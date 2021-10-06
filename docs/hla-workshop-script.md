@@ -47,21 +47,21 @@ This document provides prescriptive guidance for running the HLA Workshop
 
 # Product Deep Dive (60 minutes)
 
-1. Hands-on Workshop  Section(20 minutes)
+1. Hands-on Workshop  Section(1 minutes)
    1. Demonstrate 3 Chaos Engineering Use-Cases
       1. Trigger Application Chaos
          * This Use-Case uses the [Chaos Monkey REST API](https://codecentric.github.io/chaos-monkey-spring-boot/latest/#_http_endpoint) to setup and trigger Assaults
       1. Trigger Infrastructure Chaos
          * This Use-Case uses the [UNIX logger API](https://man7.org/linux/man-pages/man1/logger.1.html) to inject simulated errors in syslog log files
-      1. Trigger Database Chaos
+      1. _Trigger Database Chaos_
          * This Use-Case uses setting the **LimitNOFILE=64** MySQL property and bouncing the MySQL service to trigger a "Too many open files" errors in logs and makes database inaccessible from the Spring Apps
-   1. Demonstrate Root Cause Analysis
+   1. _Demonstrate Root Cause Analysis_
       1. Change Request is automatically mapped to the Alert
-   1. Demonstrate one Remediation
+   1. _Demonstrate one Remediation_
       1. Trigger Application Remediation by turning off assault
       1. Trigger Infrastructure Remediation by restarting the Spring Apps services
       1. Trigger Database Remediation by setting **LimitNOFILE=infinite** and bouncing the MySQL service
-1. Product Technical Setup (aka. Butonology) (45 minutes)
+1. Product Technical Setup (aka. Buttonology) (45 minutes)
    1. Show **Data Inputs** (20 minutes)
       * Show Data Collection options
    1. Show **Streaming Sources** and their validation (1 minute)
@@ -74,7 +74,7 @@ This document provides prescriptive guidance for running the HLA Workshop
       * Show parsing log structures and how thy are used to extract and classify key value pairs, etc.
    1. Show **Log Sources**  (2 minutes)
       * Review Mapping Results
-   1. Show **Log Viewer** 
+   1. Show **Log Viewer** ^1
       * Show Defined Alerts
 
 # Workshop environment hand off (5 mins)
