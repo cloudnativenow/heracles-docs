@@ -13,11 +13,11 @@ This document provides prescriptive guidance for running the HLA Workshop
 
 ## Describe Objectives (5 minutes)
 
-## Describe Product Overview (5 minutes)
+## Describe Product Overview (10 minutes)
 
    1. First call deck (technical)
 
-## Describe Workshop Architecture (15 minutes)
+## Describe Workshop Architecture (10 minutes)
 
    1. Show Application Architecture
       1. Show Application architecture diagram
