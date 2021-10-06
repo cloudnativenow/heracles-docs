@@ -146,7 +146,7 @@ Following is an example scenario to trigger database chaos for the HLA Workshop 
    ssh ec2-user@$HOST PUBLIC IP -i ~/.ssh/YOUR SSH KEY
    ```
 
-* Set LimitNOFILE=64 to trigger chaos
+1. Set LimitNOFILE=64 to trigger chaos
 
    ```
    mkdir -p /etc/systemd/system/mariadb.service.d
@@ -158,19 +158,19 @@ Following is an example scenario to trigger database chaos for the HLA Workshop 
 
    > CAUTION: This triggers "[ERROR] Error in accept: Too many open files" errors and makes the database inaccesible for the Spring Apps
 
-* Restart Service
+1. Restart Service
 
    ```
    systemctl daemon-reload && systemctl restart mariadb
    ```
 
-* Tail the Error Log to observe the chaos
+1. Tail the Error Log to observe the chaos
 
    ```
    tail -f /var/log/mariadb/mariadb.log
    ```
 
-* Set LimitNOFILE=infinite to remediate
+1. Set LimitNOFILE=infinite to remediate
 
    ```
    mkdir -p /etc/systemd/system/mariadb.service.d
@@ -180,13 +180,13 @@ Following is an example scenario to trigger database chaos for the HLA Workshop 
    EOF
    ```
 
-* Restart Service
+1. Restart Service
 
    ```
    systemctl daemon-reload && systemctl restart mariadb
    ```
 
-* Check Limits (e.g. 962)
+1. Check Limits (e.g. 962)
 
    ```
    $ mysql -u root -e "SHOW VARIABLES LIKE 'open_files_limit';"
