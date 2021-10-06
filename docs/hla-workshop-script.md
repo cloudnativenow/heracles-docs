@@ -79,10 +79,7 @@ This document provides prescriptive guidance for running the HLA Workshop
 
 # Workshop environment hand off
 1. Disclose how to access the HLA Workshop Environment (5 minutes)
-1. Describe Workshop usage
-   1. Chaos Engineering
-   1. Root Cause Analysis (RCA)
-   1. Remediation
+1. Describe Workshop Usage
 
 # Conclusion (5 mins)
    1. Q & A with Customer
