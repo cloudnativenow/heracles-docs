@@ -169,12 +169,14 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 ## Install MID Server Software using Ansible
 
 1. Run the Install MID Server Playbook
+
     ```
     $ ansible-playbook -i YOUR INVENTORY FILE.cfg ansible/install-midserver.yml \
     -e "instance_url=https://YOUR NOW URL " \
     -e "mid_userame=YOUR MID SERVER USER ID" \
     -e "mid_password=YOUR MID SERVER USER PASSWORD"
     ```
+
 ## Configure NOW ACC & Filebeat Access
 
     > NOTE: After the Ansible script above finished running, a MID entry should appear 
@@ -299,6 +301,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Navigate to **Health Log Analytics > Mapping > Data Input Mapping**
 1. Select each Data Inputs Mapping (e.g., nginx, spring, mysql)
 1. Update each **JS Function** as follows
+
     ```
     function map(sample, metadata) {
     return {
@@ -309,6 +312,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
     }
     // Do not write code here
     ```
+
 1. Test and publish the JavaScript Function
 
 ## Re-enable Data Inputs
@@ -323,6 +327,7 @@ These instructions apply to a WSL Ubuntu workstation. Please refer to the Terraf
 
 1. Start a Bash Shell
 1. Install Terraform CLI (e.g., v0.12.31)
+
     ```
     $ wget -qO- https://releases.hashicorp.com/terraform/0.12.31/terraform_0.12.31_linux_amd64.zip | busybox unzip -
     $ chmod 775 terraform
@@ -351,11 +356,14 @@ information.
 These instructions apply to a WSL Ubuntu workstation. Please refer to the AWS CLI Installation Guide https://docs.aws.amazon.com/cli/latest/userguide/install-linux.html for more information.
 
 1. Start a Bash Shell
-2. Install Venv
+1. Install Venv
+
     ```
     $ sudo apt-get install -y python3-venv
     ```
-3. Install the AWS CLI
+
+1. Install the AWS CLI
+
     ```
     $ curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
     $ unzip awscli-bundle.zip
