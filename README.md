@@ -47,13 +47,11 @@ pandoc "hla-workshop-installation-guide.md" --reference-doc=servicenow.docx --hi
 * Generate multiple DOCX files from a set of Markdown files in a named temp folder
 
 ```
-find ./ -iname "*.md" -type f -exec sh -c 'pandoc "${0}" --highlight-style tango --toc -o "/tmp/${0%.md}.docx"' {} \;`
+`find ./ -iname "*.md" -type f -exec sh -c 'pandoc "${0}" --highlight-style tango --toc -o "/mnt/c/Temp/${0%.md}.docx"' {} \;`
 ```
 
 * Generate multiple DOCX files from a set of Markdown files in a named temp folder using a template
 
 ```
-find ./ -iname "*.md" -type f -exec sh -c 'pandoc "${0}" --reference-doc=servicenow.docx --highlight-style tango --toc -o "/mnt/c/Temp/${0%.md}.docx"' {} \;
+`find ./ -iname "*.md" -type f -exec sh -c 'pandoc "${0}" --reference-doc=servicenow.docx --highlight-style tango --toc -o "/mnt/c/Temp/${0%.md}.docx"' {} \;`
 ```
-
-
