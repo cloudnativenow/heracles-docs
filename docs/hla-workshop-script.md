@@ -74,7 +74,7 @@ This document provides prescriptive guidance for running the HLA Workshop
       * Show parsing log structures and how thy are used to extract and classify key value pairs, etc.
    1. Show **Log Sources**  (2 minutes)
       * Review Mapping Results
-   1. Show **Log Viewer** ^1
+   1. Show **Log Viewer**
       * Show Defined Alerts
 
 # Workshop environment hand off (5 mins)
