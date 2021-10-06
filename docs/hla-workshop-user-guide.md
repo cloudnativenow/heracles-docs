@@ -16,4 +16,26 @@ Chaos in the HLA Workshop environment to simulate anomalies in the (a) applicati
 
 # Infrastructure Chaos
 
+1. SSH To Server
+
+   ```
+   ssh ec2-user@$HOST PUBLIC IP -i ~/.ssh/YOUR SSH KEY
+   ```
+
+1. Simulate 1 Error to /var/log/messages
+
+   ```
+   logger -i -t "chaos" -p user.notice "YOUR RANDOM ERROR MESSAGE HERE" -s
+   ```
+
+* Simulate 10 Errors to /var/log/messages
+
+   ```
+   for (( i=1; i<=10; i++ ))
+   do  
+      sleep .$[($RANDOM % 10)+1]s
+      logger -i -t "chaos" -p user.notice "YOUR RANDOM ERROR MESSAGE HERE"" -s
+   done
+   ```
+
 # Database Chaos
