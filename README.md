@@ -2,8 +2,9 @@ Documentation project for the HLA Workshop. In addition it describes how to inst
 
 # Project Documentation
 
-* [HLA Workshop Installation Docs](docs/hla-workshop-installation-guide.md)
-* [HLA Workshop Script Docs](docs/hla-workshop-script.md)
+* [HLA Workshop Installation Guide](docs/hla-workshop-installation-guide.md)
+* [HLA Workshop Script](docs/hla-workshop-script.md)
+* [HLA Workshop User Guide](docs/hla-workshop-user-guide.md)
 
 # Prerequisites
 
