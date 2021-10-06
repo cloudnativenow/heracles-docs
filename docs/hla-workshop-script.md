@@ -61,7 +61,7 @@ This document provides prescriptive guidance for running the HLA Workshop
       1. Trigger Application Remediation by turning off assault
       1. Trigger Infrastructure Remediation by restarting the Spring Apps services
       1. Trigger Database Remediation by setting **LimitNOFILE=infinite** and bouncing the MySQL service
-1. Product Deep Dive Section (aka. Butonology) (45 minutes)
+1. Product Technical Setup (aka. Butonology) (45 minutes)
    1. Show **Data Inputs** (20 minutes)
       * Show Data Collection options
    1. Show **Streaming Sources** and their validation (1 minute)
