@@ -77,8 +77,8 @@ This document provides prescriptive guidance for running the HLA Workshop
    1. Show **Log Viewer** 
       * Show Defined Alerts
 
-# Workshop environment hand off
-1. Disclose how to access the HLA Workshop Environment (5 minutes)
+# Workshop environment hand off (5 mins)
+1. Disclose how to access the HLA Workshop Environment
 1. Describe Workshop Usage
 
 # Conclusion (5 mins)
