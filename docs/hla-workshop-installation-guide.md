@@ -27,14 +27,14 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Navigate to [NOW HI](https://support.servicenow.com/now)
 2. Search for "new internal instance request"
 3. Request a new instance as follows, using the latest available application version:
-![Figure 1](new-internal-instance-request.png)
+    ![Figure 1](new-internal-instance-request.png)
 
 ## Upgrade your NOW Instance to latest Rome version
 
 1. Navigate to [NOW HI](https://support.servicenow.com/now)
 2. Select your Instance from the Instances Dashboard
 3. Upgrade your instance to latest Rome version & patch level as follows:
-![Figure 2](upgrade-to-rome.png)
+    ![Figure 2](upgrade-to-rome.png)
 
 ## Install the required ITOM plugins for the Workshop
 
@@ -56,7 +56,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 
 1. Login to your NOW Instance as an Administrator
 1. Retrieve the **Health Log Analytics Package Dependencies & Versions** as follows:
-![Figure 3](hla-package-deps.png)
+    ![Figure 3](hla-package-deps.png)
 
 ## Optimize your NOW Instance for the Workshop
 1. Login to your NOW Instance as an Administrator
@@ -142,7 +142,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Navigate to **Guided Setup > ITOM Guided Setup**
 1. Click on **MID Server**
 1. Click on **Create MID User**
-![Figure 4](create-mid-user.png)
+    ![Figure 4](create-mid-user.png)
 
 ## Install MID Server Software using Ansible
 
@@ -163,17 +163,17 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Keep the default options to "ALL" (e.g., IP Ranges, Supported Applications, etc.) 
 1. Click on **Setup Agent Client Collector Listener**
 1. Set the MID Web Server Port to “8085” as follows:
-![Figure 5](mid-web-server-port.png)
+    ![Figure 5](mid-web-server-port.png)
 1. Safeguard your Endpoint address (e.g., wss://15.0.1.107:8085/ws/events)
-![Figure 6](acc-endpoint.png)
+    ![Figure 6](acc-endpoint.png)
 1. Click on **Setup Operational Intelligence** as follows
-![Figure 7](setup-oi-1.png)
-And you’ll be redirected to the following screen:
-![Figure 8](setup-oi-2.png)
+    ![Figure 7](setup-oi-1.png)
+    And you’ll be redirected to the following screen:
+    ![Figure 8](setup-oi-2.png)
     > NOTE: Make sure the status turns to “Started”
 1.	Navigate to **Agent Client Collector > Deployment > MID Web Server API Key**
 1.	Safeguard your MID’s API KEY
-![Figure 9](mid-api-key.png)
+    ![Figure 9](mid-api-key.png)
 
 ## Create your Application Service
 
