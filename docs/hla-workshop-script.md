@@ -76,6 +76,7 @@ This document provides prescriptive guidance for running the HLA Workshop
       * Review Mapping Results
    1. Show **Log Viewer** 
       * Show Defined Alerts
+
 # Workshop environment hand off
 1. Disclose how to access the HLA Workshop Environment (5 minutes)
 1. Describe Workshop usage
