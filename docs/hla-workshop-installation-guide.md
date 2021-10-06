@@ -84,23 +84,32 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 ## Create the AWS Environment using Terraform
 
 1. Clone Git Project
+
     ```
     $ git clone git@github.com:pangealab/heracles.git
     $ cd heracles/
     ```
+
 1. Configure AWS Profile
+
     ```
     $ export AWS_PROFILE=YOUR PROFILE; printenv AWS_PROFILE
     ```
+
 1. Create Terraform State Bucket using your VPC ID (e.g., hlawork1)
+
     ```
     $ aws s3 mb s3://YOUR VPC ID-terraform-backend --profile YOUR PROFILE
     ```
-1.	Create SSH Key (e.g., heracles)
+
+1.	Create SSH Key (e.g., heracles) 
+
     ```
     $ ssh-keygen -t rsa -b 4096 -C "heracles@noreply.com" -f $HOME/.ssh/heracles -m PEM
     ``` 
+
 1. Set your backend bucket property in the *backend.tf* file as follows:
+
     ```
     # Save Terraform State to S3 Bucket
     terraform {
@@ -111,25 +120,33 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
     }
     }
     ```
+
 1. Initialize Terraform
+
     ```
     $ terraform init
     ```
+
 1. Create Infrastructure
+
     ```
     $ terraform apply -auto-approve -var instance_count=3 -var cluster_name=YOUR VPC ID
     ```
+
 1.	Safeguard the Terraform output of server public and private IPs
 1.	Safeguard the generated Ansible Inventory file (e.g., inventory-hlawork1.cfg)
 
 ## Install the Pet Clinic Software stack using Ansible
 
 1. Set SSH Agent
+
     ```
     $ eval `ssh-agent -s`
     $ ssh-add ~/.ssh/YOUR SSH KEY 
     ```
+
 1. Run the Install Pet Clinic Playbook
+
     ```
     $ ansible-playbook -i YOUR INVENTORY FILE.cfg ansible/install-petclinic.yml \
     -e "github_token=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" \
@@ -137,6 +154,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
     -e "servers='YOUR SPRING SERVERS PRIVATE IPS'" \
     -e "frontend_addr=YOUR NGINX PUBLIC IP:8080"
     ```
+
 # Deploy the MID Server and pre-configure ACC, Filebeat Access
 
 ## Configure NOW MID Access
@@ -187,7 +205,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1.	Navigate to **Agent Client Collector > Deployment > MID Web Server API Key**
 1.	Safeguard your MID’s API KEY
 
-        ![Figure 9](mid-api-key.png)
+    ![Figure 9](mid-api-key.png)
 
 ## Create your Application Service
 
@@ -223,7 +241,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Navigate to **Health Log Analytics > Data Input**
 1. Create a **Linux using Filebeat Data Input** as follows:
 
-    ![Figure 10](create-spring-di.png)
+    ![Figure 11](create-spring-di.png)
 
 1. Press **Submit** when done
     > NOTE: Do not download the ”filebeat.yml” as it is part of an Ansible Playbook already
@@ -234,7 +252,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Navigate to **Health Log Analytics > Data Input**
 1. Create a **Linux using Filebeat Data Input** as follows:
 
-    ![Figure 10](create-mysql-di.png)
+    ![Figure 12](create-mysql-di.png)
 
 1. Press **Submit** when done
     > NOTE: Do not download the ”filebeat.yml” as it is part of an Ansible Playbook already
