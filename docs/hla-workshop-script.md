@@ -9,15 +9,15 @@ date: 6 Oct 2021
 
 This document provides prescriptive guidance for running the HLA Workshop
 
-# HLA Overview (25 minutes)
+# Overview (25 minutes)
 
-## Describe Objectives (5 minutes)
+## Objectives (5 minutes)
 
-## Describe Product Overview (10 minutes)
+## Product Overview (10 minutes)
 
    1. First call deck (technical)
 
-## Describe Workshop Architecture (10 minutes)
+## Workshop Architecture (10 minutes)
 
    1. Show Application Architecture
       1. Show Application architecture diagram
@@ -45,7 +45,7 @@ This document provides prescriptive guidance for running the HLA Workshop
       1. Show the Agent Assist for an Alert
       1. Show a Remediation Workflow for an Alert
 
-# HLA Deep Dive (60 minutes)
+# Product Deep Dive (60 minutes)
 
 1. Hands-on Workshop  Section(20 minutes)
    1. Demonstrate 3 Chaos Engineering Use-Cases
@@ -76,7 +76,13 @@ This document provides prescriptive guidance for running the HLA Workshop
       * Review Mapping Results
    1. Show **Log Viewer** 
       * Show Defined Alerts
+# Workshop environment hand off
 1. Disclose how to access the HLA Workshop Environment (5 minutes)
-1. Discuss next steps (5 minutes)
+1. Describe Workshop usage
+   1. Chaos Engineering
+   1. Root Cause Analysis (RCA)
+   1. Remediation
+
+# Conclusion (5 mins)
    1. Q & A with Customer
    2. Schedule Touchpoint with Customer
