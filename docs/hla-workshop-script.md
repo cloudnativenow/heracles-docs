@@ -48,66 +48,29 @@ This document provides prescriptive guidance for running the HLA Workshop
       1. Trigger Infrastructure Chaos
          * This Use-Case uses the [UNIX logger API](https://man7.org/linux/man-pages/man1/logger.1.html) to inject simulated errors in syslog log files
       1. Trigger Database Chaos
-         * This Use-Case uses setting the **LimitNOFILE=64** MySQL property and bouncing the MySQL service to trigger a "Too many open files" errors in logs and makes database inaccessible from Spring Apps
+         * This Use-Case uses setting the **LimitNOFILE=64** MySQL property and bouncing the MySQL service to trigger a "Too many open files" errors in logs and makes database inaccessible from the Spring Apps
    1. Demonstrate Root Cause Analysis
       1. Change Request is automatically mapped to the Alert
    1. Demonstrate one Remediation
       1. Trigger Application Remediation by turning off assault
+      1. Trigger Infrastructure Remediation by restarting the Spring Apps services
       1. Trigger Database Remediation by setting **LimitNOFILE=infinite** and bouncing the MySQL service
-
-iii.     Trigger Infrastructure Remediation by
-restarting Spring Services
-
-6. Product Deep Dive Section –
-   Describe how the product works, i.e., buttonology) (45 minutes)
-
-a.      Show
-Data Inputs (20 minutes)
-
-i.     data
-collection options
-
-b.
-Show
-Streaming Sources & Validation (1 minute)
-
-c.       Show
-Data Input Mapping (5 minutes)
-
-i.     Why?
-To facilitate baselining of logs…Break down log stream into respective logical
-components
-
-ii.     Map
-to relevant source types (parsers)
-
-d.
-Show
-Data input preprocessor (2 minutes)
-
-i.     Modify data as necessary for data
-refinement pre ingestion
-
-e.      Source
-type structure (15 minutes)
-
-i.     Parsing
-log structure to extract and classify key value pairs etc.
-
-f.
-Log
-sources (2 minutes)
-
-i.     Review mapping results
-
-g.
-Log
-viewer
-
-i.     Defined alerts
-
-7. Accessing HLA workshop
-   Environment (5 minutes)
-8. Next steps (5 minutes)
-   1. Q&A
-   2. Set up touchpoint check in …
+1. Product Deep Dive Section (aka. Butonology) (45 minutes)
+   1. Show **Data Inputs** (20 minutes)
+      * Show Data Collection options
+   1. Show **Streaming Sources** and their validation (1 minute)
+   1. Show **Data Input Mapping** (5 minutes)
+      * Show why Data Input Mapping is important (i.e., to facilitate baselining of logs and break down log stream into respective logical components)
+      * Show go to Map Data Inputs to relevant Source Types and talk about Parsers
+   1. Show **Data Input Preprocessor** (2 minutes)
+      * Modify data as necessary for data refinement pre ingestion
+   1. Show **Source Type Structure** (15 minutes)
+      * Show parsing log structures and how thy are used to extract and classify key value pairs, etc.
+   1. Show **Log Sources**  (2 minutes)
+      * Review Mapping Results
+   1. Show **Log Viewer** 
+      * Show Defined Alerts
+1. Disclose how to access the HLA Workshop Environment (5 minutes)
+1. Discuss next steps (5 minutes)
+   1. Q & A with Customer
+   2. Schedule Touchpoint with Customer
