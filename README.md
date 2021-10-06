@@ -39,7 +39,7 @@ Documentation project for the HLA Workshop. In addition it describes how to inst
 * Generate one DOCX file from a single Markdown file in a named temp folder using a template
 
 ```
-pandoc "hla-workshop-installation-guide.md" --reference-doc=servicenow.docx --highlight-style tango --toc -o "/mnt/c/Temp/$hla-workshop-installation-guide.docx"
+pandoc "hla-workshop-installation-guide.md" --reference-doc=servicenow.docx --highlight-style tango --toc -o "/mnt/c/Temp/hla-workshop-installation-guide.docx"
 ```
 
 * Generate multiple DOCX files from a set of Markdown files in a named temp folder
