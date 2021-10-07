@@ -43,10 +43,13 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Login to your NOW Instance as an Administrator
 1. Navigate to the **System Definition > Plugins** and install the following plugins:
 
-    |  Plugin Name  |  Plugin ID | Notes |
-    | ------------- | ---------- | ----- |
-    | Agent Client Collector Monitoring | com.snc.sa.metric | 10 Minutes to install |
-    | Service Mapping | com.snc.service-mapping | 20 Minutes to install |
+    |  Plugin Name  |  Plugin ID |
+    | ------------- | ---------- |
+    | Metric Intelligence  | com.snc.sa.metric |
+    | Service Mapping | com.snc.service-mapping |
+    | Discovery and Service Mapping Patterns | sn_itom_pattern |
+    | CMDB CI Class Models | sn_cmdb_ci_class |
+    | Certificate Inventory and Management | sn_disco_certmgmt |
 
 ## Install the HLA stack for your NOW Instance
 
