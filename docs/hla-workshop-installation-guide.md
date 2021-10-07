@@ -50,7 +50,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 
 ## Install the HLA stack for your NOW Instance
 
-1. Follow the [HLA Installation Guide](https://servicenow.sharepoint.com/:w:/s/itxamssc/EZUQY9F095VEmHuA0A4Od2cBEkjRbiVo8oWMLARC5HfjVg?e=iGEcKR) for the latest installation steps
+1. Follow the [HLA Installation Guide](hla-installation-guide.pdf) for the latest installation steps
 
     > NOTE: Please read and follow all the steps carefully as instructed in the "HLA Installation Guide" document as it us updated frequently by the HLA Development Team
 
