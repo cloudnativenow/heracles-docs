@@ -57,9 +57,17 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 ## Validate the HLA stack for your NOW Instance
 
 1. Login to your NOW Instance as an Administrator
-1. Retrieve the **Health Log Analytics Package Dependencies & Versions** as follows:
+1. In the Filter Navigator enter `sn_occ_stats.do`
+1. Note the **Health Log Analytics Package Dependencies & Versions** as follows:
 
-    ![Figure 3](hla-package-deps.png)
+    | Dependency | Version |
+    | ---------- | ------- |
+    | Health Log Analytics | 21.0.1 |
+    | Health Log Analytics Viewer | 20.1.4 |
+    | Alert Intelligence | 19.3.8 |
+    | Occultus Version | 1.13.2.25 |
+    | Metrics Base Version | 1.14.0.13 |
+    | ElasticSearch Version | 7.3.2 |
 
 ## Optimize your NOW Instance for the Workshop
 1. Login to your NOW Instance as an Administrator
@@ -193,7 +201,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Click on your MID Server
 1. Click on the **Validate** link
 
-### Configure IP Ranges
+## Configure IP Ranges
 
 1. Click on the **IP Ranges** tab
 1. Add a an IP Range as follows:
@@ -204,7 +212,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
     | Type  | Include |
     | Range	| 0.0.0.0 |
 
-### Configure Supported Applications
+## Configure Supported Applications
 
 1. Click on the **Supported Applications** tab
 1. Add a Supported Application follows:
@@ -215,7 +223,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
     | Default MID Server | YOUR MID SERVER |
     | Included in application ALL	| true |    
 
-### Setup Operational Intelligence
+## Setup Operational Intelligence
 
 1. Click on the **Setup Operational Intelligence** link
 
@@ -225,7 +233,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Set the MID Web Server Port to `8085`
 1. Safeguard your Endpoint address (e.g., wss://15.0.1.107:8085/ws/events)
 
-### Collect the MID Web Server API Key
+## Collect the MID Web Server API Key
 
 1. Navigate to **MID Server > Manage MID Web Server API Key**
 1. Copy and safeguard your `MID Web Server API Key`
