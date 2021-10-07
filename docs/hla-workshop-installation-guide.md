@@ -176,38 +176,59 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
     -e "mid_userame=YOUR MID SERVER USER ID" \
     -e "mid_password=YOUR MID SERVER USER PASSWORD"
     ```
+## Configure Discovery Credentials
 
-## Configure NOW ACC & Filebeat Access
+1. Login to your NOW Instance as Administrator
+1. Navigate to **Discovery > Credentials**
+1. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
 
-    > NOTE: After the Ansible script above finished running, a MID entry should appear 
-    on the "MID Servers" table in the platform
+    ![Figure 20](heracles-credential.png)
 
-1. Select the MID record name
-1. Press the **Validate** button
-1. Keep the default options to "ALL" (e.g., IP Ranges, Supported Applications, etc.) 
-1. Click on **Setup Agent Client Collector Listener**
-1. Set the MID Web Server Port to “8085” as follows:
+1. Test Credential with any of your server IP addresses (e.g. mysql, spring, etc.)
 
-    ![Figure 5](mid-web-server-port.png)
+## Validate MID Server
 
+1. Login to your NOW Instance as Administrator
+1. Navigate to **MID Server > Server**
+1. Click on your MID Server
+1. Click on the **Validate** link
+
+### Configure IP Ranges
+
+1. Click on the **IP Ranges** tab
+1. Add a an IP Range as follows:
+
+    | Field | Value   |
+    | ----- | ------- | 
+    | Name	| ALL     |
+    | Type  | Include |
+    | Range	| 0.0.0.0 |
+
+### Configure Supported Applications
+
+1. Click on the **Supported Applications** tab
+1. Add a Supported Application follows:
+
+    | Field | Value   |
+    | ----- | ------- |
+    | Name	| ALL     |
+    | Default MID Server | YOUR MID SERVER |
+    | Included in application ALL	| true |    
+
+### Setup Operational Intelligence
+
+1. Click on the **Setup Operational Intelligence** link
+
+## Setup Agent Client Collector Listener
+
+1. Click on the **Setup Agent Client Collector Listener** link
+1. Set the MID Web Server Port to `8085`
 1. Safeguard your Endpoint address (e.g., wss://15.0.1.107:8085/ws/events)
 
-    ![Figure 6](acc-endpoint.png)
+### Collect the MID Web Server API Key
 
-1. Click on **Setup Operational Intelligence** as follows
-
-    ![Figure 7](setup-oi-1.png)
-
-    And you’ll be redirected to the following screen:
-
-    ![Figure 8](setup-oi-2.png)
-
-    > NOTE: Make sure the status turns to “Started”
-
-1.	Navigate to **Agent Client Collector > Deployment > MID Web Server API Key**
-1.	Safeguard your MID’s API KEY
-
-    ![Figure 9](mid-api-key.png)
+1. Navigate to **MID Server > Manage MID Web Server API Key**
+1. Copy and safeguard your `MID Web Server API Key`
 
 ## Create your Application Service
 
