@@ -274,9 +274,48 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 
 # Configure your NOW HLA instance for a new Workshop
 
+## Configure your Source Type Structures
+
 1. Login to your NOW Instance as Administrator
 1. Navigate to **Health Log Analytics > Mapping > Source Type Structures**
 1. For each Source Type Structure, set the **Custom JS** Function using the scripts located in the cloned Git Project /servicenow folder (e.g., source-type-structure-mariadb-error.js)
+
+## Configure your Source Type Structures Key/Value Mappings
+
+1. Login to your NOW Instance as Administrator
+1. Navigate to **Health Log Analytics > Mapping > Source Type Structures**
+1. For each Source Type Structure, set the Key/Value Mappings as follows
+
+    Key/Value Mappings:
+
+    1. syslog-messages
+
+        ![Figure 13](syslog-messages-kvm.png)
+
+    1. spring-app
+
+        ![Figure 14](spring-app-kvm.png)
+
+    1. spring-access
+
+        ![Figure 15](spring-access-kvm.png)
+
+    1. nginx-error
+
+        ![Figure 16](nginx-error-kvm.png)
+
+    1. nginx-access
+
+        ![Figure 17](nginx-access-kvm.png)
+        
+    1. mariadb-sql
+
+        ![Figure 18](mariadb-sql-kvm.png)
+
+    1. mariadb-error
+
+        ![Figure 19](mariadb-error-kvm.png)
+
 
 # Reconfigure an existing NOW HLA Instance for a new Workshop
 
