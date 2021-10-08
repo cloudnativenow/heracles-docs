@@ -379,39 +379,29 @@ Syslog Logs
 
 ![syslog-messages](syslog-messages-kvm.png)
 
-
 Spring App Logs
 
 ![spring-app](spring-app-kvm.png)
-
-
 
 Spring Access Logs
 
 ![spring-access](spring-access-kvm.png)
 
-
-
 NGINX Error Logs
 
 ![nginx-error](nginx-error-kvm.png)
-
-
 
 NGINX Access Logs
 
 ![nginx-access](nginx-access-kvm.png)
 
-
 MariaDB SQL Dump
 
 ![mariadb-sql](mariadb-sql-kvm.png)
 
-
 MariaDB Error Logs
 
 ![mariadb-error](mariadb-error-kvm.png)
-
 
 # Reconfigure an existing NOW HLA Instance for a new Workshop
 
