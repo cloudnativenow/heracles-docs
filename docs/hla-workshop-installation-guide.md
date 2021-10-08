@@ -2,8 +2,8 @@
 title: HLA Workshop
 subtitle: Installation Guide 
 author: 
-- Anthony Angelo, Netser Heruty, Daniel Smith
-date: 5 Oct 2021
+- Anthony Angelo, Netser Heruty, Daniel Smith, Joe Steinfeld
+date: 8 Oct 2021
 ---
 
 # Introduction

@@ -25,7 +25,9 @@ Documentation project for the HLA Workshop. In addition it describes how to inst
 * Install Pandoc using APT GET
 
     ```
-    sudo apt-get install -y pandoc
+    sudo apt-get update
+    sudo apt-get install -y pandoc # Core Pandoc
+    sudo apt-get install -y texlive-latex-extra # For PDF features
     ```
 
 # Pandoc Installation for Mac
@@ -33,7 +35,9 @@ Documentation project for the HLA Workshop. In addition it describes how to inst
 * Install Pandoc using HOMEBREW
 
     ```
+    sudo apt-get update
     brew install pandoc
+    brew install texlive-latex-extra
     ```
 
 # Convert Markdown to WORD
