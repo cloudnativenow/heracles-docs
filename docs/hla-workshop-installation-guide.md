@@ -279,7 +279,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Filter Results using `*sql`
 1. Select the `MySQL Instance`
 1. Press the `+ Add Relatonship` Button
-1. Select the `Used By (Child)` Relationship
+1. Select the `Use End Point From (Child)` Relationship
 1. Remove all Filters
 1. Filter using the following
 
