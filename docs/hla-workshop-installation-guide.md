@@ -272,27 +272,19 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 
 ## Create your Application Service  Database Relatonships  
 
-1. Navigate to **Configuration > CMDB Query Builder**
-1. Create a new Query called `Search`
-1. Drag the **Configuration Item** on the canvas
-1. Press the **Run** Button
-1. Filter Results using `*sql`
-1. Select the `MySQL Instance`
-1. Press the `+ Add Relatonship` Button
-1. Select the `Use End Point From (Child)` Relationship
-1. Remove all Filters
-1. Filter using the following
+1. Navigate to **Service Mapping > Services > Application Services**
+1. Select the `Pet Clinic` Application
+1. Press the **View Map** Button
+1. Hover over each `Tomcat` Server and click on the **Manually add a connection** link
+1. Manually add a connection as follows:
 
-    | Field | Operator |Value  |
-    | ----- | ------- | ------ |
-    | Name  | contains | tomcat |
-
-1. Select all `Tomcat` Configuration Items
-1. Press the `+ Create new relationships with selected configuration items` Button
-1. Press the `Save and Exit` Button
+    | Field | Operator |
+    | ----- | -------- |
+    | Select Entry Point Type  | MySQL Server Endpoint |
+    | Host | YOUR MYSQL PRIVATE IP (e.g. ip-15-0-1-241) |
+    | Port | YOUR MYSQL PORT (e.g. 3306) |
+1. Press the **Add** Button
     
-    ![Figure](relationship-editor.png)
-
 # Create your HLA Data Inputs
 
 ## NGINX Data Input
