@@ -28,7 +28,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 2. Search for "new internal instance request"
 3. Request a new instance as follows, using the latest available application version:
 
-    ![Figure 1](new-internal-instance-request.png)
+    ![Figure](new-internal-instance-request.png)
 
 ## Upgrade your NOW Instance to latest Rome version
 
@@ -36,7 +36,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 2. Select your Instance from the Instances Dashboard
 3. Upgrade your instance to latest Rome version & patch level as follows:
 
-    ![Figure 2](upgrade-to-rome.png)
+    ![Figure](upgrade-to-rome.png)
 
 ## Install the required ITOM plugins for the Workshop
 
@@ -175,7 +175,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Click on **MID Server**
 1. Click on **Create MID User**
 
-    ![Figure 4](create-mid-user.png)
+    ![Figure](create-mid-user.png)
 
 ## Install MID Server Software using Ansible
 
@@ -193,7 +193,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Navigate to **Discovery > Credentials**
 1. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
 
-    ![Figure 20](heracles-credential.png)
+    ![Figure](heracles-credential.png)
 
 1. Test Credential with any of your server IP addresses (e.g. mysql, spring, etc.)
 
@@ -257,18 +257,41 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
     
 ## Create your Application Service
 
-1. Login to your NOW Instance as Administrator
-1. Navigate to **CSDM > Manage Technical Services > Application Service**
-1. Create a **New** Application Service as follows:
+1. Navigate to **Service Mapping > Services > Application Services**
+1. Create a **New** Application Service `Pet Clinic`
+1. Add a **Web Application** Entry Point as follows:
 
-    | Field | Value |
-    | ----- | ----- | 
-    | Name	| Pet Clinic |
-    | Operational Status | Operational |
+    | Field | Value   |
+    | ----- | ------- |
+    | Discoverable by Service Mapping | true |
+    | URL	| http:// NGINX AWS PRIVATE IP DNS NAME :8080 |
+    | Host Name | NGINX AWS PRIVATE IP DNS NAME  |
 
-3. Press  **Next** followed by **Done**
+1. Press the **View Map** Button
+1. Press the **Run Discovery** Button
 
-    > NOTE: Do not populate the Application Service
+## Create your Application Service  Database Relatonships  
+
+1. Navigate to **Configuration > CMDB Query Builder**
+1. Create a new Query called `Search`
+1. Drag the **Configuration Item** on the canvas
+1. Press the **Run** Button
+1. Filter Results using `*sql`
+1. Select the `MySQL Instance`
+1. Press the `+ Add Relatonship` Button
+1. Select the `Used By (Child)` Relationship
+1. Remove all Filters
+1. Filter using the following
+
+    | Field | Operator |Value  |
+    | ----- | ------- | ------ |
+    | Name  | contains | tomcat |
+
+1. Select all `Tomcat` Configuration Items
+1. Press the `+ Create new relationships with selected configuration items` Button
+1. Press the `Save and Exit` Button
+    
+    ![Figure](relationship-editor.png)
 
 # Create your HLA Data Inputs
 
@@ -278,7 +301,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Navigate to **Health Log Analytics > Data Input**
 1. Create a **Linux using Filebeat Data Input** as follows:
 
-    ![Figure 10](create-nginx-di.png)
+    ![Figure](create-nginx-di.png)
 
 1. Press **Submit** when done
     > NOTE: Do not download the ”filebeat.yml” as it is part of an Ansible Playbook already
@@ -289,7 +312,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Navigate to **Health Log Analytics > Data Input**
 1. Create a **Linux using Filebeat Data Input** as follows:
 
-    ![Figure 11](create-spring-di.png)
+    ![Figure](create-spring-di.png)
 
 1. Press **Submit** when done
     > NOTE: Do not download the ”filebeat.yml” as it is part of an Ansible Playbook already
@@ -300,7 +323,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Navigate to **Health Log Analytics > Data Input**
 1. Create a **Linux using Filebeat Data Input** as follows:
 
-    ![Figure 12](create-mysql-di.png)
+    ![Figure](create-mysql-di.png)
 
 1. Press **Submit** when done
     > NOTE: Do not download the ”filebeat.yml” as it is part of an Ansible Playbook already
@@ -336,31 +359,31 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 
     1. syslog-messages
 
-        ![Figure 13](syslog-messages-kvm.png)
+        ![Figure](syslog-messages-kvm.png)
 
     1. spring-app
 
-        ![Figure 14](spring-app-kvm.png)
+        ![Figure](spring-app-kvm.png)
 
     1. spring-access
 
-        ![Figure 15](spring-access-kvm.png)
+        ![Figure](spring-access-kvm.png)
 
     1. nginx-error
 
-        ![Figure 16](nginx-error-kvm.png)
+        ![Figure](nginx-error-kvm.png)
 
     1. nginx-access
 
-        ![Figure 17](nginx-access-kvm.png)
+        ![Figure](nginx-access-kvm.png)
         
     1. mariadb-sql
 
-        ![Figure 18](mariadb-sql-kvm.png)
+        ![Figure](mariadb-sql-kvm.png)
 
     1. mariadb-error
 
-        ![Figure 19](mariadb-error-kvm.png)
+        ![Figure](mariadb-error-kvm.png)
 
 
 # Reconfigure an existing NOW HLA Instance for a new Workshop
