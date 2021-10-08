@@ -38,26 +38,25 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 
     ![Figure](upgrade-to-rome.png)
 
-## Install the required ITOM plugins for the Workshop
-
-1. Login to your NOW Instance as an Administrator
-1. Navigate to the **System Definition > Plugins** and install the following plugins:
-
-    |  Plugin Name  |  Plugin ID |
-    | ------------- | ---------- |
-    | Metric Intelligence  | com.snc.sa.metric |
-    | Service Mapping | com.snc.service-mapping |
-    | Discovery and Service Mapping Patterns | sn_itom_pattern |
-    | CMDB CI Class Models | sn_cmdb_ci_class |
-    | Certificate Inventory and Management | sn_disco_certmgmt |
-
 ## Install the HLA stack for your NOW Instance
 
 1. Follow the [HLA Installation Guide](hla-installation-guide.pdf) for the latest installation steps
 
     > NOTE: Please read and follow all the steps carefully as instructed in the "HLA Installation Guide" document as it us updated frequently by the HLA Development Team
 
-## Validate the HLA stack for your NOW Instance
+## Check HLA Services Status for your NOW Instance
+
+1. Login to your NOW Instance as an Administrator
+1. In your browser add the following to your instance URL `xmlstats.do?include=services_status`
+1. Check **Services Status** are as follows:
+
+    | Name | Status |
+    | ---- | ------ |
+    | MetricBase | green |
+    | Occultus | green |
+    | ElasticSearch | green |
+
+## Check HLA Package Versions your NOW Instance  
 
 1. Login to your NOW Instance as an Administrator
 1. In the Filter Navigator enter `sn_occ_stats.do`
@@ -72,7 +71,31 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
     | Metrics Base Version | 1.14.0.13 |
     | ElasticSearch Version | 7.3.2 |
 
+## Install the required ITOM plugins for the Workshop
+
+1. Login to your NOW Instance as an Administrator
+1. Navigate to the **System Definition > Plugins** and install the following plugins:
+
+    |  Plugin Name  |  Plugin ID |
+    | ------------- | ---------- |
+    | Agent Client Collector Monitoring | sn_itmon |
+    | Service Mapping | com.snc.service-mapping |
+    | Discovery and Service Mapping Patterns | sn_itom_pattern |
+    | CMDB CI Class Models | sn_cmdb_ci_class |
+    | Certificate Inventory and Management | sn_disco_certmgmt |
+
+## Fix Service Mapping Glitches
+
+1. Login to your NOW Instance as an Administrator
+1. In the Filter Navigator enter `sys_properties_list.do`
+1. Set the following property:
+
+    | Property Name	                | Value | Type    | Application |
+    | ----------------------------- | ----- | ------- | ----------- |
+    | com.glide.request.max_waiters | 30    | integer | Global      | 
+
 ## Optimize your NOW Instance for the Workshop
+
 1. Login to your NOW Instance as an Administrator
 1. Navigate to **Health Log Analytics > Health Log Analytics Administration > System Properties** and set the following properties:
 
