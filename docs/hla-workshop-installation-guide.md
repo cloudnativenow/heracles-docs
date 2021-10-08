@@ -241,6 +241,20 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Navigate to **MID Server > Manage MID Web Server API Key**
 1. Copy and safeguard your `MID Web Server API Key`
 
+## Configure Agent Client Collector Policies
+
+1. Navigate to **Agent Client Collector > Configuration > Policies**
+1. Activate the following Policies:
+
+    | Name | Active  |
+    | ---- | ------- |
+    | Basic Discovery | true |
+    | Linux OS Events | true |
+    | Linux OS Metrics| true |
+    | MySQL DB Events | true |
+    | MySQL DB Metrics | true |
+    | Self-Healing Events | true |
+    
 ## Create your Application Service
 
 1. Login to your NOW Instance as Administrator
