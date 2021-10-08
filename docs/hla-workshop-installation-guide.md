@@ -375,33 +375,43 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Navigate to **Health Log Analytics > Mapping > Source Type Structures**
 1. For each Source Type Structure, set the Key/Value Mappings as follows
 
-### Syslog Logs
+Syslog Logs
 
 ![syslog-messages](syslog-messages-kvm.png)
 
-### Spring App Logs
+
+Spring App Logs
 
 ![spring-app](spring-app-kvm.png)
 
-### Spring Access Logs
+
+
+Spring Access Logs
 
 ![spring-access](spring-access-kvm.png)
 
-### NGINX Error Logs
+
+
+NGINX Error Logs
 
 ![nginx-error](nginx-error-kvm.png)
 
-### NGINX Access Logs
+
+
+NGINX Access Logs
 
 ![nginx-access](nginx-access-kvm.png)
 
-### MariaDB SQL Dump
+
+MariaDB SQL Dump
 
 ![mariadb-sql](mariadb-sql-kvm.png)
 
-### MariaDB Error Logs
+
+MariaDB Error Logs
 
 ![mariadb-error](mariadb-error-kvm.png)
+
 
 # Reconfigure an existing NOW HLA Instance for a new Workshop
 
