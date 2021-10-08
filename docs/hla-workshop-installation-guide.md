@@ -226,28 +226,33 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Navigate to **MID Server > Server**
 1. Click on your MID Server
 1. Click on the **Validate** link
+1. Set the **MID Initial Selection Criteria** as follows:
 
-## Configure IP Ranges
+    ![Figure](validate-mid.png)
 
-1. Click on the **IP Ranges** tab
-1. Add a an IP Range as follows:
+1. Click on the **Supported Applications** tab and check settings are as follows:
+
+    | Field | Value   |
+    | ----- | ------- |
+    | Name	| ALL     |
+    | Default MID Server | YOUR MID SERVER |
+    | Included in application ALL	| true |
+
+1. Click on the **Capabilities** tab and check settings are as follows:
+
+    | Field | Value   |
+    | ----- | ------- |
+    | Name	| ALL     |
+    | Default MID Server | YOUR MID SERVER |
+    | Included in application ALL	| true |
+
+1. Click on the **IP Ranges** tab and check settings are as follows:
 
     | Field | Value   |
     | ----- | ------- | 
     | Name	| ALL     |
     | Type  | Include |
     | Range	| 0.0.0.0 |
-
-## Configure Supported Applications
-
-1. Click on the **Supported Applications** tab
-1. Add a Supported Application follows:
-
-    | Field | Value   |
-    | ----- | ------- |
-    | Name	| ALL     |
-    | Default MID Server | YOUR MID SERVER |
-    | Included in application ALL	| true |    
 
 ## Setup Operational Intelligence
 
