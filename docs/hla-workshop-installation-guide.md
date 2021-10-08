@@ -28,7 +28,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 2. Search for "new internal instance request"
 3. Request a new instance as follows, using the latest available application version:
 
-    ![Figure](new-internal-instance-request.png)
+    ![New Internal Instance Request](new-internal-instance-request.png)
 
 ## Upgrade your NOW Instance to latest Rome version
 
@@ -36,7 +36,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 2. Select your Instance from the Instances Dashboard
 3. Upgrade your instance to latest Rome version & patch level as follows:
 
-    ![Figure](upgrade-to-rome.png)
+    ![Upgrade to Rome](upgrade-to-rome.png)
 
 ## Install the HLA stack for your NOW Instance
 
@@ -198,7 +198,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Click on **MID Server**
 1. Click on **Create MID User**
 
-    ![Figure](create-mid-user.png)
+    ![Create MID User](create-mid-user.png)
 
 ## Install MID Server Software using Ansible
 
@@ -216,7 +216,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Navigate to **Discovery > Credentials**
 1. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
 
-    ![Figure](heracles-credential.png)
+    ![SSH Credentials](heracles-credential.png)
 
 1. Test Credential with any of your server IP addresses (e.g. mysql, spring, etc.)
 
@@ -228,7 +228,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Click on the **Validate** link
 1. Set the **MID Initial Selection Criteria** as follows:
 
-    ![Figure](validate-mid.png)
+    ![Validate MID Server](validate-mid.png)
 
 1. Click on the **Supported Applications** tab and check settings are as follows:
 
@@ -321,7 +321,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Navigate to **Health Log Analytics > Data Input**
 1. Create a **Linux using Filebeat Data Input** as follows:
 
-    ![Figure](create-nginx-di.png)
+    ![NGINX Data Input](create-nginx-di.png)
 
 1. Press **Submit** when done
     > NOTE: Do not download the ”filebeat.yml” as it is part of an Ansible Playbook already
@@ -332,7 +332,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Navigate to **Health Log Analytics > Data Input**
 1. Create a **Linux using Filebeat Data Input** as follows:
 
-    ![Figure](create-spring-di.png)
+    ![Spring Data Input](create-spring-di.png)
 
 1. Press **Submit** when done
     > NOTE: Do not download the ”filebeat.yml” as it is part of an Ansible Playbook already
@@ -343,7 +343,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Navigate to **Health Log Analytics > Data Input**
 1. Create a **Linux using Filebeat Data Input** as follows:
 
-    ![Figure](create-mysql-di.png)
+    ![MySQL Data Input](create-mysql-di.png)
 
 1. Press **Submit** when done
     > NOTE: Do not download the ”filebeat.yml” as it is part of an Ansible Playbook already
@@ -379,32 +379,31 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 
     1. syslog-messages
 
-        ![Figure](syslog-messages-kvm.png)
+        ![Syslog Logs](syslog-messages-kvm.png)
 
     1. spring-app
 
-        ![Figure](spring-app-kvm.png)
+        ![Spring App Log](spring-app-kvm.png)
 
     1. spring-access
 
-        ![Figure](spring-access-kvm.png)
+        ![Spring Access Logs](spring-access-kvm.png)
 
     1. nginx-error
 
-        ![Figure](nginx-error-kvm.png)
+        ![NGINX Error Logs](nginx-error-kvm.png)
 
     1. nginx-access
 
-        ![Figure](nginx-access-kvm.png)
-        
+        ![NGINX Access Logs](nginx-access-kvm.png)
+
     1. mariadb-sql
 
-        ![Figure](mariadb-sql-kvm.png)
+        ![MariaDB SQL Logs](mariadb-sql-kvm.png)
 
     1. mariadb-error
 
-        ![Figure](mariadb-error-kvm.png)
-
+        ![MariaDB Error Logs](mariadb-error-kvm.png)
 
 # Reconfigure an existing NOW HLA Instance for a new Workshop
 
