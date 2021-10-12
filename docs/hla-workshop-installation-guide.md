@@ -85,6 +85,13 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
     | Discovery and Service Mapping Patterns | sn_itom_pattern |
     | CMDB CI Class Models | sn_cmdb_ci_class |
     | Certificate Inventory and Management | sn_disco_certmgmt |
+    | Performance Analytics - Premium | com.snc.pa.premium |
+
+## Execute the [PA HLA] Historic Data Collection Job to catch up the HLA Overiew Dashboard
+
+1. Login to your NOW Instance as an Administrator
+1. Set the Application Scope to `Health Log Analytics`
+1. Navigate to the **Performance Analytics > Data Collector > Jobs** and Execute the `[PA HLA] Historic Data Collection` by using right-click-mouse to to `Execute Now`
 
 ## Fix Service Mapping Glitches
 
