@@ -1,6 +1,6 @@
 ---
-title: HLA Workshop
-subtitle: Installation Guide 
+title: HLA Workshop Installation Guide
+subtitle: Health Log Analytics 
 author: 
 - Anthony Angelo, Netser Heruty, Daniel Smith, Joe Steinfeld
 date: 12 Oct 2021
@@ -81,14 +81,15 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 2. Navigate to the **System Definition > Plugins** and install the following plugins:
 
 
-   | Plugin Name                            | Plugin ID               |
-   | ---------------------------------------- | ------------------------- |
-   | Agent Client Collector Monitoring      | sn_itmon                |
-   | Service Mapping                        | com.snc.service-mapping |
-   | Discovery and Service Mapping Patterns | sn_itom_pattern         |
-   | CMDB CI Class Models                   | sn_cmdb_ci_class        |
-   | Certificate Inventory and Management   | sn_disco_certmgmt       |
-   | Performance Analytics - Premium        | com.snc.pa.premium      |
+   | Plugin Name |  Plugin ID   |
+   | ----------- | ------------ |
+   | Agent Client Collector Monitoring | sn_itmon|
+   | Service Mapping | com.snc.service-mapping |
+   | Discovery and Service Mapping Patterns | sn_itom_pattern |
+   | CMDB CI Class Models | sn_cmdb_ci_class |
+   | Certificate Inventory and Management | sn_disco_certmgmt |
+   | Performance Analytics - Premium | com.snc.pa.premium |
+   | ServiceNow IntegrationHub Professional  Pack Installer | com.glide.hub.integrations.professional | 
 
 ## Execute the [PA HLA] Historic Data Collection Job to catch up the HLA Overview Dashboard
 
