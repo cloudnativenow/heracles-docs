@@ -87,7 +87,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
     | Certificate Inventory and Management | sn_disco_certmgmt |
     | Performance Analytics - Premium | com.snc.pa.premium |
 
-## Execute the [PA HLA] Historic Data Collection Job to catch up the HLA Overiew Dashboard
+## Execute the [PA HLA] Historic Data Collection Job to catch up the HLA Overview Dashboard
 
 1. Login to your NOW Instance as an Administrator
 1. Set the Application Scope to `Health Log Analytics`
