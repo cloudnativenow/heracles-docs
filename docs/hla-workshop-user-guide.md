@@ -8,8 +8,7 @@ date: 6 Oct 2021
 
 # Introduction
 
-This document provides prescriptive guidance for generating
-Chaos in the HLA Workshop environment to simulate anomalies in the (a) application (b) database and (c) infrastructure tiers of the architecture.
+This document provides prescriptive guidance for generating Chaos in the HLA Workshop environment to simulate anomalies in the Pet Clinic application. 
 
 ![Figure 1](workshop-chaos-architecture.png)
 
@@ -109,10 +108,15 @@ Following is an example scenario to trigger infrastructure chaos for the HLA Wor
       Chaos Monkey is disabled
       ```
 
-# Trigger Infrastructure Chaos and Remediation
+# APPENDIX A - Trigger Infrastructure Chaos and Remediation
 
-Following is an example scenario to trigger infrastructure chaos for the HLA Workshop which will ultimately be detected as an anomaly in ServiceNow.
+Following is an example scenario to trigger server syslog chaos using a `privileged account` which will ultimately be detected as an anomaly in ServiceNow.
 
+## Prerequisites
+
+* Service Account & SSH Private Key
+
+## Trigger Infrastructure Chaos and Remediation
 
 1. SSH To any Server (e.g. nginx, spring or mysql)
 
@@ -136,9 +140,15 @@ Following is an example scenario to trigger infrastructure chaos for the HLA Wor
    done
    ```
 
-# Trigger Database Chaos and Remediation
+# APPENDIX B - Database Chaos and Remediation
 
-Following is an example scenario to trigger database chaos for the HLA Workshop which will ultimately be detected as an anomaly in ServiceNow.
+Following is an example scenario to trigger database chaos using a `privileged account` which will ultimately be detected as an anomaly in ServiceNow.
+
+## Prerequisites
+
+* Service Account & SSH Private Key
+
+## Trigger Database Chaos and Remediation
 
 1. SSH To MySQL Server
 
