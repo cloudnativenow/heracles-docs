@@ -415,6 +415,13 @@ MariaDB Error Logs
 
 ![mariadb-error](mariadb-error-kvm.png)
 
+# Grant User Access to your NOW Instance
+
+1. Login to your NOW Instance as Administrator
+1. Navigate to **User Admininstration > Users**
+1. Create a user named `hlauser1` and grant the `hla_workshop_user` Role
+1. Create a user named `hlaadmin1` and grant the `hla_admin_read_only` Role
+
 # Appendix A – Terraform Installation
 
 These instructions apply to a WSL Ubuntu workstation. Please refer to the Terraform Downloads page https://www.terraform.io/downloads.html for more information
