@@ -78,7 +78,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 ## Install the required ITOM plugins for the Workshop
 
 1. Login to your NOW Instance as an Administrator
-2. Navigate to the **System Definition > Plugins** and install the following plugins:
+2. Navigate to the **System Definition > Plugins** and install or activate the following plugins:
 
 
    | Plugin Name |  Plugin ID   |
