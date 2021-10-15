@@ -121,12 +121,11 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
    | incidents.cooldown_period_minutes                        | 2     | 5             |
 3. Navigate to **Health Log Analytics > Health Log Analytics Administration > Features** and set the following features:
 
-
-   | Name                                              | State             | Default Value |
-   | --------------------------------------------------- | ------------------- | --------------- |
-   | Disable                                           | Warm Up Time Rule | ON            |
-   | Disable Setup Time Rule                           | ON                | OFF           |
-   | Disable All Events Metric Anomaly Detections Rule | ON                | OFF           |
+   | Name                                              | State | Default Value |
+   | ------------------------------------------------- | ----- | ------------- |
+   | Disable  Warm Up Time Rule                        | ON    | OFF           |
+   | Disable Setup Time Rule                           | ON    | OFF           |
+   | Disable All Events Metric Anomaly Detections Rule | ON    | OFF           |
 
 # Deploy the Workshop AWS Environment
 
