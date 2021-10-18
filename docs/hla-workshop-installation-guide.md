@@ -293,8 +293,8 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 ## Create your Application Service
 
 1. Navigate to **Service Mapping > Services > Application Services**
-2. Create a **New** Application Service `Pet Clinic`
-3. Add a **Web Application** Entry Point as follows:
+1. Create a **New** Application Service `Pet Clinic`
+1. Add a **Web Application** Entry Point as follows:
 
 
    | Field                           | Value                                       |
@@ -302,8 +302,9 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
    | Discoverable by Service Mapping | true                                        |
    | URL                             | http:// NGINX AWS PRIVATE IP DNS NAME :8080 |
    | Host Name                       | NGINX AWS PRIVATE IP DNS NAME               |
-4. Press the **View Map** Button
-5. Press the **Run Discovery** Button
+1. Press the **View Map** Button
+1. Set the **Operational Status** to `Operational`
+1. Press the **Run Discovery** Button
 
 ## Create your Application Service  Database Relatonships
 
