@@ -189,7 +189,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 
    ```
    $ ansible-playbook -i YOUR INVENTORY FILE.cfg ansible/install-petclinic.yml \
-   -e "github_token=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" \
+   -e "github_token=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" \
    -e "mysql_host=YOUR MYSQL PRIVATE IP \
    -e "servers='YOUR SPRING SERVERS PRIVATE IPS'" \
    -e "frontend_addr=YOUR NGINX PUBLIC IP:8080"
@@ -272,7 +272,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 
 ## Collect the MID Web Server API Key
 
-1. Navigate to **MID Server > Manage MID Web Server API Key**
+1. Navigate to **MID Server > MID Web Server API Key**
 2. Copy and safeguard your `MID Web Server API Key`
 
 ## Configure Agent Client Collector Policies
