@@ -260,9 +260,9 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
    | Type  | Include |
    | Range | 0.0.0.0 |
 
-## Setup Operational Intelligence
+## Setup Metric Intelligence
 
-1. Click on the **Setup Operational Intelligence** link
+1. Click on the **Setup Metric Intelligence** link
 
 ## Setup Agent Client Collector Listener
 
@@ -283,7 +283,6 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 
    | Name                | Active |
    | --------------------- | -------- |
-   | Basic Discovery     | true   |
    | Linux OS Events     | true   |
    | Linux OS Metrics    | true   |
    | MySQL DB Events     | true   |
