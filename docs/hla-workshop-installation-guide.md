@@ -44,7 +44,6 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Follow the [HLA Installation Guide](hla-installation-guide.pdf) for the latest installation steps
 
    > NOTE: Please read and follow all the steps carefully as instructed in the "HLA Installation Guide" document as it us updated frequently by the HLA Development Team
-   >
 
 ## Check HLA Services Status for your NOW Instance
 
@@ -113,12 +112,14 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 1. Login to your NOW Instance as an Administrator
 2. Navigate to **Health Log Analytics > Health Log Analytics Administration > System Properties** and set the following properties:
 
-
    | Property Name                                            | Value | Default Value |
    | ---------------------------------------------------------- | ------- | --------------- |
    | aggregator.window_size_seconds                           | 300   | 1800          |
    | rules.filter_detections_with_low_current_value.threshold | 1.0   | 5.0           |
    | incidents.cooldown_period_minutes                        | 2     | 5             |
+
+> NOTE: Request an Occultus restart for properties that require it
+
 3. Navigate to **Health Log Analytics > Health Log Analytics Administration > Features** and set the following features:
 
    | Name                                              | State | Default Value |
@@ -333,7 +334,6 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 4. Press **Submit** when done
 
    > NOTE: Do not download the ”filebeat.yml” as it is part of an Ansible Playbook already
-   >
 
 ## Spring Data Input
 
@@ -345,7 +345,6 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 4. Press **Submit** when done
 
    > NOTE: Do not download the ”filebeat.yml” as it is part of an Ansible Playbook already
-   >
 
 ## MySQL Data Input
 
@@ -357,7 +356,6 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 4. Press **Submit** when done
 
    > NOTE: Do not download the ”filebeat.yml” as it is part of an Ansible Playbook already
-   >
 
 # Install the ACC & Filebeat Software using Ansible
 
