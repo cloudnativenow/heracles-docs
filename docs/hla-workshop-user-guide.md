@@ -140,6 +140,8 @@ Following is an example scenario to trigger server syslog chaos using a `privile
    done
    ```
 
+   > NOTE: Use an HLA Lexical Keyword so that HLA can notice the log faster (e.g., error, failed, fatal, corrupt, etc.). For more information please refer to the [HLA Lexical Keyword](https://docs.servicenow.com/bundle/quebec-it-operations-management/page/product/health-log-analytics-admin/task/hla-lexical-keywords-admin.html) documentation
+
 # APPENDIX B - Database Chaos and Remediation
 
 Following is an example scenario to trigger database chaos using a `privileged account` which will ultimately be detected as an anomaly in ServiceNow.
