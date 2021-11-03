@@ -192,7 +192,7 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
    $ ansible-playbook -i YOUR INVENTORY FILE.cfg ansible/install-petclinic.yml \
    -e "github_token=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" \
    -e "mysql_host=YOUR MYSQL PRIVATE IP \
-   -e "servers='YOUR SPRING SERVERS PRIVATE IPS'" \
+   -e "servers='SPACE SEPARATED LIST OF YOUR SPRING SERVERS PRIVATE IPS'" \
    -e "frontend_addr=YOUR NGINX PUBLIC IP:8080"
    ```
 
