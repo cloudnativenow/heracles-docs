@@ -414,9 +414,12 @@ MariaDB Error Logs
 
 # Configure your NOW HLA instance Chaos Catalog
 
-## Install the Chaos Catalog Global Update Set
+## Login to your NOW Instance
 
 1. Login to your NOW Instance as Administrator
+
+## Install the Chaos Catalog Global Update Set
+
 1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
 1. Select the `hla-global-updates-1.1.xml` Update Set from the `heracles/servicenow/` local folder
 1. Select the `HLA WorkShop Global Updates` Loaded Update Set and press `Preview Update Set`
@@ -426,13 +429,51 @@ MariaDB Error Logs
 
 ## Install the Chaos Catalog Service Portal Update Set
 
-1. Login to your NOW Instance as Administrator
 1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
 1. Select the `hla-ws-portal-2.0.xml` Update Set from the `heracles/servicenow/` local folder
 1. Select the `Predictive AIOps Workshop Service Portal` Loaded Update Set and press `Preview Update Set`
 1. Press `Commit Update Set`
 
    > NOTE: Select `Accept remote update` for any Errors listed and commit update set
+
+## Create Support Group
+
+1. Navigate to **User Administration > Groups**
+1. Create a Group called `Application Support`
+
+## Map Linux Servers to Support Group
+
+1. Navigate to **Configuration > Servers > Linux**
+1. Add the `Support group` field to the list
+1. Map each of your Spring Application Servers `Support group` to `Application Support`
+1. Filter list to `Show Matching` only items mapped to the `Applicaton Support` group
+1. Select `Copy query` using *right-click* on the `All>Support group=Application Support` fiter breadcrumb 
+
+## Configure the Generate Infrastructure Errors Catalog Item List Collector
+
+1. Navigate to **Service Catalog > Catalog Definitions > My Items**
+1. Filter list to `Show Matching` only items mapped to the `Predictive AIOps Workshop Error Generation` Catalogs as follows:
+
+   | Name    | Category |
+   | ------- | ------------- |
+   | Generate Application Errors | Application Chaos |
+   | Generate Infrastructure Errors | Infrastructure Chaos |
+   | Stress Servers | nfrastructure Chaos |
+
+1. For each item in this select the `List Collector` variable
+
+   ![list-collector](list-collector.png)
+
+1. Set the `Reference qualifier` field to the query copied earlier
+
+   ![reference-qualifier](reference-qualifier.png)
+
+## Test the Chaos Catalog
+
+1. Navigate to `https://YOUR INSTANCE.service-now.com/chaos` 
+1. You should see the following Chaos Catalog Page:
+
+   ![chaos-catalog](chaos-catalog.png)
 
 # Grant User Access to your NOW Instance
 
