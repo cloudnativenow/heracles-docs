@@ -419,6 +419,30 @@ MariaDB Error Logs
 1. Create a user named `hlauser1` and grant the `hla_workshop_user` Role
 1. Create a user named `hlaadmin1` and grant the `hla_admin_read_only` Role
 
+# Secure your Workshop AWS Environment
+
+## Identify your Crowdstrike CID
+
+1. Navigate to [NOW HI](https://support.servicenow.com/now)
+1. Search for `KB0051390` Knowledge Article
+1. Note the Crowdstrike CID for the `Cloud (Commercial)` Environment
+
+## Install the Crowdstrike Falcon Agent using Ansible
+
+1. Download the Crowdstrike Falcon Agent RPM from HI for RHEL 8 (e.g. v6.28.12504)
+
+   ```
+   wget https://surf.service-now.com/sys_attachment.do?sys_id=9aad2f29db1ff810020a8263059619f7 -qO falcon-sensor.rpm
+   ```
+
+1. Run the Install Falcon Playbook
+
+   ```
+   $ ansible-playbook -i YOUR INVENTORY FILE.cfg ansible/install-falcon.yml \
+   -e "falcon_rpm=YOUR FALCON RPM FILE" \
+   -e "falcon_cid=YOUR FALCON CID" 
+   ```
+
 # Appendix A – Terraform Installation
 
 These instructions apply to a WSL Ubuntu workstation. Please refer to the Terraform Downloads page https://www.terraform.io/downloads.html for more information
