@@ -412,6 +412,28 @@ MariaDB Error Logs
 
 ![mariadb-error](mariadb-error-kvm.png)
 
+# Configure your NOW HLA instance Chaos Catalog
+
+## Install the Chaos Catalog Global Update Set
+
+1. Login to your NOW Instance as Administrator
+1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
+1. Select the `hla-global-updates-1.1.xml` Update Set from the `heracles/servicenow/` local folder
+1. Select the `HLA WorkShop Global Updates` Loaded Update Set and press `Preview Update Set`
+1. Press `Commit Update Set` 
+
+   > NOTE: Select `Accept remote update` for any Errors listed and commit update set
+
+## Install the Chaos Catalog Service Portal Update Set
+
+1. Login to your NOW Instance as Administrator
+1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
+1. Select the `hla-ws-portal-2.0.xml` Update Set from the `heracles/servicenow/` local folder
+1. Select the `Predictive AIOps Workshop Service Portal` Loaded Update Set and press `Preview Update Set`
+1. Press `Commit Update Set`
+
+   > NOTE: Select `Accept remote update` for any Errors listed and commit update set
+
 # Grant User Access to your NOW Instance
 
 1. Login to your NOW Instance as Administrator
