@@ -430,7 +430,7 @@ MariaDB Error Logs
 ## Install the Chaos Catalog Service Portal Update Set
 
 1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
-1. Select the `hla-ws-portal-2.0.xml` Update Set from the `heracles/servicenow/` local folder
+1. Select the `hla-ws-portal-2.1.xml` Update Set from the `heracles/servicenow/` local folder
 1. Select the `Predictive AIOps Workshop Service Portal` Loaded Update Set and press `Preview Update Set`
 1. Press `Commit Update Set`
 
