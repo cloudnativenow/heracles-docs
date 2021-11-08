@@ -421,7 +421,7 @@ MariaDB Error Logs
 ## Install the Chaos Catalog Global Update Set
 
 1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
-1. Select the `hla-global-updates-1.1.xml` Update Set from the `heracles/servicenow/` local folder
+1. Select the `chaos-catalog-global-update-set.xml` Update Set from the `heracles/servicenow/` local folder
 1. Select the `HLA WorkShop Global Updates` Loaded Update Set and press `Preview Update Set`
 1. Press `Commit Update Set` 
 
@@ -430,7 +430,7 @@ MariaDB Error Logs
 ## Install the Chaos Catalog Service Portal Update Set
 
 1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
-1. Select the `hla-ws-portal-2.1.xml` Update Set from the `heracles/servicenow/` local folder
+1. Select the `chaos-catalog-portal-update-set.xml` Update Set from the `heracles/servicenow/` local folder
 1. Select the `Predictive AIOps Workshop Service Portal` Loaded Update Set and press `Preview Update Set`
 1. Press `Commit Update Set`
 
@@ -467,6 +467,14 @@ MariaDB Error Logs
 1. Set the `Reference qualifier` field to the query copied earlier
 
    ![reference-qualifier](reference-qualifier.png)
+
+## Configure the Chaos Catalog Credentials
+
+1. Navigate to **Connections & Credentials > Connections & Credential Aliases**
+1. Click on the `hla_workshop_creds` Credential
+1. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
+   ![SSH Credentials](heracles-credential.png)
+1. Test Credential with any of your server IP addresses (e.g. mysql, spring, etc.)
 
 ## Test the Chaos Catalog
 
