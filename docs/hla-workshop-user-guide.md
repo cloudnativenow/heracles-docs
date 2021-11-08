@@ -3,7 +3,7 @@ title: HLA Workshop User Guide
 subtitle: Health Log Analytics 
 author: 
 - Anthony Angelo, Netser Heruty, Daniel Smith
-date: 6 Oct 2021
+date: 8 Nov 2021
 ---
 
 # Introduction
