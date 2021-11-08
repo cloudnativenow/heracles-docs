@@ -12,17 +12,68 @@ This document provides prescriptive guidance for generating Chaos in the HLA Wor
 
 ![Figure 1](workshop-chaos-architecture.png)
 
-# Application Chaos
+# Trigger Chaos using the Chaos Catalog
 
-Following is an example scenario to trigger application chaos for the HLA Workshop which will ultimately be detected as an anomaly in ServiceNow.
+Your Workshop instance has been provisioned with an _easy-to-use_ Chaos Catalog in order to help participants quicly dispatch chaos to different servers throughout the Workshop architecture. Access to the Chaos Catalog is as follows:
 
-## What is Chaos Monkey
+1. Navigate to `https://YOUR INSTANCE.service-now.com/chaos` 
+1. You should see the following Chaos Catalog Page:
 
-Chaos Monkey for Spring Boot is an open-source project for Java Spring based applications used to simulate & control service degradations, random errors & stack traces.  Please refer to the Chaos Monkey Project https://codecentric.github.io/chaos-monkey-spring-boot for more information.
+   ![chaos-catalog](chaos-catalog.png)
 
-## Workshop Application Chaos Architecture
+## Trigger Application Chaos
 
-The Spring Boot application layer has been built and injected with the Chaos Monkey libraries which in turn, trigger service degradations and random errors, otherwise known as chaos. This simulated chaos is eventually detected by the HLA system as anomalies after receiving and processing the application telemetry, such as streaming logs from all layers of the application. The frequency and the nature of the errors are controlled using the assaults REST API and can also be altogether turned off using the disable and enable REST APIs. 
+The Workshop Application Chaos leverages the `Chaos Monkey for Spring Boot` framework, which is an open-source project for Java Spring based applications used to simulate & control service degradations, random errors & stack traces. Please refer to the Chaos Monkey Project https://codecentric.github.io/chaos-monkey-spring-boot for more information. The Spring Boot application layer has been built and injected with the Chaos Monkey libraries which in turn, trigger service degradations and random errors, otherwise known as chaos. This simulated chaos is eventually detected by the HLA system as anomalies in any of the Spring Servers.
+
+Use the Chaos Catalog as follows to create Application Chaos:
+
+1. Select **Home> Predictive AIOps Workshop Error Generation > Application Chaos**
+
+   ![chaos-application](chaos-application.png)
+
+1. Select one or more servers in the `Select a server or multiple servers on which to trigger application chaos` field
+
+1. Select an Exception Type in the `Select the type of Java Runtime exception you want Chaos Monkey to generate` field
+
+1. Enter a random error message in the `Enter a random application error message` field
+
+1. Press `Submit` to process request
+
+## Trigger Infrastructure Chaos using the UNIX Logger API
+
+The Workshop Application Chaos leverages the UNIX `logger` API which allows privileged users to simulate any log messages so that they are processed by the SYSLOG system and eventually broacasted to the `/var/log/messages` log files with the correct timestamp and log levels. This simulated chaos is eventually detected by the HLA system as anomalies in any of the Spring Servers. Use the Chaos Catalog as follows to trigger Infrastructure Chaos using the UNIX Logger API:
+
+1. Select **Home> Predictive AIOps Workshop Error Generation > Infrastructure Chaos**
+
+   ![chaos-infrastructure-logger](chaos-infrastructure-logger.png)
+
+1. Select one or more servers in the `Select a server or multiple servers on which to generate infrastructure errors` field
+
+1. Enter a random error message in the `Enter a random error message you want added to /var/log/messages on the target server` field
+
+   >NOTE: You will need to include keywords in your error message associated with infrastructure failures such as `crash`, `failure`, `error`, `issue`, `warning`, etc.
+
+1. Press `Submit` to process request
+
+## Trigger Infrastructure Chaos using the Stress API
+
+The Workshop Application Chaos leverages the UNIX `stress` API which allows privileged users to simulate memory and CPU load. These metrics (along with many others) are constantly being streamed to NOW for processing. This simulated chaos is eventually detected by the Alert Intelligence system as anomalies in any of the Spring Servers. Use the Chaos Catalog as follows to trigger Infrastructure Chaos using the Stress API:
+
+1. Select **Home> Predictive AIOps Workshop Error Generation > Infrastructure Chaos**
+
+   ![chaos-infrastructure-stress](chaos-infrastructure-stress.png)
+
+1. Select one or more servers in the `Select a server or multiple servers on which to generate infrastructure errors` field
+
+1. Enter a random error message in the `Enter a random error message you want added to /var/log/messages on the target server` field
+
+   >NOTE: You will need to include keywords in your error message associated with infrastructure failures such as `crash`, `failure`, `error`, `issue`, `warning`, etc.
+
+1. Press `Submit` to process request
+
+# APPENDIX A - Trigger Application Chaos using REST
+
+Following is an example scenario to trigger application chaos for the HLA Workshop using the Chaos Monkey REST API which will ultimately be detected as an anomaly in ServiceNow.
 
 ## Chaos Monkey API Explained
 
@@ -36,7 +87,7 @@ The Chaos Monkey assaults API is accessible via REST both via HTTP GET from a br
 | GET	| /actuator/chaosmonkey/assaults | Get assaults payload |
 | POST | /actuator/chaosmonkey/assaults | Set assaults payload |
 
-## Trigger Application Chaos and Remediation
+## Trigger Application Chaos using REST
 
 Following is an example scenario to trigger infrastructure chaos for the HLA Workshop which will ultimately be detected as an anomaly in ServiceNow
 
@@ -108,7 +159,7 @@ Following is an example scenario to trigger infrastructure chaos for the HLA Wor
       Chaos Monkey is disabled
       ```
 
-# APPENDIX A - Trigger Infrastructure Chaos and Remediation
+# APPENDIX A - Trigger Infrastructure Chaos
 
 Following is an example scenario to trigger server syslog chaos using a `privileged account` which will ultimately be detected as an anomaly in ServiceNow.
 
