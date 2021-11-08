@@ -159,7 +159,7 @@ Following is an example scenario to trigger infrastructure chaos for the HLA Wor
       Chaos Monkey is disabled
       ```
 
-# APPENDIX A - Trigger Infrastructure Chaos
+# APPENDIX B - Trigger Infrastructure Chaos
 
 Following is an example scenario to trigger server syslog chaos using a `privileged account` which will ultimately be detected as an anomaly in ServiceNow.
 
@@ -193,7 +193,49 @@ Following is an example scenario to trigger server syslog chaos using a `privile
 
    > NOTE: Use an HLA Lexical Keyword so that HLA can notice the log faster (e.g., error, failed, fatal, corrupt, etc.). For more information please refer to the [HLA Lexical Keyword](https://docs.servicenow.com/bundle/quebec-it-operations-management/page/product/health-log-analytics-admin/task/hla-lexical-keywords-admin.html) documentation
 
-# APPENDIX B - Database Chaos and Remediation
+# APPENDIX C - Trigger Infrastructure Stress Chaos
+
+Following is an example scenario to trigger `stress` chaos using a `privileged account` which will ultimately be detected as an anomaly in ServiceNow.
+
+## Prerequisites
+
+* Service Account & SSH Private Key
+* Install `stress` as follows:
+
+   ```
+   sudo amazon-linux-extras install epel -y
+   sudo yum install stress -y
+   ```
+
+## Trigger Infrastructure Stress Chaos and Remediation
+
+1. SSH To MySQL Server
+
+   ```
+   ssh ec2-user@$HOST PUBLIC IP -i ~/.ssh/YOUR SSH KEY
+   ```
+
+1. Get Number of processors
+
+   ```
+   getconf _NPROCESSORS_ONLN
+   ```
+
+   >NOTE: To fully stress the CPU, this should be the total number of CPU cores or double that if the CPU supports hyper-threading
+
+1. Run CPU Stress (5 mins)
+
+   ```
+   stress -v -c $(getconf _NPROCESSORS_ONLN) -t 5m
+   ```
+
+1. Run memory stress (5 mins)
+
+   ```
+   CPUS=$(getconf _NPROCESSORS_ONLN); stress -m $CPUS --vm-bytes $(awk -v cpus=$CPUS '/MemAvailable/{printf "%d\n", $2 / cpus;}' < /proc/meminfo)k --vm-keep  -t 5m
+   ```
+
+# APPENDIX D - Database Chaos and Remediation
 
 Following is an example scenario to trigger database chaos using a `privileged account` which will ultimately be detected as an anomaly in ServiceNow.
 
