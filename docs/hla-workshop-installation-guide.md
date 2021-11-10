@@ -3,7 +3,7 @@ title: Predictive AIOps Workshop Installation Guide
 subtitle: Predictive AIOps Workshop 
 author: 
 - Anthony Angelo, Netser Heruty, Daniel Smith, Joe Steinfeld
-date: 12 Oct 2021
+date: 12 Nov 2021
 ---
 # Introduction
 
