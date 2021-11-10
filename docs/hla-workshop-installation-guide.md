@@ -1,6 +1,6 @@
 ---
-title: HLA Workshop Installation Guide
-subtitle: Health Log Analytics 
+title: Predictive AIOps Workshop Installation Guide
+subtitle: Predictive AIOps Workshop 
 author: 
 - Anthony Angelo, Netser Heruty, Daniel Smith, Joe Steinfeld
 date: 12 Oct 2021
