@@ -378,6 +378,8 @@ Following is a list of prerequisite tools and accesses needed to perform a full 
 2. Navigate to **Health Log Analytics > Mapping > Source Type Structures**
 3. For each Source Type Structure, set the **Custom JS** Function using the scripts located in the cloned Git Project /servicenow folder (e.g., `source-type-structures-mariadb-error.js`)
 
+   >NOTE: Custom JS functions must be published to start working by clicking `Publish` after saving the form
+
 ## Configure your Source Type Structures Key/Value Mappings
 
 1. Login to your NOW Instance as Administrator
