@@ -2,8 +2,8 @@ Documentation project for the HLA Workshop. In addition it describes how to inst
 
 # Project Documentation
 
-* [HLA Workshop Installation Guide](docs/hla-workshop-installation-guide.md)
-* [HLA Workshop User Guide](docs/hla-workshop-user-guide.md)
+* [Predictive AIOps Workshop Installation Guide](docs/workshop-installation-guide.md)
+* [Predictive AIOps Workshop User Guide](docs/workshop-user-guide.md)
 
 # Prerequisites
 
