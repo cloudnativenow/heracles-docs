@@ -7,19 +7,19 @@ date: 10 Nov 2021
 ---
 # Introduction
 
-This document provides prescriptive guidance for deploying the Predictive AIOps Workshop infrastructure. The overall Predictive AIOps Workshop Architecture consists of several AWS EC2 servers conforming to a typical N-Tier web application, complete with a Load Generator and Chaos Simulator. The core application is the Spring Pet Clinic which is based on Java Spring Boot and requires the use of a Database for persistence.
+This document provides prescriptive guidance for deploying the Predictive AIOps Workshop infrastructure. The overall Predictive AIOps Workshop Architecture consists of several AWS EC2 servers conforming to a typical N-Tier web application, complete with a Load Generator and Chaos Simulator. The core application is the Spring Pet Clinic which is based on Java Spring Boot and requires the use of a Database for persistence. 
 
 ![Workshop Architecture](workshop-architecture.png)
 
 # Prerequisites
 
-Following is a list of prerequisite tools and accesses needed to perform a full Predictive AIOps Workshop installation.This document provides prescriptive guidance for using installing the Predictive AIOps Workshop:
+This document assumes a basic level of competency and familiarity with the tools listed as prerequisites. See the Appendix section for some basic guidance of the use of these tools. Following is a list of prerequisite tools and accesses needed to perform a full Predictive AIOps Workshop installation:
 
 * Access to an AWS Account with full admin privileges
 * AWS CLI
 * Bash Terminal Access (e.g., WSL for Windows, MacOS Terminal or another Linux)
-* Terraform (e.g., Terraform v0.12.31)
-* Ansible (e.g., v4.5.0)
+* Terraform v0.12.31
+* Ansible v4.5.0
 
 # Deploy your NOW Instance
 
