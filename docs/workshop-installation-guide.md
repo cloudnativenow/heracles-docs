@@ -225,7 +225,7 @@ This document assumes a basic level of competency and familiarity with the tools
 3. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
 
    ![SSH Credentials](heracles-credential.png)
-4. Test Credential with any of your server IP addresses (e.g. mysql, spring, etc.)
+4. Test Credential with any of your server private IP addresses (e.g. mysql, spring, etc.)
 
 ## Validate MID Server
 
