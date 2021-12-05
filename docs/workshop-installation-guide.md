@@ -545,6 +545,10 @@ information.
    interpreter_python=auto_silent
    ideprecation_warnings=false
    ```
+4. Install Prerequisites
+   ```
+   ansible-galaxy collection install community.mysql
+   ```
 
 # Appendix C – AWS CLI Installation
 
