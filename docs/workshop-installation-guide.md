@@ -19,6 +19,7 @@ This document assumes a basic level of competency and familiarity with the tools
 * AWS CLI
 * Bash Terminal Access (e.g., WSL for Windows, MacOS Terminal or another Linux)
 * Terraform v0.12.31
+* Python v3.7.10
 * Ansible v4.5.0
 
 # Deploy your NOW Instance
@@ -521,7 +522,7 @@ MariaDB Error Logs
 These instructions apply to a WSL Ubuntu workstation. Please refer to the Terraform Downloads page https://www.terraform.io/downloads.html for more information
 
 1. Start a Bash Shell
-2. Install Terraform CLI (e.g., v0.12.31)
+1. Install Terraform CLI (e.g., v0.12.31)
 
    ```
    $ wget -qO- https://releases.hashicorp.com/terraform/0.12.31/terraform_0.12.31_linux_amd64.zip | busybox unzip -
@@ -529,7 +530,46 @@ These instructions apply to a WSL Ubuntu workstation. Please refer to the Terraf
    $ sudo mv terraform /usr/local/bin/
    ```
 
-# Appendix B – Ansible Installation
+# Appendix B – Python and Pyenv Installaton
+
+These instructions apply to a WSL Ubuntu workstation and provide an opinionated approach to installing Python. There are many ways to install Python on a workstation and we found that usign the `pyenv` utility provides the most consistent approach across several operating systems. 
+
+Ansible relies on a local installation of Python and 
+
+1. Start a Bash Shell
+1. Install pyenv
+
+   ```
+   curl https://pyenv.run | bash
+   ```
+
+1. Edit Bashrc
+
+   ```
+   export PYENV_ROOT="$HOME/.pyenv"
+   export PATH="$PYENV_ROOT/bin:$PATH"
+   eval "$(pyenv init --path)"
+   ```
+
+1. Install Python
+
+   ```
+   pyenv install 3.7.10
+   ```
+
+1. Get Versions
+
+   ```
+   pyenv versions
+   ```
+
+1. Use Version
+
+   ```
+   pyenv global 3.7.10
+   ```
+
+# Appendix C – Ansible Installation
 
 These instructions apply to a WSL Ubuntu workstation and Python PIP which provides broad cross-platform support regardless of the operating system. Please refer to the Ansible Installation Guide https://docs.ansible.com/ansible/latest/installation_guide for more
 information.
@@ -550,7 +590,7 @@ information.
    ansible-galaxy collection install community.mysql
    ```
 
-# Appendix C – AWS CLI Installation
+# Appendix D – AWS CLI Installation
 
 These instructions apply to a WSL Ubuntu workstation. Please refer to the AWS CLI Installation Guide https://docs.aws.amazon.com/cli/latest/userguide/install-linux.html for more information.
 
