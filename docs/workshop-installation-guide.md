@@ -366,8 +366,8 @@ This document assumes a basic level of competency and familiarity with the tools
    -e "acc_mid=YOUR ACC MID URL" \
    -e "acc_api_key=YOUR ACC API KEY" \
    -e "nginx_logstash=YOUR MID SERVER PRIVATE IP:5040" \
-   -e "spring_logstash= YOUR MID SERVER PRIVATE IP:5041" \
-   -e "mysql_logstash= YOUR MID SERVER PRIVATE IP:5042"
+   -e "spring_logstash=YOUR MID SERVER PRIVATE IP:5041" \
+   -e "mysql_logstash=YOUR MID SERVER PRIVATE IP:5042"
    ```
 
 # Configure your NOW HLA instance for a new Workshop
