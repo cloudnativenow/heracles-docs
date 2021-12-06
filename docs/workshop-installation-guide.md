@@ -532,9 +532,7 @@ These instructions apply to a WSL Ubuntu workstation. Please refer to the Terraf
 
 # Appendix B – Python and Pyenv Installaton
 
-These instructions apply to a WSL Ubuntu workstation and provide an opinionated approach to installing Python. There are many ways to install Python on a workstation and we found that usign the `pyenv` utility provides the most consistent approach across several operating systems. 
-
-Ansible relies on a local installation of Python and 
+These instructions apply to a WSL Ubuntu workstation and provide an opinionated approach to installing Python. There are many ways to install Python on a workstation and we found that using the `pyenv` utility provides the most consistent approach across several operating systems. 
 
 1. Start a Bash Shell
 1. Install pyenv
@@ -571,8 +569,7 @@ Ansible relies on a local installation of Python and
 
 # Appendix C – Ansible Installation
 
-These instructions apply to a WSL Ubuntu workstation and Python PIP which provides broad cross-platform support regardless of the operating system. Please refer to the Ansible Installation Guide https://docs.ansible.com/ansible/latest/installation_guide for more
-information.
+These instructions apply to a WSL Ubuntu workstation and Python PIP which provides broad cross-platform support regardless of the operating system. Please refer to the Ansible Installation Guide https://docs.ansible.com/ansible/latest/installation_guide for more information.
 
 1. Start a Bash Shell
 2. Install Ansible (e.g., v4.5.0)
