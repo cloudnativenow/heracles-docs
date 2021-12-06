@@ -77,7 +77,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
 ## Install the required ITOM plugins for the Workshop
 
-1. Login to your NOW Instance as an Administrator
+1. HOP to your NOW Instance as Administrator
 2. Navigate to the **System Definition > Plugins** and install or activate the following plugins:
 
 
