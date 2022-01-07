@@ -144,15 +144,15 @@ This document assumes a basic level of competency and familiarity with the tools
 
 1. Configure AWS Profile
 
-   ```
+   ```F
    $ export AWS_PROFILE=YOUR PROFILE; printenv AWS_PROFILE
    ```
 1. Standardize on using one AWS Region. The automation scripts provided assume you are deploying in one region (e.g. `us-east-2`). To change to another region, edit the `backend.tf`,`providers.tf` and `variables.tf` files and replace with your specific region.
 
-1. Create Terraform State Bucket using your VPC ID (e.g., hlawork1)
+1. Create Terraform State Bucket using your CLUSTER ID (e.g., hlawork1)
 
    ```
-   $ aws s3 mb s3://YOUR VPC ID-terraform-backend --profile YOUR PROFILE
+   $ aws s3 mb s3://YOUR CLUSTER ID-terraform-backend --profile YOUR PROFILE
    ```
 1. Create SSH Key (e.g., heracles)
 
@@ -179,7 +179,7 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Create Infrastructure
 
    ```
-   $ terraform apply -auto-approve -var instance_count=3 -var cluster_name=YOUR VPC ID
+   $ terraform apply -auto-approve -var instance_count=3 -var cluster_name=YOUR CLUSTER ID
    ```
 1. Safeguard the Terraform output of server public and private IPs
 1. Safeguard the generated Ansible Inventory file (e.g., inventory-hlawork1.cfg)
@@ -286,7 +286,10 @@ This document assumes a basic level of competency and familiarity with the tools
 
 1. Navigate to **Agent Client Collector > Configuration > Policies**
 1. Activate the following Policies:
+<<<<<<< HEAD
 
+=======
+>>>>>>> a3b819c... Update
 
    | Name                | Active |
    | --------------------- | -------- |
@@ -327,6 +330,7 @@ This document assumes a basic level of competency and familiarity with the tools
    | Host                    | YOUR MYSQL PRIVATE IP (e.g. ip-15-0-1-241) |
    | Port                    | YOUR MYSQL PORT (e.g. 3306)                |
 <<<<<<< HEAD
+<<<<<<< HEAD
 6. Press the **Add** Button
 =======
 
@@ -362,6 +366,10 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Login to your NOW Instance as Administrator
 2. Navigate to **Health Log Analytics > Data Input**
 3. Create a **Linux using Filebeat Data Input** as follows:
+=======
+
+1. Press the **Add** Button
+>>>>>>> a3b819c... Update
 
    ![MySQL Data Input](create-mysql-di.png)
 4. Press **Submit** when done
