@@ -142,22 +142,24 @@ This document assumes a basic level of competency and familiarity with the tools
 
    > NOTE: If you don't have an SSH Key setup, use the HTTPS URI instead to clone (e.g. https://github.com/pangealab/heracles.git)
 
-2. Configure AWS Profile
+1. Configure AWS Profile
 
    ```
    $ export AWS_PROFILE=YOUR PROFILE; printenv AWS_PROFILE
    ```
-3. Create Terraform State Bucket using your VPC ID (e.g., hlawork1)
+1. Standardize on using one AWS Region. The automation scripts provided assume you are deploying in one region (e.g. `us-east-2`). To change to another region, edit the `backend.tf`,`providers.tf` and `variables.tf` files and replace with your specific region.
+
+1. Create Terraform State Bucket using your VPC ID (e.g., hlawork1)
 
    ```
    $ aws s3 mb s3://YOUR VPC ID-terraform-backend --profile YOUR PROFILE
    ```
-4. Create SSH Key (e.g., heracles)
+1. Create SSH Key (e.g., heracles)
 
    ```
    $ ssh-keygen -t rsa -b 4096 -C "heracles@noreply.com" -f $HOME/.ssh/heracles -m PEM
    ```
-5. Set your backend bucket property in the *backend.tf* file as follows:
+1. Set your backend bucket property in the *backend.tf* file as follows:
 
    ```
    # Save Terraform State to S3 Bucket
@@ -169,18 +171,18 @@ This document assumes a basic level of competency and familiarity with the tools
    }
    }
    ```
-6. Initialize Terraform
+1. Initialize Terraform
 
    ```
    $ terraform init
    ```
-7. Create Infrastructure
+1. Create Infrastructure
 
    ```
    $ terraform apply -auto-approve -var instance_count=3 -var cluster_name=YOUR VPC ID
    ```
-8. Safeguard the Terraform output of server public and private IPs
-9. Safeguard the generated Ansible Inventory file (e.g., inventory-hlawork1.cfg)
+1. Safeguard the Terraform output of server public and private IPs
+1. Safeguard the generated Ansible Inventory file (e.g., inventory-hlawork1.cfg)
 
 ## Install the Pet Clinic Software stack using Ansible
 
@@ -190,7 +192,7 @@ This document assumes a basic level of competency and familiarity with the tools
    $ eval `ssh-agent -s`
    $ ssh-add ~/.ssh/YOUR SSH KEY 
    ```
-2. Run the Install Pet Clinic Playbook
+1. Run the Install Pet Clinic Playbook
 
    ```
    $ ansible-playbook -i YOUR INVENTORY FILE.cfg ansible/install-petclinic.yml \
@@ -205,9 +207,9 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Configure NOW MID Access
 
 1. Login to your NOW Instance as Administrator
-2. Navigate to **Guided Setup > ITOM Guided Setup**
-3. Click on **MID Server**
-4. Click on **Create MID User**
+1. Navigate to **Guided Setup > ITOM Guided Setup**
+1. Click on **MID Server**
+1. Click on **Create MID User**
 
    ![Create MID User](create-mid-user.png)
 
@@ -225,22 +227,22 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Configure Discovery Credentials
 
 1. Login to your NOW Instance as Administrator
-2. Navigate to **Discovery > Credentials**
-3. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
+1. Navigate to **Discovery > Credentials**
+1. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
 
    ![SSH Credentials](heracles-credential.png)
-4. Test Credential with any of your server private IP addresses (e.g. mysql, spring, etc.)
+1. Test Credential with any of your server private IP addresses (e.g. mysql, spring, etc.)
 
 ## Validate MID Server
 
 1. Login to your NOW Instance as Administrator
-2. Navigate to **MID Server > Server**
-3. Click on your MID Server
-4. Click on the **Validate** link
-5. Set the **MID Initial Selection Criteria** as follows:
+1. Navigate to **MID Server > Server**
+1. Click on your MID Server
+1. Click on the **Validate** link
+1. Set the **MID Initial Selection Criteria** as follows:
 
    ![Validate MID Server](validate-mid.png)
-6. Click on the **Supported Applications** tab and check settings are as follows:
+1. Click on the **Supported Applications** tab and check settings are as follows:
 
 
    | Field                       | Value           |
@@ -248,7 +250,7 @@ This document assumes a basic level of competency and familiarity with the tools
    | Name                        | ALL             |
    | Default MID Server          | YOUR MID SERVER |
    | Included in application ALL | true            |
-7. Click on the **Capabilities** tab and check settings are as follows:
+1. Click on the **Capabilities** tab and check settings are as follows:
 
 
    | Field                       | Value           |
@@ -256,7 +258,7 @@ This document assumes a basic level of competency and familiarity with the tools
    | Name                        | ALL             |
    | Default MID Server          | YOUR MID SERVER |
    | Included in application ALL | true            |
-8. Click on the **IP Ranges** tab and check settings are as follows:
+1. Click on the **IP Ranges** tab and check settings are as follows:
 
 
    | Field | Value   |
@@ -272,18 +274,18 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Setup Agent Client Collector Listener
 
 1. Click on the **Setup Agent Client Collector Listener** link
-2. Set the MID Web Server Port to `8085`
-3. Safeguard your Endpoint address (e.g., wss://15.0.1.107:8085/ws/events)
+1. Set the MID Web Server Port to `8085`
+1. Safeguard your Endpoint address (e.g., wss://15.0.1.107:8085/ws/events)
 
 ## Collect the MID Web Server API Key
 
 1. Navigate to **MID Server > MID Web Server API Key**
-2. Copy and safeguard your `MID Web Server API Key`
+1. Copy and safeguard your `MID Web Server API Key`
 
 ## Configure Agent Client Collector Policies
 
 1. Navigate to **Agent Client Collector > Configuration > Policies**
-2. Activate the following Policies:
+1. Activate the following Policies:
 
 
    | Name                | Active |
@@ -324,7 +326,12 @@ This document assumes a basic level of competency and familiarity with the tools
    | Select Entry Point Type | MySQL Server Endpoint                      |
    | Host                    | YOUR MYSQL PRIVATE IP (e.g. ip-15-0-1-241) |
    | Port                    | YOUR MYSQL PORT (e.g. 3306)                |
+<<<<<<< HEAD
 6. Press the **Add** Button
+=======
+
+1. Press the **Add** Button
+>>>>>>> a3b819c... Update
 
 # Create your HLA Data Inputs
 
@@ -575,17 +582,17 @@ These instructions apply to a WSL Ubuntu workstation and provide an opinionated 
 These instructions apply to a WSL Ubuntu workstation and Python PIP which provides broad cross-platform support regardless of the operating system. Please refer to the Ansible Installation Guide https://docs.ansible.com/ansible/latest/installation_guide for more information.
 
 1. Start a Bash Shell
-2. Install Ansible (e.g., v4.5.0)
+1. Install Ansible (e.g., v4.5.0)
    ```
    $ pip install ansible==4.5.0
    ```
-3. Edit Ansible Settings (e.g. vi ~/.ansible.cfg)
+1. Edit Ansible Settings (e.g. vi ~/.ansible.cfg)
    ```
    [defaults]
    interpreter_python=auto_silent
    ideprecation_warnings=false
    ```
-4. Install Prerequisites
+1. Install Prerequisites
    ```
    ansible-galaxy collection install community.mysql
    ```
@@ -595,12 +602,12 @@ These instructions apply to a WSL Ubuntu workstation and Python PIP which provid
 These instructions apply to a WSL Ubuntu workstation. Please refer to the AWS CLI Installation Guide https://docs.aws.amazon.com/cli/latest/userguide/install-linux.html for more information.
 
 1. Start a Bash Shell
-2. Install Venv
+1. Install Venv
 
    ```
    $ sudo apt-get install -y python3-venv
    ```
-3. Install the AWS CLI
+1. Install the AWS CLI
 
    ```
    $ curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
