@@ -1,6 +1,7 @@
 ---
 title: Predictive AIOps Workshop Installation Guide
-subtitle: Predictive AIOps Workshop 
+subtitle: Predictive AIOps Workshop ![image](https://user-images.githubusercontent.com/4479184/149375358-e3295346-6ac3-4942-b340-8e40f007abd0.png)
+
 author: 
 - Anthony Angelo, Netser Heruty, Daniel Smith, Joe Steinfeld
 date: 10 Nov 2021
@@ -286,10 +287,6 @@ This document assumes a basic level of competency and familiarity with the tools
 
 1. Navigate to **Agent Client Collector > Configuration > Policies**
 1. Activate the following Policies:
-<<<<<<< HEAD
-
-=======
->>>>>>> a3b819c... Update
 
    | Name                | Active |
    | --------------------- | -------- |
