@@ -328,9 +328,6 @@ This document assumes a basic level of competency and familiarity with the tools
    | Port                    | YOUR MYSQL PORT (e.g. 3306)                |
 
 6. Press the **Add** Button
-=======
-
-1. Press the **Add** Button
 
 # Create your HLA Data Inputs
 
@@ -361,13 +358,10 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Login to your NOW Instance as Administrator
 2. Navigate to **Health Log Analytics > Data Input**
 3. Create a **Linux using Filebeat Data Input** as follows:
-=======
-
-1. Press the **Add** Button
->>>>>>> a3b819c... Update
+4. Press the **Add** Button
 
    ![MySQL Data Input](create-mysql-di.png)
-4. Press **Submit** when done
+5. Press **Submit** when done
 
    > NOTE: Do not download the ”filebeat.yml” as it is part of an Ansible Playbook already
 
