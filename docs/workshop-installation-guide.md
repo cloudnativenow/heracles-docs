@@ -220,7 +220,7 @@ This document assumes a basic level of competency and familiarity with the tools
    ```
    $ ansible-playbook -i YOUR INVENTORY FILE.cfg ansible/install-midserver.yml \
    -e "instance_url=https://YOUR NOW URL" \
-   -e "mid_userame=YOUR MID SERVER USER ID" \
+   -e "mid_username=YOUR MID SERVER USER ID" \
    -e "mid_password=YOUR MID SERVER USER PASSWORD"
    ```
 
