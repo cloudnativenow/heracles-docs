@@ -326,8 +326,7 @@ This document assumes a basic level of competency and familiarity with the tools
    | Select Entry Point Type | MySQL Server Endpoint                      |
    | Host                    | YOUR MYSQL PRIVATE IP (e.g. ip-15-0-1-241) |
    | Port                    | YOUR MYSQL PORT (e.g. 3306)                |
-<<<<<<< HEAD
-<<<<<<< HEAD
+
 6. Press the **Add** Button
 =======
 
