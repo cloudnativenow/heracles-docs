@@ -28,16 +28,16 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Request a new NOW Instance
 
 1. Navigate to [NOW HI](https://support.servicenow.com/now)
-2. Search for "new internal instance request"
-3. Request a new instance as follows, using the latest available application version:
+1. Search for "new internal instance request"
+1. Request a new instance as follows, using the latest available application version:
 
    ![New Internal Instance Request](new-internal-instance-request.png)
 
 ## Upgrade your NOW Instance to latest Rome version
 
 1. Navigate to [NOW HI](https://support.servicenow.com/now)
-2. Select your Instance from the Instances Dashboard
-3. Upgrade your instance to latest Rome version & patch level as follows:
+1. Select your Instance from the Instances Dashboard
+1. Upgrade your instance to latest Rome version & patch level as follows:
 
    ![Upgrade to Rome](upgrade-to-rome.png)
 
@@ -50,8 +50,8 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Check HLA Services Status for your NOW Instance
 
 1. Login to your NOW Instance as an Administrator
-2. In your browser add the following to your instance URL `xmlstats.do?include=services_status`
-3. Check **Services Status** are as follows:
+1. In your browser add the following to your instance URL `xmlstats.do?include=services_status`
+1. Check **Services Status** are as follows:
 
 
    | Name          | Status |
@@ -63,8 +63,8 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Check HLA Package Versions your NOW Instance
 
 1. Login to your NOW Instance as an Administrator
-2. In the Filter Navigator enter `sn_occ_stats.do`
-3. Note the **Health Log Analytics Package Dependencies & Versions** as follows:
+1. In the Filter Navigator enter `sn_occ_stats.do`
+1. Note the **Health Log Analytics Package Dependencies & Versions** as follows:
 
 
    | Dependency                  | Version   |
@@ -79,7 +79,7 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Install the required ITOM plugins for the Workshop
 
 1. HOP to your NOW Instance as Administrator
-2. Navigate to the **System Definition > Plugins** and install or activate the following plugins:
+1. Navigate to the **System Definition > Plugins** and install or activate the following plugins:
 
 
    | Plugin Name |  Plugin ID   |
@@ -95,14 +95,14 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Execute the [PA HLA] Historic Data Collection Job to catch up the HLA Overview Dashboard
 
 1. Login to your NOW Instance as an Administrator
-2. Set the Application Scope to `Health Log Analytics`
-3. Navigate to the **Performance Analytics > Data Collector > Jobs** and Execute the `[PA HLA] Historic Data Collection` by using right-click-mouse to `Execute Now`
+1. Set the Application Scope to `Health Log Analytics`
+1. Navigate to the **Performance Analytics > Data Collector > Jobs** and Execute the `[PA HLA] Historic Data Collection` by using right-click-mouse to `Execute Now`
 
 ## Fix Service Mapping Glitches
 
 1. Login to your NOW Instance as an Administrator
-2. In the Filter Navigator enter `sys_properties_list.do`
-3. Set the following property:
+1. In the Filter Navigator enter `sys_properties_list.do`
+1. Set the following property:
 
 
    | Property Name                 | Value | Type    | Application |
@@ -112,7 +112,7 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Optimize your NOW Instance for the Workshop
 
 1. Login to your NOW Instance as an Administrator
-2. Navigate to **Health Log Analytics > Health Log Analytics Administration > System Properties** and set the following properties:
+1. Navigate to **Health Log Analytics > Health Log Analytics Administration > System Properties** and set the following properties:
 
    | Property Name                                            | Value | Default Value |
    | ---------------------------------------------------------- | ------- | --------------- |
@@ -122,7 +122,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
    > NOTE: Request an Occultus restart for properties that require it
 
-3. Navigate to **Health Log Analytics > Health Log Analytics Administration > Features** and set the following features:
+1. Navigate to **Health Log Analytics > Health Log Analytics Administration > Features** and set the following features:
 
    | Name                                              | State | Default Value |
    | ------------------------------------------------- | ----- | ------------- |
@@ -315,10 +315,10 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Create your Application Service  Database Relatonships
 
 1. Navigate to **Service Mapping > Services > Application Services**
-2. Select the `Pet Clinic` Application
-3. Press the **View Map** Button
-4. Hover over each `Tomcat` Server and click on the **Manually add a connection** link
-5. Manually add a connection as follows:
+1. Select the `Pet Clinic` Application
+1. Press the **View Map** Button
+1. Hover over each `Tomcat` Server and click on the **Manually add a connection** link
+1. Manually add a connection as follows:
 
 
    | Field                   | Operator                                   |
@@ -327,41 +327,41 @@ This document assumes a basic level of competency and familiarity with the tools
    | Host                    | YOUR MYSQL PRIVATE IP (e.g. ip-15-0-1-241) |
    | Port                    | YOUR MYSQL PORT (e.g. 3306)                |
 
-6. Press the **Add** Button
+1. Press the **Add** Button
 
 # Create your HLA Data Inputs
 
 ## NGINX Data Input
 
 1. Login to your NOW Instance as Administrator
-2. Navigate to **Health Log Analytics > Data Input**
-3. Create a **Linux using Filebeat Data Input** as follows:
+1. Navigate to **Health Log Analytics > Data Input**
+1. Create a **Linux using Filebeat Data Input** as follows:
 
    ![NGINX Data Input](create-nginx-di.png)
-4. Press **Submit** when done
+1. Press **Submit** when done
 
    > NOTE: Do not download the ”filebeat.yml” as it is part of an Ansible Playbook already
 
 ## Spring Data Input
 
 1. Login to your NOW Instance as Administrator
-2. Navigate to **Health Log Analytics > Data Input**
-3. Create a **Linux using Filebeat Data Input** as follows:
+1. Navigate to **Health Log Analytics > Data Input**
+1. Create a **Linux using Filebeat Data Input** as follows:
 
    ![Spring Data Input](create-spring-di.png)
-4. Press **Submit** when done
+1. Press **Submit** when done
 
    > NOTE: Do not download the ”filebeat.yml” as it is part of an Ansible Playbook already
 
 ## MySQL Data Input
 
 1. Login to your NOW Instance as Administrator
-2. Navigate to **Health Log Analytics > Data Input**
-3. Create a **Linux using Filebeat Data Input** as follows:
-4. Press the **Add** Button
+1. Navigate to **Health Log Analytics > Data Input**
+1. Create a **Linux using Filebeat Data Input** as follows:
+1. Press the **Add** Button
 
    ![MySQL Data Input](create-mysql-di.png)
-5. Press **Submit** when done
+1. Press **Submit** when done
 
    > NOTE: Do not download the ”filebeat.yml” as it is part of an Ansible Playbook already
 
@@ -383,16 +383,16 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Configure your Source Type Structures
 
 1. Login to your NOW Instance as Administrator
-2. Navigate to **Health Log Analytics > Mapping > Source Type Structures**
-3. For each Source Type Structure, set the **Custom JS** Function using the scripts located in the cloned Git Project /servicenow folder (e.g., `source-type-structures-mariadb-error.js`)
+1. Navigate to **Health Log Analytics > Mapping > Source Type Structures**
+1. For each Source Type Structure, set the **Custom JS** Function using the scripts located in the cloned Git Project /servicenow folder (e.g., `source-type-structures-mariadb-error.js`)
 
    >NOTE: Custom JS functions must be published to start working by clicking `Publish` after saving the form
 
 ## Configure your Source Type Structures Key/Value Mappings
 
 1. Login to your NOW Instance as Administrator
-2. Navigate to **Health Log Analytics > Mapping > Source Type Structures**
-3. For each Source Type Structure, set the Key/Value Mappings as follows
+1. Navigate to **Health Log Analytics > Mapping > Source Type Structures**
+1. For each Source Type Structure, set the Key/Value Mappings as follows
 
 Syslog Logs
 
