@@ -521,10 +521,10 @@ MariaDB Error Logs
 
 ## Install the Crowdstrike Falcon Agent using Ansible
 
-1. Download the Crowdstrike Falcon Agent RPM from HI for RHEL 8 (e.g. 6.31.14505)
+1. Download the Crowdstrike Falcon Agent RPM from HI for RHEL 8 (e.g. 6.32.0-12904)
 
    ```
-   wget https://surf.service-now.com/sys_attachment.do?sys_id=9aad2f29db1ff810020a8263059619f7 -qO falcon-sensor.rpm
+   wget https://surf.service-now.com/sys_attachment.do?sys_id=6e589ffcdb800d10ae878fd3399619f8 -qO falcon-sensor.rpm
    ```
 
 1. Run the Install Falcon Playbook
