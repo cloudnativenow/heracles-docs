@@ -378,50 +378,6 @@ This document assumes a basic level of competency and familiarity with the tools
    -e "mysql_logstash=YOUR MID SERVER PRIVATE IP:5042"
    ```
 
-# Configure your NOW HLA instance for a new Workshop
-
-## Configure your Source Type Structures
-
-1. Login to your NOW Instance as Administrator
-1. Navigate to **Health Log Analytics > Mapping > Source Type Structures**
-1. For each Source Type Structure, set the **Custom JS** Function using the scripts located in the cloned Git Project /servicenow folder (e.g., `source-type-structures-mariadb-error.js`)
-
-   >NOTE: Custom JS functions must be published to start working by clicking `Publish` after saving the form
-
-## Configure your Source Type Structures Key/Value Mappings
-
-1. Login to your NOW Instance as Administrator
-1. Navigate to **Health Log Analytics > Mapping > Source Type Structures**
-1. For each Source Type Structure, set the Key/Value Mappings as follows
-
-Syslog Logs
-
-![syslog-messages](syslog-messages-kvm.png)
-
-Spring App Logs
-
-![spring-app](spring-app-kvm.png)
-
-Spring Access Logs
-
-![spring-access](spring-access-kvm.png)
-
-NGINX Error Logs
-
-![nginx-error](nginx-error-kvm.png)
-
-NGINX Access Logs
-
-![nginx-access](nginx-access-kvm.png)
-
-MariaDB SQL Dump
-
-![mariadb-sql](mariadb-sql-kvm.png)
-
-MariaDB Error Logs
-
-![mariadb-error](mariadb-error-kvm.png)
-
 # Configure your NOW HLA instance Chaos Catalog
 
 ## Login to your NOW Instance
@@ -492,6 +448,50 @@ MariaDB Error Logs
 1. You should see the following Chaos Catalog Page:
 
    ![chaos-catalog](chaos-catalog.png)
+   
+# Configure your NOW HLA instance for a new Workshop
+
+## Configure your Source Type Structures
+
+1. Login to your NOW Instance as Administrator
+1. Navigate to **Health Log Analytics > Mapping > Source Type Structures**
+1. For each Source Type Structure, set the **Custom JS** Function using the scripts located in the cloned Git Project /servicenow folder (e.g., `source-type-structures-mariadb-error.js`)
+
+   >NOTE: Custom JS functions must be published to start working by clicking `Publish` after saving the form
+
+## Configure your Source Type Structures Key/Value Mappings
+
+1. Login to your NOW Instance as Administrator
+1. Navigate to **Health Log Analytics > Mapping > Source Type Structures**
+1. For each Source Type Structure, set the Key/Value Mappings as follows
+
+Syslog Logs
+
+![syslog-messages](syslog-messages-kvm.png)
+
+Spring App Logs
+
+![spring-app](spring-app-kvm.png)
+
+Spring Access Logs
+
+![spring-access](spring-access-kvm.png)
+
+NGINX Error Logs
+
+![nginx-error](nginx-error-kvm.png)
+
+NGINX Access Logs
+
+![nginx-access](nginx-access-kvm.png)
+
+MariaDB SQL Dump
+
+![mariadb-sql](mariadb-sql-kvm.png)
+
+MariaDB Error Logs
+
+![mariadb-error](mariadb-error-kvm.png)
 
 # Grant User Access to your NOW Instance
 
