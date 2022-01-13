@@ -332,7 +332,6 @@ This document assumes a basic level of competency and familiarity with the tools
 =======
 
 1. Press the **Add** Button
->>>>>>> a3b819c... Update
 
 # Create your HLA Data Inputs
 
