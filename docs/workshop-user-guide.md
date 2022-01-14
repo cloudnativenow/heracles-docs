@@ -12,6 +12,13 @@ This document provides prescriptive guidance for generating Chaos in the Predict
 
 ![Figure 1](workshop-chaos-architecture.png)
 
+# Log into your NOW Instance
+
+1. Login to your NOW Instance with your given credentials
+1. Set your `Profile Time Zone` accordingly (e.g. `US\Eastern`)
+
+   > NOTE: Log out and back in to make sure your `Profile Time Zone` is set correctly. Failure to do so will adversly affect the workshop and using basic HLA functions like searching and finding log entries.
+
 # Trigger Chaos using the Chaos Catalog
 
 Your Workshop instance has been provisioned with an _easy-to-use_ Chaos Catalog in order to help participants quicly dispatch chaos to different servers throughout the Workshop architecture. Access to the Chaos Catalog is as follows:

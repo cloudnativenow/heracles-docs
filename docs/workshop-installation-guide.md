@@ -50,6 +50,10 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Check HLA Services Status for your NOW Instance
 
 1. Login to your NOW Instance as an Administrator
+1. Set your `Profile Time Zone` accordingly (e.g. `US\Eastern`)
+
+   > NOTE: Log out and back in to make sure your `Profile Time Zone` is set correctly. Failure to do so will adversly affect the workshop and using basic HLA functions like searching and finding log entries.
+
 1. In your browser add the following to your instance URL `xmlstats.do?include=services_status`
 1. Check **Services Status** are as follows:
 
