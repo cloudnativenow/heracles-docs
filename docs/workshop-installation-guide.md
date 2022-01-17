@@ -1,11 +1,11 @@
 ---
 title: Predictive AIOps Workshop Installation Guide
-subtitle: Predictive AIOps Workshop ![image](https://user-images.githubusercontent.com/4479184/149375358-e3295346-6ac3-4942-b340-8e40f007abd0.png)
-
+subtitle: Predictive AIOps Workshop
 author: 
 - Anthony Angelo, Netser Heruty, Daniel Smith, Joe Steinfeld
 date: 10 Nov 2021
 ---
+
 # Introduction
 
 This document provides prescriptive guidance for deploying the Predictive AIOps Workshop infrastructure. The overall Predictive AIOps Workshop Architecture consists of several AWS EC2 servers conforming to a typical N-Tier web application, complete with a Load Generator and Chaos Simulator. The core application is the Spring Pet Clinic which is based on Java Spring Boot and requires the use of a Database for persistence. 
