@@ -2,8 +2,8 @@
 title: Predictive AIOps Workshop Installation Guide
 subtitle: Predictive AIOps Workshop
 author: 
-- Anthony Angelo, Netser Heruty, Daniel Smith, Joe Steinfeld
-date: 10 Nov 2021
+- Anthony Angelo, Netser Heruty, Daniel Smith, Joe Steinfeld, Mike Gallagher
+date: 26 Jan 2022
 ---
 
 # Introduction
@@ -43,7 +43,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
 ## Install the HLA stack for your NOW Instance
 
-1. Follow the [HLA Installation Guide](hla-installation-guide.pdf) for the latest installation steps
+1. Follow the [HLA Installation Guide](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0998946) for the latest installation steps
 
    > NOTE: Please read and follow all the steps carefully as instructed in the "HLA Installation Guide" document as it us updated frequently by the HLA Development Team
 
