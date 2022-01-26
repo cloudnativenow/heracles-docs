@@ -428,13 +428,36 @@ This document assumes a basic level of competency and familiarity with the tools
    | ------- | ------------- |
    | Generate Application Errors | Application Chaos |
    | Generate Infrastructure Errors | Infrastructure Chaos |
-   | Stress Servers | nfrastructure Chaos |
+   | Stress Servers | Infrastructure Chaos |
 
-1. For each item in this select the `List Collector` variable
+1. Go into the Generate Infrastructure Errors Catalog item and select the `List Collector` variable
 
    ![list-collector](list-collector.png)
 
 1. Set the `Reference qualifier` field to the query copied earlier
+
+   ![reference-qualifier](reference-qualifier.png)
+
+1. Do the same for the Stress Servers catalog item.  
+1. Go back to the **Configuration > Servers > Linux** screen.
+1. Add the `Support group` field to the list
+1. Filter list to `Show Matching` only items mapped to the `Applicaton Support` group
+1. Refer to the server list generated when you deployed the linux servers and filter out the IPs of any server that is NOT a spring server.  
+1. Select `Copy query` using *right-click* on the last entry in the fiter breadcrumb 
+1. Navigate to **Service Catalog > Catalog Definitions > My Items**
+1. Filter list to `Show Matching` only items mapped to the `Predictive AIOps Workshop Error Generation` Catalogs as follows:
+
+   | Name    | Category |
+   | ------- | ------------- |
+   | Generate Application Errors | Application Chaos |
+   | Generate Infrastructure Errors | Infrastructure Chaos |
+   | Stress Servers | Infrastructure Chaos |
+
+1. Go into the Generate Application Errors Catalog item and select the `List Collector` variable
+
+   ![list-collector](list-collector.png)
+
+1. Set the `Reference qualifier` field to the query copied earlier.  This should limit this catalog item to ONLY spring servers.  This is to prevent attempting to run application chaos against non-application servers.
 
    ![reference-qualifier](reference-qualifier.png)
 
