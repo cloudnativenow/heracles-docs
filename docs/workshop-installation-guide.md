@@ -1,16 +1,23 @@
----
-title: Predictive AIOps Workshop Installation Guide
-subtitle: Predictive AIOps Workshop
-author: 
-- Anthony Angelo, Netser Heruty, Daniel Smith, Joe Steinfeld
-date: 10 Nov 2021
----
+
+Title | Subtitle | Author | Date
+--- | --- | --- | --- 
+Predictive AIOps Workshop 1.0 Installation Guide | Predictive AIOps Workshop - I am the I in AI | Anthony Angelo, Netser Heruty, Danny Smith | 10 Nov 2021
+Predictive AIOps Workshop 2.0 Installation Guide | Predictive AIOps Workshop - The Rise of the Unified Agent | Anthony Angelo, Netser Heruty | 01 Feb 2022
+Predictive AIOps Workshop 3.0 #Future Plan# | Predictive AIOps Workshop - Feat. Grafana #No_Time_to_Glide | Anthony Angelo, Netser Heruty, Karlis Peterson | July 2022?
 
 # Introduction
 
-This document provides prescriptive guidance for deploying the Predictive AIOps Workshop infrastructure. The overall Predictive AIOps Workshop Architecture consists of several AWS EC2 servers conforming to a typical N-Tier web application, complete with a Load Generator and Chaos Simulator. The core application is the Spring Pet Clinic which is based on Java Spring Boot and requires the use of a Database for persistence. 
+This document provides prescriptive guidance for deploying the Predictive AIOps Workshop environment (both the monitored app, and the ServiceNow instance). The overall Predictive AIOps Workshop Architecture consists of several AWS EC2 servers conforming to a typical N-Tier web application, complete with a Load Generator and Chaos Simulator. The core application is the Spring Pet Clinic which is based on Java Spring Boot and requires the use of a Database for persistence.
 
-![Workshop Architecture](workshop-architecture.png)
+On the ServiceNow side, we provide the full **ITOM Health** exprience with ACC, HLA, MI & EM (plus ITOM Visiblity! with Discovery & Service Mapping complementing the entire setup). Each of the CI's in the environment is fully monitored by the _Agent Client Collector (ACC, AKA: ITOM Agent, Unified AIOps Agent)_, which runs basic discovery and collects all the observability data from the app, using:
+* The ACC-M plugin for Monitoring - leveraging checks execution directly against the CI to create **Events**, and **Metrics** collection in real-time, to be analyzed by Metric Intelligence (MI);
+* The ACC-L plugin for Log Analytics - collecting all the **Logs** from the application's components and infrastructure, to be analyzed and searched for anomalies in real-time by the _Health Log Analytics (HLA)_ AI Engine.
+
+Finally, it all comes together with _Event Management (EM)_ correlating the alerts, while also leveraging CMDB relationships.
+
+![WorkshopAppArch](https://user-images.githubusercontent.com/15874038/151668160-18a8f595-551e-4a43-b09f-08cbc5bc2758.png)
+![WorkshopSNarch](https://user-images.githubusercontent.com/15874038/151668165-abf3c7e1-c86d-4b2c-9fdd-8401f56c97a4.png)
+
 
 # Prerequisites
 
@@ -40,12 +47,13 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Upgrade your instance to latest Rome version & patch level as follows:
 
    ![Upgrade to Rome](upgrade-to-rome.png)
+   > NOTE: Minimal Family Release for this workshop is Rome patch 4 (RP4)
 
 ## Install the HLA stack for your NOW Instance
 
-1. Follow the [HLA Installation Guide](hla-installation-guide.pdf) for the latest installation steps
+1. Follow [KB0998946](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0998946) for the latest installation steps
 
-   > NOTE: Please read and follow all the steps carefully as instructed in the "HLA Installation Guide" document as it us updated frequently by the HLA Development Team
+   > NOTE: Please read and follow all the steps carefully as instructed in the HLA Installation Guide KB, as it is updated frequently by the HLA Dev team
 
 ## Check HLA Services Status for your NOW Instance
 
@@ -54,7 +62,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
    > NOTE: Log out and back in to make sure your `Profile Time Zone` is set correctly. Failure to do so will adversly affect the workshop and using basic HLA functions like searching and finding log entries.
 
-1. In your browser add the following to your instance URL `xmlstats.do?include=services_status`
+1. In your browser add the following to your instance URL: `xmlstats.do?include=services_status`
 1. Check **Services Status** are as follows:
 
 
@@ -73,28 +81,35 @@ This document assumes a basic level of competency and familiarity with the tools
 
    | Dependency                  | Version   |
    | ----------------------------- | ----------- |
-   | Health Log Analytics        | 21.0.1    |
-   | Health Log Analytics Viewer | 20.1.4    |
-   | Alert Intelligence          | 19.3.8    |
-   | Occultus Version            | 1.13.2.25 |
+   | Health Log Analytics        | 22.0.12    |
+   | Health Log Analytics Viewer | 21.0.0    |
+   | Alert Intelligence          | 19.4.7    |
+   | Occultus Version            | 1.14.0.34 |
    | Metrics Base Version        | 1.14.0.13 |
    | ElasticSearch Version       | 7.3.2     |
+
+   > NOTE: Confirm your Occultus version matches your HLA version using this matrix: [KB1002197](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB1002197). If it doesn't, comment on your HLA installation CHG request asking to fix this.
 
 ## Install the required ITOM plugins for the Workshop
 
 1. HOP to your NOW Instance as Administrator
-1. Navigate to the **System Definition > Plugins** and install or activate the following plugins:
+1. Navigate to the **System Definition > Plugins** and install or activate the following mandatory plugins:
 
 
    | Plugin Name |  Plugin ID   |
    | ----------- | ------------ |
-   | Agent Client Collector Monitoring | sn_itmon|
+   | Agent Client Collector Log Analytics | sn_accl |
    | Service Mapping | com.snc.service-mapping |
    | Discovery and Service Mapping Patterns | sn_itom_pattern |
    | CMDB CI Class Models | sn_cmdb_ci_class |
    | Certificate Inventory and Management | sn_disco_certmgmt |
    | Performance Analytics - Premium | com.snc.pa.premium |
-   | ServiceNow IntegrationHub Professional  Pack Installer | com.glide.hub.integrations.professional | 
+   | ServiceNow IntegrationHub Professional Pack Installer | com.glide.hub.integrations.professional | 
+   
+1. Plus, Search for the **ITOM Health** suite, and Install/Update All.
+
+   This will ensure that you're both running the latest and greatest versions (*limited to **Rome** instances*); AND are able to show additional ITOM capabilties during workshops upon demand (i.e., Tag Based Alert Clustering, EM Connectors), even though we don't currently use these in the workshop.
+   
 
 ## Execute the [PA HLA] Historic Data Collection Job to catch up the HLA Overview Dashboard
 
@@ -133,6 +148,7 @@ This document assumes a basic level of competency and familiarity with the tools
    | Disable  Warm Up Time Rule                        | ON    | OFF           |
    | Disable Setup Time Rule                           | ON    | OFF           |
    | Disable All Events Metric Anomaly Detections Rule | ON    | OFF           |
+
 
 # Deploy the Workshop AWS Environment
 
@@ -207,16 +223,16 @@ This document assumes a basic level of competency and familiarity with the tools
    -e "frontend_addr=YOUR NGINX PUBLIC IP:8080"
    ```
 
-# Deploy the MID Server and pre-configure ACC, Filebeat Access
+# Deploy the MID Server and pre-configure ACC Access
 
 ## Configure NOW MID Access
 
 1. Login to your NOW Instance as Administrator
-1. Navigate to **Guided Setup > ITOM Guided Setup**
-1. Click on **MID Server**
-1. Click on **Create MID User**
+2. In your browser add the following to your instance URL: `/nav_to.do?uri=%2F$mid_server_user.do`
+3. **Create MID Server User**
 
    ![Create MID User](create-mid-user.png)
+   > Safeguard the Credentials for the next step
 
 ## Install MID Server Software using Ansible
 
@@ -247,45 +263,39 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Set the **MID Initial Selection Criteria** as follows:
 
    ![Validate MID Server](validate-mid.png)
-1. Click on the **Supported Applications** tab and check settings are as follows:
+
+   Make sure to ALLOW **ALL** Supported Applications, Capabilities and IP Ranges!
 
 
-   | Field                       | Value           |
-   | ----------------------------- | ----------------- |
-   | Name                        | ALL             |
-   | Default MID Server          | YOUR MID SERVER |
-   | Included in application ALL | true            |
-1. Click on the **Capabilities** tab and check settings are as follows:
+## Setup ACC-M+L
 
+1. In the MID Server form, under Related Links: click on the **Setup ACC Monitoring** link
+   
+   ![image](https://user-images.githubusercontent.com/15874038/151672492-0407c7b6-c4ab-4a64-b65d-9bddff2fc761.png)
 
-   | Field                       | Value           |
-   | ----------------------------- | ----------------- |
-   | Name                        | ALL             |
-   | Default MID Server          | YOUR MID SERVER |
-   | Included in application ALL | true            |
-1. Click on the **IP Ranges** tab and check settings are as follows:
+   > NOTE: This will automatically initiate a call to "Setup ACC Listener" first, which will create both a _MID Web Server_ extension AND an _ACC Websocket Endpoint_ extension - and then it will also initiate a call to "Setup Metric Intelligence" (for ACC-M).
 
+2. In the prompted Agent Client Collector Setup:
 
-   | Field | Value   |
-   | ------- | --------- |
-   | Name  | ALL     |
-   | Type  | Include |
-   | Range | 0.0.0.0 |
+   1. Set the MID Web Server Port to `8085`
+   1. Safeguard your Endpoint address (e.g., `wss://15.0.1.107:8085/ws/events`), to later be used as the "ACC_MID"
 
-## Setup Metric Intelligence
+> NOTE: Metric Intelligence setup happens in the background and doesn't require any configuration
 
-1. Click on the **Setup Metric Intelligence** link
+3. Collect the MID Web Server API Key:
 
-## Setup Agent Client Collector Listener
+   1. Navigate to **MID Server > MID Web Server API Key**
+   1. Copy and safeguard your `MID Web Server API Key` - to later be used as the "ACC_API_KEY"
 
-1. Click on the **Setup Agent Client Collector Listener** link
-1. Set the MID Web Server Port to `8085`
-1. Safeguard your Endpoint address (e.g., wss://15.0.1.107:8085/ws/events)
+4. Setup ACC Log Analytics:
 
-## Collect the MID Web Server API Key
+   1. Click on the **Setup ACC Log Analytics** link
+   2. Set the ACC Data Input Port to `5044`
+> NOTE: Just like the _Setup ACC Monitoring_ link, this first tries to setup the Web Server and Web Socket extensions, but if they already exist, it skips directly to setting up an ACC Data Input (technically, you could have also reversed the ACC setup order)
 
-1. Navigate to **MID Server > MID Web Server API Key**
-1. Copy and safeguard your `MID Web Server API Key`
+At this point, validate that all 4 extensions were added under Extension Contexts as follows:
+![image](https://user-images.githubusercontent.com/15874038/151670959-6f98705d-95e3-4804-b81d-04c5dc2e76d8.png)
+
 
 ## Configure Agent Client Collector Policies
 
