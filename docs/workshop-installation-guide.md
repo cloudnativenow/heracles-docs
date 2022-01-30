@@ -47,7 +47,9 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Upgrade your instance to latest Rome version & patch level as follows:
 
    ![Upgrade to Rome](upgrade-to-rome.png)
-   > NOTE: Minimal Family Release for this workshop is Rome patch 4 (RP4)
+   > NOTE: **Minimal** Family Release for this workshop is Rome patch 4 (RP4)
+
+   > **Recommended**: Rome patch 6 (RP6) or above
 
 ## Install the HLA stack for your NOW Instance
 
@@ -106,10 +108,12 @@ This document assumes a basic level of competency and familiarity with the tools
    | Performance Analytics - Premium | com.snc.pa.premium |
    | ServiceNow IntegrationHub Professional Pack Installer | com.glide.hub.integrations.professional | 
    
-1. Plus, Search for the **ITOM Health** suite, and Install/Update All.
+1. Plus, Search for the **ITOM Health** suite, and Install/Update All. (but **DON'T** load demo data)
 
    This will ensure that you're both running the latest and greatest versions (*limited to **Rome** instances*); AND are able to show additional ITOM capabilties during workshops upon demand (i.e., Tag Based Alert Clustering, EM Connectors), even though we don't currently use these in the workshop.
    
+   ![image](https://user-images.githubusercontent.com/15874038/151692391-6be9dfd7-2490-4264-ad51-105ee5308288.png)
+
 
 ## Execute the [PA HLA] Historic Data Collection Job to catch up the HLA Overview Dashboard
 
@@ -326,7 +330,7 @@ At this point, validate that all 4 extensions were added under Extension Context
 1. Set the **Operational Status** to `Operational`
 1. Press the **Run Discovery** Button
 
-## Create your Application Service  Database Relatonships
+## Create your Application Service Database Relatonships
 
 1. Navigate to **Service Mapping > Services > Application Services**
 1. Select the `Pet Clinic` Application
@@ -343,43 +347,22 @@ At this point, validate that all 4 extensions were added under Extension Context
 
 1. Press the **Add** Button
 
-# Create your HLA Data Inputs
+# Configure ACC Log Policies
 
-## NGINX Data Input
+> Background: Out of the box, you will already have **Active** ACC Log Policies for: "Linux OS Logs", "MySQL DB on Linux Logs", and "Tomcat on Linux Logs". To complete the Log collection for the workshop, we need to add a new log policy for Nginx, and create a child policy from the Tomcat's default policy to be customized and used for the Spring CIs (that got discovered as Tomcat CIs)
 
-1. Login to your NOW Instance as Administrator
-1. Navigate to **Health Log Analytics > Data Input**
-1. Create a **Linux using Filebeat Data Input** as follows:
+1. Download and unzip the following **update set** which completes the required ACC Log Policies configuration:
+   [sys_remote_update_set_4ccc88c787148950fbe710683cbb35aa.xml.zip](https://github.com/pangealab/heracles-docs/files/7965676/sys_remote_update_set_4ccc88c787148950fbe710683cbb35aa.xml.zip)
+1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
+1. Upload the downloaded update-set's XML
+1. Select the loaded `Custom ACC-L Policies`, and press  `Preview Update Set`
+1. Press `Commit Update Set`
 
-   ![NGINX Data Input](create-nginx-di.png)
-1. Press **Submit** when done
+1. Navigate to **ACC Log Analytics > ACC Log Policies**
+1. Confirm you now have a log policy named "Nginx Stream Logs" and that "Tomcat on Linux Logs" became a "Parent" policy
 
-   > NOTE: Do not download the ”filebeat.yml” as it is part of an Ansible Playbook already
 
-## Spring Data Input
-
-1. Login to your NOW Instance as Administrator
-1. Navigate to **Health Log Analytics > Data Input**
-1. Create a **Linux using Filebeat Data Input** as follows:
-
-   ![Spring Data Input](create-spring-di.png)
-1. Press **Submit** when done
-
-   > NOTE: Do not download the ”filebeat.yml” as it is part of an Ansible Playbook already
-
-## MySQL Data Input
-
-1. Login to your NOW Instance as Administrator
-1. Navigate to **Health Log Analytics > Data Input**
-1. Create a **Linux using Filebeat Data Input** as follows:
-1. Press the **Add** Button
-
-   ![MySQL Data Input](create-mysql-di.png)
-1. Press **Submit** when done
-
-   > NOTE: Do not download the ”filebeat.yml” as it is part of an Ansible Playbook already
-
-# Install the ACC & Filebeat Software using Ansible
+# Install the ACC Software using Ansible
 
 1. Run the Install Agents Playbook
 
