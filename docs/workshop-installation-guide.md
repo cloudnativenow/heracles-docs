@@ -261,7 +261,7 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Validate MID Server
 
 1. Login to your NOW Instance as Administrator
-1. Navigate to **MID Server > Server**
+1. Navigate to **MID Server > Servers**
 1. Click on your MID Server
 1. Click on the **Validate** link
 1. Set the **MID Initial Selection Criteria** as follows:
@@ -271,35 +271,30 @@ This document assumes a basic level of competency and familiarity with the tools
    Make sure to ALLOW **ALL** Supported Applications, Capabilities and IP Ranges!
 
 
-## Setup ACC-M+L
+## Setup ACC-L
 
-1. In the MID Server form, under Related Links: click on the **Setup ACC Monitoring** link
-   
-   ![image](https://user-images.githubusercontent.com/15874038/151672492-0407c7b6-c4ab-4a64-b65d-9bddff2fc761.png)
+1. Click on the **Setup ACC Monitoring** link
 
-   > NOTE: This will automatically initiate a call to "Setup ACC Listener" first, which will create both a _MID Web Server_ extension AND an _ACC Websocket Endpoint_ extension - and then it will also initiate a call to "Setup Metric Intelligence" (for ACC-M).
+1. Set the MID Web Server Port to `8085`
 
-2. In the prompted Agent Client Collector Setup:
+1. Safeguard your Endpoint address (e.g., `wss://15.0.1.210:8085/ws/events`)
 
-   1. Set the MID Web Server Port to `8085`
-   1. Safeguard your Endpoint address (e.g., `wss://15.0.1.107:8085/ws/events`), to later be used as the "ACC_MID"
+## Collect the MID Server API Key
 
-> NOTE: Metric Intelligence setup happens in the background and doesn't require any configuration
+1. Navigate to **MID Server > Extensions > MID Web Server API Key**
+1. Copy and safeguard your `MID Web Server API Key` - to later be used as the "ACC_API_KEY"
 
-3. Collect the MID Web Server API Key:
-
-   1. Navigate to **MID Server > MID Web Server API Key**
-   1. Copy and safeguard your `MID Web Server API Key` - to later be used as the "ACC_API_KEY"
-
-4. Setup ACC Log Analytics:
+## Setup ACC Log Analytics:
 
    1. Click on the **Setup ACC Log Analytics** link
    2. Set the ACC Data Input Port to `5044`
-> NOTE: Just like the _Setup ACC Monitoring_ link, this first tries to setup the Web Server and Web Socket extensions, but if they already exist, it skips directly to setting up an ACC Data Input (technically, you could have also reversed the ACC setup order)
 
-At this point, validate that all 4 extensions were added under Extension Contexts as follows:
-![image](https://user-images.githubusercontent.com/15874038/151670959-6f98705d-95e3-4804-b81d-04c5dc2e76d8.png)
+## Validate ACC-L Extension Contexts
 
+   1. Cick on **Extension Context** Tab and check extensions are as follows:
+   
+      ![Extension Contexts](extension-contexts.png)
+      > NOTE: Make sre form is in **Advanced View** for Tabs to be visible
 
 ## Configure Agent Client Collector Policies
 
@@ -307,7 +302,7 @@ At this point, validate that all 4 extensions were added under Extension Context
 1. Activate the following Policies:
 
    | Name                | Active |
-   | --------------------- | -------- |
+   | ------------------- | ------ |
    | Linux OS Events     | true   |
    | Linux OS Metrics    | true   |
    | MySQL DB Events     | true   |
@@ -349,18 +344,22 @@ At this point, validate that all 4 extensions were added under Extension Context
 
 # Configure ACC Log Policies
 
-> Background: Out of the box, you will already have **Active** ACC Log Policies for: "Linux OS Logs", "MySQL DB on Linux Logs", and "Tomcat on Linux Logs". To complete the Log collection for the workshop, we need to add a new log policy for Nginx, and create a child policy from the Tomcat's default policy to be customized and used for the Spring CIs (that got discovered as Tomcat CIs)
-
-1. Download and unzip the following **update set** which completes the required ACC Log Policies configuration:
-   [sys_remote_update_set_4ccc88c787148950fbe710683cbb35aa.xml.zip](https://github.com/pangealab/heracles-docs/files/7965676/sys_remote_update_set_4ccc88c787148950fbe710683cbb35aa.xml.zip)
 1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
-1. Upload the downloaded update-set's XML
-1. Select the loaded `Custom ACC-L Policies`, and press  `Preview Update Set`
+
+1. Select the `acc-log-policies-update-set.xml` Update Set from the `heracles/servicenow/` local folder
+
+1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
+
+1. Select the `Custom ACC-L Policies` and press `Preview Update Set`
+
 1. Press `Commit Update Set`
 
-1. Navigate to **ACC Log Analytics > ACC Log Policies**
-1. Confirm you now have a log policy named "Nginx Stream Logs" and that "Tomcat on Linux Logs" became a "Parent" policy
+1. Navigate to **ACC Log Analytics > ACC Log Policies** and and check for the new extensions:
 
+   | Name | Hierarchy | Active | Pubish Status |
+   | -----| --------- | ------ | ------------- | 
+   | Nginx Stream Logs | None | true | Published |
+   | Tomcat on Linux Logs | Parent | true | Published |
 
 # Install the ACC Software using Ansible
 
@@ -369,10 +368,7 @@ At this point, validate that all 4 extensions were added under Extension Context
    ```
    $ ansible-playbook -i YOUR INVENTORY FILE ansible/install-agents.yml \
    -e "acc_mid=YOUR ACC MID URL" \
-   -e "acc_api_key=YOUR ACC API KEY" \
-   -e "nginx_logstash=YOUR MID SERVER PRIVATE IP:5040" \
-   -e "spring_logstash=YOUR MID SERVER PRIVATE IP:5041" \
-   -e "mysql_logstash=YOUR MID SERVER PRIVATE IP:5042"
+   -e "acc_api_key=YOUR ACC API KEY"
    ```
 
 # Configure your NOW HLA instance Chaos Catalog
