@@ -7,7 +7,7 @@ date: 1 Feb 2022
 ---
 # Introduction
 
-This document provides prescriptive guidance for deploying the Predictive AIOps Workshop infrastructure and SN instance configuration. 
+This document provides prescriptive guidance for deploying the Predictive AIOps Workshop infrastructure and ServiceNow instance configuration. 
 
 # Prerequisites
 
