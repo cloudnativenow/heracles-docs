@@ -76,7 +76,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
 
    | Dependency                  | Version   |
-   | ----------------------------- | ----------- |
+   | --------------------------- | --------- |
    | Health Log Analytics        | 22.0.12   |
    | Health Log Analytics Viewer | 21.0.0    |
    | Alert Intelligence          | 19.4.7    |
