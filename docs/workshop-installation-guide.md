@@ -95,7 +95,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
 
    | Plugin Name                                           | Plugin ID                               |
-   | ------------------------------------------------------- | ----------------------------------------- |
+   | ----------------------------------------------------- | --------------------------------------- |
    | Agent Client Collector Log Analytics                  | sn_accl                                 |
    | Service Mapping                                       | com.snc.service-mapping                 |
    | Discovery and Service Mapping Patterns                | sn_itom_pattern                         |
@@ -118,7 +118,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
 
    | Property Name                 | Value | Type    | Application |
-   | ------------------------------- | ------- | --------- | ------------- |
+   | ----------------------------- | ----- | ------- | ----------- |
    | com.glide.request.max_waiters | 30    | integer | Global      |
 
 ## Optimize your NOW Instance for the Workshop
@@ -128,7 +128,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
 
    | Property Name                                            | Value | Default Value |
-   | ---------------------------------------------------------- | ------- | --------------- |
+   | -------------------------------------------------------- | ----- | ------------- |
    | aggregator.window_size_seconds                           | 300   | 1800          |
    | rules.filter_detections_with_low_current_value.threshold | 1.0   | 5.0           |
    | incidents.cooldown_period_minutes                        | 2     | 5             |
@@ -140,7 +140,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
 
    | Name                                              | State | Default Value |
-   | --------------------------------------------------- | ------- | --------------- |
+   | ------------------------------------------------- | ----- | ------------- |
    | Disable  Warm Up Time Rule                        | ON    | OFF           |
    | Disable Setup Time Rule                           | ON    | OFF           |
    | Disable All Events Metric Anomaly Detections Rule | ON    | OFF           |
@@ -292,7 +292,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
 
    | Name                | Active |
-   | --------------------- | -------- |
+   | ------------------- | ------ |
    | Linux OS Events     | true   |
    | Linux OS Metrics    | true   |
    | MySQL DB Events     | true   |
@@ -307,7 +307,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
 
    | Field                           | Value                                       |
-   | --------------------------------- | --------------------------------------------- |
+   | ------------------------------- | ------------------------------------------- |
    | Discoverable by Service Mapping | true                                        |
    | URL                             | http:// NGINX AWS PRIVATE IP DNS NAME :8080 |
    | Host Name                       | NGINX AWS PRIVATE IP DNS NAME               |
@@ -325,7 +325,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
 
    | Field                   | Operator                                   |
-   | ------------------------- | -------------------------------------------- |
+   | ----------------------- | ------------------------------------------ |
    | Select Entry Point Type | MySQL Server Endpoint                      |
    | Host                    | YOUR MYSQL PRIVATE IP (e.g. ip-15-0-1-241) |
    | Port                    | YOUR MYSQL PORT (e.g. 3306)                |
@@ -342,7 +342,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
 
    | Name                 | Hierarchy | Active | Pubish Status |
-   | ---------------------- | ----------- | -------- | --------------- |
+   | -------------------- | --------- | ------ | ------------- |
    | Nginx Stream Logs    | None      | true   | Published     |
    | Tomcat on Linux Logs | Parent    | true   | Published     |
 
@@ -402,7 +402,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
 
    | Name                           | Category             |
-   | -------------------------------- | ---------------------- |
+   | ------------------------------ | -------------------- |
    | Generate Application Errors    | Application Chaos    |
    | Generate Infrastructure Errors | Infrastructure Chaos |
    | Stress Servers                 | nfrastructure Chaos  |
