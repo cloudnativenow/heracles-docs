@@ -253,9 +253,6 @@ This document assumes a basic level of competency and familiarity with the tools
 
    ![Validate MID Server](validate-mid.png)
 
-   Make sure to ALLOW **ALL** Supported Applications, Capabilities and IP Ranges!
-
-
 ## Setup ACC-L
 
 1. Click on the **Setup ACC Monitoring** link
