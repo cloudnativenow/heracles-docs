@@ -14,7 +14,7 @@ _Predictive AIOps Workshop 3.0 #Future Plan#_ | _Predictive AIOps Workshop - Fea
 
 # Introduction
 
-This document provides prescriptive guidance for deploying the Predictive AIOps Workshop environment (both the monitored app, and the ServiceNow instance). The overall Predictive AIOps Workshop Architecture consists of several AWS EC2 servers conforming to a typical N-Tier web application, complete with a Load Generator and Chaos Simulator. The core application is the Spring Pet Clinic which is based on Java Spring Boot and requires the use of a Database for persistence.
+The heracles-docs repo provides prescriptive guidance for deploying the Predictive AIOps Workshop environment (both the monitored app, and the ServiceNow instance). The overall Predictive AIOps Workshop Architecture consists of several AWS EC2 servers conforming to a typical N-Tier web application, complete with a Load Generator and Chaos Simulator. The core application is the Spring Pet Clinic which is based on Java Spring Boot and requires the use of a Database for persistence.
 
 On the ServiceNow side, we provide the full **ITOM Health** exprience with ACC, HLA, MI & EM (plus ITOM Visiblity! with Discovery & Service Mapping complementing the entire setup). Each of the CI's in the environment is fully monitored by the _Agent Client Collector (ACC, AKA: ITOM Agent, Unified AIOps Agent)_, which runs basic discovery and collects all the observability data from the app, using:
 * The ACC-M plugin for Monitoring - leveraging checks execution directly against the CI to create **Events**, and **Metrics** collection in real-time, to be analyzed by Metric Intelligence (MI);
