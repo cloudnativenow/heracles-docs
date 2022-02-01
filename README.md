@@ -1,5 +1,8 @@
 Documentation project for the Predictive AIOps Workshop. In addition it describes how to install [Pandoc](https://pandoc.org/MANUAL.html) and generate PDF or WORD docs from the Markdown files.
 
+# Introduction
+* [Predictive AIOps Workshop Introduction](workshop-introduction.md)
+
 # Project Documentation
 
 * [Predictive AIOps Workshop Installation Guide](docs/workshop-installation-guide.md)
