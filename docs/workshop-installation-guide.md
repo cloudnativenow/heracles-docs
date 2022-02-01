@@ -63,7 +63,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
 
    | Name          | Status |
-   | --------------- | -------- |
+   | ------------- | ------ |
    | MetricBase    | green  |
    | Occultus      | green  |
    | ElasticSearch | green  |
