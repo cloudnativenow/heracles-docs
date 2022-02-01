@@ -1,9 +1,10 @@
-
-Title | Subtitle | Author | Date
---- | --- | --- | --- 
-Predictive AIOps Workshop 1.0 Installation Guide | Predictive AIOps Workshop - I am the I in AI | Anthony Angelo, Netser Heruty, Danny Smith | 10 Nov 2021
-Predictive AIOps Workshop 2.0 Installation Guide | Predictive AIOps Workshop - The Rise of the Unified Agent | Anthony Angelo, Netser Heruty | 01 Feb 2022
-Predictive AIOps Workshop 3.0 #Future Plan# | Predictive AIOps Workshop - Feat. Grafana #No_Time_to_Glide | Anthony Angelo, Netser Heruty, Karlis Peterson | July 2022?
+---
+title: Predictive AIOps Workshop Installation Guide
+subtitle: Predictive AIOps Workshop
+author: 
+- Anthony Angelo, Netser Heruty, Daniel Smith, Joe Steinfeld, Mike Gallagher
+date: 31 Jan 2022
+---
 
 # Introduction
 
