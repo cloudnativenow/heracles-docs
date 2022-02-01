@@ -9,8 +9,6 @@ date: 26 Jan 2022
 
 This document provides prescriptive guidance for deploying the Predictive AIOps Workshop infrastructure. The overall Predictive AIOps Workshop Architecture consists of several AWS EC2 servers conforming to a typical N-Tier web application, complete with a Load Generator and Chaos Simulator. The core application is the Spring Pet Clinic which is based on Java Spring Boot and requires the use of a Database for persistence.
 
----
-
 ![Workshop Architecture](workshop-architecture.png)
 
 # Prerequisites
