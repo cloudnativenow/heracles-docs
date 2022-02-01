@@ -90,7 +90,6 @@ This document assumes a basic level of competency and familiarity with the tools
 1. HOP to your NOW Instance as Administrator
 1. Navigate to the **System Definition > Plugins** and install or activate the following mandatory plugins:
 
-
    | Plugin Name |  Plugin ID   |
    | ----------- | ------------ |
    | Agent Client Collector Log Analytics | sn_accl |
@@ -100,13 +99,6 @@ This document assumes a basic level of competency and familiarity with the tools
    | Certificate Inventory and Management | sn_disco_certmgmt |
    | Performance Analytics - Premium | com.snc.pa.premium |
    | ServiceNow IntegrationHub Professional Pack Installer | com.glide.hub.integrations.professional | 
-   
-1. Plus, Search for the **ITOM Health** suite, and Install/Update All. (but **DON'T** load demo data)
-
-   This will ensure that you're both running the latest and greatest versions (*limited to **Rome** instances*); AND are able to show additional ITOM capabilties during workshops upon demand (i.e., Tag Based Alert Clustering, EM Connectors), even though we don't currently use these in the workshop.
-   
-   ![image](https://user-images.githubusercontent.com/15874038/151692391-6be9dfd7-2490-4264-ad51-105ee5308288.png)
-
 
 ## Execute the [PA HLA] Historic Data Collection Job to catch up the HLA Overview Dashboard
 
