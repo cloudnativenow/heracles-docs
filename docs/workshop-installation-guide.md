@@ -33,16 +33,16 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Upgrade your NOW Instance to latest Rome version
 
 1. Navigate to [NOW HI](https://support.servicenow.com/now)
-2. Select your Instance from the Instances Dashboard
+2. Select our Instance from the Instances Dashboard
 3. Upgrade your instance to latest Rome version & patch level as follows:
 
    ![Upgrade to Rome](upgrade-to-rome.png)
 
-   > NOTE: **Minimal** Family Release for this workshop is Rome patch 4 (RP4)
-   >
+   > NOTE: Recommended Family Release for this workshop is Rome patch 6 (RP6) ot later.
+  
 
-   > **Recommended**: Rome patch 6 (RP6) or above
-   >
+
+
 
 ## Install the HLA stack for your NOW Instance
 
