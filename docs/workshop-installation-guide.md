@@ -96,7 +96,9 @@ This document assumes a basic level of competency and familiarity with the tools
    | CMDB CI Class Models                                  | sn_cmdb_ci_class                        |
    | Certificate Inventory and Management                  | sn_disco_certmgmt                       |
    | Performance Analytics - Premium                       | com.snc.pa.premium                      |
-   | ServiceNow IntegrationHub Professional Pack Installer | com.glide.hub.integrations.professional |
+   | ServiceNow IntegrationHub Professional Pack Installer [^1]  | com.glide.hub.integrations.professional |
+
+   [^1]: Requires installation using `maint` role after hopping in with full access
 
 ## Execute the [PA HLA] Historic Data Collection Job to catch up the HLA Overview Dashboard
 
