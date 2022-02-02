@@ -24,7 +24,7 @@ The overall Predictive AIOps Workshop Architecture (see diagram below) consists 
 
 # Workshop ServiceNow Architecture
 
-On the ServiceNow side, we provide the full **ITOM Health** experience leveraging the Agent Client Collector (ACC), Health Log Analytics (HLA), Metric Intelligence (MI), Event Managment (EM) as well as ITOM Visiblity with Discovery and Service Mapping (see diagram below). Each of the Configuration Items (CI's) in the environment is fully monitored by ACC which runs basic discovery and collects all the observability data from the apps.
+On the ServiceNow side, we provide the full ITOM Health experience leveraging the latest Agent Client Collector (ACC), Health Log Analytics (HLA), Metric Intelligence (MI), Event Managment (EM) as well as ITOM Visiblity with Discovery and Service Mapping (see diagram below). Each of the Configuration Items (CI's) in the environment is fully monitored by ACC which runs basic discovery and collects all the observability data from the apps.
 
 ![image](workshop-sn-arch.png)
 
