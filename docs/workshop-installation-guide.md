@@ -579,3 +579,6 @@ These instructions apply to a WSL Ubuntu workstation. Please refer to the AWS CL
 1. Configure your AWS CLI Profile. Please refer to the Please refer to the AWS CLI Named Profiles Guide https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html for more information.
 
    > NOTE: Remember to configure your profile default region and profile credentials per the AWS documentation.
+
+1. Validate AWS CLI Access
+aws ec2 describe-regions --profile YOUR PROFILE
