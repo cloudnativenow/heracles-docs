@@ -401,7 +401,7 @@ This document assumes a basic level of competency and familiarity with the tools
    | ------------------------------ | -------------------- |
    | Generate Application Errors    | Application Chaos    |
    | Generate Infrastructure Errors | Infrastructure Chaos |
-   | Stress Servers                 | nfrastructure Chaos  |
+   | Stress Servers                 | Infrastructure Chaos  |
 3. For each item in this select the `List Collector` variable
 
    ![list-collector](list-collector.png)
