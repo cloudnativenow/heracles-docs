@@ -368,8 +368,6 @@ This document assumes a basic level of competency and familiarity with the tools
 4. Press `Commit Update Set`
 
    > NOTE: Select `Accept remote update` for any Errors listed and commit update set
-   >
-
 ## Install the Chaos Catalog Service Portal Update Set
 
 1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
@@ -378,8 +376,6 @@ This document assumes a basic level of competency and familiarity with the tools
 4. Press `Commit Update Set`
 
    > NOTE: Select `Accept remote update` for any Errors listed and commit update set
-   >
-
 ## Create Support Group
 
 1. Navigate to **User Administration > Groups**
@@ -572,12 +568,12 @@ These instructions apply to a WSL Ubuntu workstation and Python PIP which provid
 These instructions apply to a WSL Ubuntu workstation. Please refer to the AWS CLI Installation Guide https://docs.aws.amazon.com/cli/latest/userguide/install-linux.html for more information.
 
 1. Start a Bash Shell
-2. Install Venv
+1. Install Venv
 
    ```
    $ sudo apt-get install -y python3-venv
    ```
-3. Install the AWS CLI
+1. Install the AWS CLI
 
    ```
    $ curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
@@ -585,3 +581,9 @@ These instructions apply to a WSL Ubuntu workstation. Please refer to the AWS CL
    $ sudo /usr/bin/python3 awscli-bundle/install -i \
    /usr/local/aws -b /usr/local/bin/aws
    ```
+
+1. Configure your AWS CLI Profile. Please refer to the Please refer to the AWS CLI Named Profiles Guide https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html for more information.
+
+   > NOTE: Remember to configure your profile default region and profile credentials per the AWS documentation.
+
+
