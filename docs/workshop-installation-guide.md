@@ -38,7 +38,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
    ![Upgrade to Rome](upgrade-to-rome.png)
 
-   > NOTE: Recommended Family Release for this workshop is Rome patch 6 (RP6) ot later.
+   > NOTE: Recommended Family Release for this workshop is Rome Patch 6 (RP6) or later.
 
 ## Install the HLA stack for your NOW Instance
 
