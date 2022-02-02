@@ -14,14 +14,12 @@ _Predictive AIOps Workshop 3.0 #Future Plan#_ | _Predictive AIOps Workshop - Fea
 
 # Introduction
 
-The heracles-docs repo provides prescriptive guidance for deploying the Predictive AIOps Workshop environment (both the monitored app, and the ServiceNow instance). The overall Predictive AIOps Workshop Architecture consists of several AWS EC2 servers conforming to a typical N-Tier web application, complete with a Load Generator and Chaos Simulator. The core application is the Spring Pet Clinic which is based on Java Spring Boot and requires the use of a Database for persistence.
+The heracles-docs repo provides prescriptive guidance for deploying the Predictive AIOps Workshop environment (both the monitored app, and the ServiceNow instance). The overall Predictive AIOps Workshop Architecture (see diagram below) consists of several AWS EC2 servers conforming to a typical N-Tier web application, complete with a Load Generator and Chaos Simulator. The core application is the Spring Pet Clinic which is based on Java Spring Boot and requires the use of a Database for persistence.
 
-On the ServiceNow side, we provide the full **ITOM Health** exprience with ACC, HLA, MI & EM (plus ITOM Visiblity! with Discovery & Service Mapping complementing the entire setup). Each of the CI's in the environment is fully monitored by the _Agent Client Collector (ACC, AKA: ITOM Agent, Unified AIOps Agent)_, which runs basic discovery and collects all the observability data from the app, using:
-* The ACC-M plugin for Monitoring - leveraging checks execution directly against the CI to create **Events**, and **Metrics** collection in real-time, to be analyzed by Metric Intelligence (MI);
-* The ACC-L plugin for Log Analytics - collecting all the **Logs** from the application's components and infrastructure, to be analyzed and searched for anomalies in real-time by the _Health Log Analytics (HLA)_ AI Engine.
+![image](workshop-app-arch.png)
 
-Finally, it all comes together with _Event Management (EM)_ correlating the alerts, while also leveraging CMDB relationships.
+On the ServiceNow side, we provide the full **ITOM Health** experience leveraging the Agent Client Collector (ACC), Health Log Analytics (HLA), Metric Intelligence (MI), Event Managment (EM) as well as ITOM Visiblity with Discovery and Service Mapping (see diagram below). Each of the Configuration Items (CI's) in the environment is fully monitored by ACC which runs basic discovery and collects all the observability data from the apps.
 
-![Workshop Architecture](workshop-app-arch.png)
+![image](workshop-sn-arch.png)
 
-![Workshop Architecture](workshop-sn-arch.png)
+The latest version of ACC unifies the legacy functions of our Monitoring Agent (ACC-M) together with log collection, providing a unified AIOps capability. ACC is built on the [Sensu.io](https://sensu.io) framework and comes installed with monitoring capabilities for servers, databases, application servers, and middleware. Sensu based checks and policies run in the ACC agent to retrieve the relevant data, which is transformed into events or metrics which are analyzed in real-time by the Metric Intelligence capability. In addition, this latest ACC version removes the need for a separate 3rd party agent to collect log files (e.g., Filebeat) simplifying the deployment. Log files from your application components and infrastructure are streamed into ServiceNow and analyzed in real-time by HLA looking for anomalies and alerting users when they are detected. Alerts are scanned by Event Management and correlated using temporal or lexical heuristics, or by leveraging relationships defined in the Configuration Management Database (CMDB).
