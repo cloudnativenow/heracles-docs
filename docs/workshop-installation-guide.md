@@ -20,8 +20,6 @@ This document assumes a basic level of competency and familiarity with the tools
 * Python v3.7.10
 * Ansible v4.5.0
 
- > NOTE: See Appendix Section for specific guidance on these prerequisites
-
 # Deploy your NOW Instance
 
 ## Request a new NOW Instance
