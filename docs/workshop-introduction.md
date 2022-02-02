@@ -4,17 +4,10 @@ subtitle: Predictive AIOps Workshop
 author: Anthony Angelo, Netser Heruty
 date: 1 Feb 2022
 ---
-# Introduction
-
-Title | Subtitle | Author | Date
---- | --- | --- | --- 
-Predictive AIOps Workshop 1.0 Installation Guide | Predictive AIOps Workshop - I am the I in AI | Anthony Angelo, Netser Heruty, Danny Smith | 10 Nov 2021
-**Predictive AIOps Workshop 2.0 Installation Guide** | **Predictive AIOps Workshop - The Rise of the Unified Agent** | **Anthony Angelo, Netser Heruty** | **01 Feb 2022**
-_Predictive AIOps Workshop 3.0 #Future Plan#_ | _Predictive AIOps Workshop - Feat. Grafana #No_Time_to_Glide_ | _Anthony Angelo, Netser Heruty, Karlis Peterson_ | _July 2022?_
 
 # Introduction
 
-This document describes at a high level the overall architecture and intent of the Predictive AIOps Workshop. 
+This document describes at a high level the overall architecture and design decisions of the Predictive AIOps Workshop, as well as a brief road map for future releases.
 
 # Workshop Application Architecture
 
@@ -37,3 +30,18 @@ ACC is built on the [Sensu.io](https://sensu.io) framework and comes installed w
 This latest ACC release removes the need for a separate 3rd party agent to collect log files (e.g., Filebeat) reducing complexity. Log files from your application components and infrastructure are streamed into ServiceNow and analyzed in real-time by Health Log Analytics which is constantly looking for anomalies and alerting users when they are detected. 
 
 Alerts are continuously scanned by Event Management and correlated using temporal or lexical heuristics, or processed by leveraging relationships defined in the Configuration Management Database (CMDB).
+
+# Workshop Roadmap
+
+## Release History
+
+| Release | Release Notes |
+| ------- | ------------- |
+| 1.0.0   | Pilot release | 
+| 1.0.1   | Feedback from Canadian Rail, Edward Jones, Sabre, Opportun & EMEA |
+| 1.0.2   | Feedback from Sentinel Workshops |
+| 2.0.0   | Upgrade to latest ACC |
+
+## Backlog
+
+1. Incorporate Grafana
