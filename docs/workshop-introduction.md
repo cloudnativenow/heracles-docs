@@ -35,7 +35,7 @@ Alerts are continuously scanned by Event Management and correlated using tempora
 
 | Release | Release Notes |
 | ------- | ------------- |
-| 1.0.0   | Pilot release | 
+| 1.0.0   | Pilot release using ACC-M and Filebeat | 
 | 1.0.1   | Feedback from Canadian Rail, Edward Jones, Sabre, Opportun & EMEA |
 | 1.0.2   | Feedback from Sentinel Workshops |
 | 2.0.0   | Upgrade to latest ACC |
