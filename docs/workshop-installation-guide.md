@@ -88,15 +88,15 @@ This document assumes a basic level of competency and familiarity with the tools
 2. Navigate to the **System Definition > Plugins** and install or activate the following mandatory plugins:
 
 
-   | Plugin Name                                           | Plugin ID                               |
-   | ----------------------------------------------------- | --------------------------------------- |
-   | Agent Client Collector Log Analytics                  | sn_accl                                 |
-   | Service Mapping                                       | com.snc.service-mapping                 |
-   | Discovery and Service Mapping Patterns                | sn_itom_pattern                         |
-   | CMDB CI Class Models                                  | sn_cmdb_ci_class                        |
-   | Certificate Inventory and Management                  | sn_disco_certmgmt                       |
-   | Performance Analytics - Premium                       | com.snc.pa.premium                      |
-   | ServiceNow IntegrationHub Professional Pack Installer [^1]  | com.glide.hub.integrations.professional |
+   | Plugin Name                                                  | Plugin ID                               |
+   | ------------------------------------------------------------ | --------------------------------------- |
+   | Agent Client Collector Log Analytics                         | sn_accl                                 |
+   | Service Mapping                                              | com.snc.service-mapping                 |
+   | Discovery and Service Mapping Patterns                       | sn_itom_pattern                         |
+   | CMDB CI Class Models                                         | sn_cmdb_ci_class                        |
+   | Certificate Inventory and Management                         | sn_disco_certmgmt                       |
+   | Performance Analytics - Premium                              | com.snc.pa.premium                      |
+   | ServiceNow IntegrationHub Professional Pack Installer [^1]   | com.glide.hub.integrations.professional |
 
    [^1]: Requires installation using `maint` role after hopping in with full access
 
