@@ -7,7 +7,7 @@ date: 1 Feb 2022
 
 # Introduction
 
-This document describes at a high level the overall architecture and design decisions of the Predictive AIOps Workshop, as well as a brief road map for future releases.
+This document describes at a high-level the Predictive AIOps Workshop Architecture, Design decisions as well as a brief Release History.
 
 # Workshop Application Architecture
 
@@ -31,9 +31,7 @@ This latest ACC release removes the need for a separate 3rd party agent to colle
 
 Alerts are continuously scanned by Event Management and correlated using temporal or lexical heuristics, or processed by leveraging relationships defined in the Configuration Management Database (CMDB).
 
-# Workshop Roadmap
-
-## Release History
+# Release History
 
 | Release | Release Notes |
 | ------- | ------------- |
@@ -41,7 +39,3 @@ Alerts are continuously scanned by Event Management and correlated using tempora
 | 1.0.1   | Feedback from Canadian Rail, Edward Jones, Sabre, Opportun & EMEA |
 | 1.0.2   | Feedback from Sentinel Workshops |
 | 2.0.0   | Upgrade to latest ACC |
-
-## Backlog
-
-1. Incorporate Grafana
