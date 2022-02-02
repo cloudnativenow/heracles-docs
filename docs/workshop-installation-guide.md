@@ -47,7 +47,6 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Follow [KB0998946](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0998946) for the latest installation steps
 
    > NOTE: Please read and follow all the steps carefully as instructed in the HLA Installation Guide KB, as it is updated frequently by the HLA Dev team
-   >
 
 ## Check HLA Services Status for your NOW Instance
 
@@ -55,7 +54,7 @@ This document assumes a basic level of competency and familiarity with the tools
 2. Set your `Profile Time Zone` accordingly (e.g. `US\Eastern`)
 
    > NOTE: Log out and back in to make sure your `Profile Time Zone` is set correctly. Failure to do so will adversly affect the workshop and using basic HLA functions like searching and finding log entries.
-   >
+
 3. In your browser add the following to your instance URL: `xmlstats.do?include=services_status`
 4. Check **Services Status** are as follows:
 
@@ -84,7 +83,6 @@ This document assumes a basic level of competency and familiarity with the tools
 
 
    > NOTE: Confirm your Occultus version matches your HLA version using this matrix: [KB1002197](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB1002197). If it doesn't, comment on your HLA installation CHG request asking to fix this.
-   >
 
 ## Install the required ITOM plugins for the Workshop
 
@@ -133,7 +131,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
 
    > NOTE: Request an Occultus restart for properties that require it
-   >
+
 3. Navigate to **Health Log Analytics > Health Log Analytics Administration > Features** and set the following features:
 
 
@@ -155,7 +153,7 @@ This document assumes a basic level of competency and familiarity with the tools
    ```
 
    > NOTE: If you don't have an SSH Key setup, use the HTTPS URI instead to clone (e.g. https://github.com/pangealab/heracles.git)
-   >
+
 2. Configure AWS Profile
 
    ```
@@ -281,7 +279,6 @@ This document assumes a basic level of competency and familiarity with the tools
    ![Extension Contexts](extension-contexts.png)
 
    > NOTE: Make sre form is in **Advanced View** for Tabs to be visible
-   >
 
 ## Configure Agent Client Collector Policies
 
@@ -431,7 +428,6 @@ This document assumes a basic level of competency and familiarity with the tools
 3. For each Source Type Structure, set the **Custom JS** Function using the scripts located in the cloned Git Project /servicenow folder (e.g., `source-type-structures-mariadb-error.js`)
 
    > NOTE: Source Type Structures cannot be updated if stil in `Learning` mode. Make sure you have at least 100 log entries before proceeding. In addition, Custom JS functions must be published to start working by clicking `Publish` after saving the form.
-   >
 
 ## Configure your Source Type Structures Key/Value Mappings
 
@@ -585,5 +581,3 @@ These instructions apply to a WSL Ubuntu workstation. Please refer to the AWS CL
 1. Configure your AWS CLI Profile. Please refer to the Please refer to the AWS CLI Named Profiles Guide https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html for more information.
 
    > NOTE: Remember to configure your profile default region and profile credentials per the AWS documentation.
-
-
