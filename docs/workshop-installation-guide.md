@@ -147,28 +147,37 @@ This document assumes a basic level of competency and familiarity with the tools
 
    ```
    $ git clone git@github.com:pangealab/heracles.git
-   $ cd heracles/
    ```
 
    > NOTE: If you don't have an SSH Key setup, use the HTTPS URI instead to clone (e.g. https://github.com/pangealab/heracles.git)
 
-2. Configure AWS Profile
+1. Change to heracles folder
+
+   ```
+   $ cd heracles/
+   ```
+
+   > NOTE: Remain in this folder for the remainder of this installation. All files referenced therein are located in this folder.
+
+1. Configure AWS Profile
 
    ```
    $ export AWS_PROFILE=YOUR PROFILE; printenv AWS_PROFILE
    ```
-3. Standardize on using one AWS Region. The automation scripts provided assume you are deploying in one region (e.g. `us-east-2`). To change to another region, edit the `backend.tf`,`providers.tf` and `variables.tf` files and replace with your specific region.
-4. Create Terraform State Bucket using your CLUSTER ID (e.g., hlawork1)
+
+1. Standardize on using one AWS Region. The automation scripts provided assume you are deploying in one region (e.g. `us-east-2`). To change to another region, edit the `backend.tf`,`providers.tf` and `variables.tf` files and replace with your specific region.
+
+1. Create Terraform State Bucket using your CLUSTER ID (e.g., hlawork1)
 
    ```
    $ aws s3 mb s3://YOUR CLUSTER ID-terraform-backend --profile YOUR PROFILE
    ```
-5. Create SSH Key (e.g., heracles)
+1. Create SSH Key (e.g., heracles)
 
    ```
    $ ssh-keygen -t rsa -b 4096 -C "heracles@noreply.com" -f $HOME/.ssh/heracles -m PEM
    ```
-6. Set your backend bucket property in the *backend.tf* file as follows:
+1. Set your backend bucket property in the `backend.tf` file as follows:
 
    ```
    # Save Terraform State to S3 Bucket
@@ -180,18 +189,19 @@ This document assumes a basic level of competency and familiarity with the tools
    }
    }
    ```
-7. Initialize Terraform
+1. Initialize Terraform
 
    ```
    $ terraform init
    ```
-8. Create Infrastructure
+1. Create Infrastructure
 
    ```
    $ terraform apply -auto-approve -var instance_count=3 -var cluster_name=YOUR CLUSTER ID
    ```
-9. Safeguard the Terraform output of server public and private IPs
-10. Safeguard the generated Ansible Inventory file (e.g., inventory-hlawork1.cfg)
+1. Safeguard the Terraform output of server public and private IPs
+
+1. Safeguard the generated Ansible Inventory file (e.g., inventory-hlawork1.cfg)
 
 ## Install the Pet Clinic Software stack using Ansible
 
