@@ -637,3 +637,38 @@ These instructions apply to a WSL Ubuntu workstation. Please refer to the AWS CL
    $ sudo /usr/bin/python3 awscli-bundle/install -i \
    /usr/local/aws -b /usr/local/bin/aws
    ```
+
+# Appendix E - MacOS Prerequisites installation.
+
+Instructions for installing the lab buildout pre-requisites on a Mac.  
+
+1. Open a terminal
+1. Install [Homebrew](https://brew.sh/)
+
+   ```
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+
+1. Install AWS CLI
+
+   ```
+   brew install awscli
+   ```
+1. Install Terraform
+
+   ```
+   brew install terraform@0.12
+   ```
+
+1. Install Python
+
+   ```
+   brew install python
+   ```
+
+1. Install Ansible
+
+   ```
+   brew install ansible
+   ```
+
