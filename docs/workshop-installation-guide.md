@@ -64,7 +64,7 @@ This document assumes a basic level of competency and familiarity with the tools
    | Occultus      | green  |
    | ElasticSearch | green  |
 
-## Check HLA Package Versions your NOW Instance
+## Check HLA Package Versions for your NOW Instance
 
 1. Login to your NOW Instance as an Administrator
 2. In the Filter Navigator enter `sn_occ_stats.do`
