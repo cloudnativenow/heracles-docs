@@ -266,8 +266,9 @@ This document assumes a basic level of competency and familiarity with the tools
 
    ![Validate MID Server](validate-mid.png)
 
-## Setup ACC-L
+## Setup ACC Monitoring:
 
+In the MID Server record:
 1. Click on the **Setup ACC Monitoring** link
 2. Set the MID Web Server Port to `8085`
 3. Safeguard your Endpoint address (e.g., `wss://15.0.1.210:8085/ws/events`)
@@ -278,7 +279,7 @@ This document assumes a basic level of competency and familiarity with the tools
 2. Copy and safeguard your `MID Web Server API Key` - to later be used as the "ACC_API_KEY"
 
 ## Setup ACC Log Analytics:
-
+In the MID Server record:
 1. Click on the **Setup ACC Log Analytics** link
 2. Set the ACC Data Input Port to `5044`
 
