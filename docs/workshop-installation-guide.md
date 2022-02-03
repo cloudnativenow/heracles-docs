@@ -323,15 +323,22 @@ In the MID Server record:
 ## Create your Application Service Database Relatonships
 
 1. Navigate to **Service Mapping > Services > Application Services**
-1. Select the `Pet Clinic` Application
-1. Press the **View Map** Button - you should see the following:
-   ![service map without db](petclinic-service-map-without-db.png)
-1. Select **Suggestions > Connection Suggestions** at the top right
-1. Select all the suggestsions' boxes, and press the **Add** button, as follows:
-   ![connection suggestions to db](petclinic-connection-suggestions-db.png)
-1. Your map should now look like this:
-   ![service map with db](petclinic-service-map-with-db.png)
 
+1. Select the `Pet Clinic` Application
+
+1. Press the **View Map** Button to display the Service Map as follows:
+
+   ![Service Map without the Database](petclinic-service-map-without-db.png)
+
+1. On the top right, press the  **Suggestions > Connection Suggestion** Button
+
+1. Select All suggestions in the list and press the **Add** button as follows:
+
+   ![Connection Suggestions for Database](petclinic-connection-suggestions-db.png)
+
+1. Your Service Map should now look as follows:
+
+   ![Service Map with the Database](petclinic-service-map-with-db.png)
 # Configure ACC Log Policies
 
 1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
