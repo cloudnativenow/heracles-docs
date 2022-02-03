@@ -647,16 +647,6 @@ Instructions for installing the lab buildout pre-requisites on a Mac.
    ```
    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
    ```
-## Install AWS CLI
-
-Please refer to the AWS CLI Installation Guide https://docs.aws.amazon.com/cli/latest/userguide/install-linux.html for more information.
-
-1. Open a Terminal
-1. Install AWS CLI
-
-   ```
-   brew install awscli
-   ```
 
 ## Install Terraform
 
@@ -667,6 +657,7 @@ Please refer to the Terraform Downloads page https://www.terraform.io/downloads.
    ```
    brew install terraform@0.12
    ```
+
 ## Install Python
 
 1. Open a Terminal
@@ -674,6 +665,7 @@ Please refer to the Terraform Downloads page https://www.terraform.io/downloads.
    ```
    brew install python
    ```
+
 ## Install Ansible
 
 Please refer to the Ansible Installation Guide https://docs.ansible.com/ansible/latest/installation_guide for more information.
@@ -682,4 +674,15 @@ Please refer to the Ansible Installation Guide https://docs.ansible.com/ansible/
 1. Install Ansible
    ```
    brew install ansible
+   ```
+   
+## Install AWS CLI
+
+Please refer to the AWS CLI Installation Guide https://docs.aws.amazon.com/cli/latest/userguide/install-linux.html for more information.
+
+1. Open a Terminal
+1. Install AWS CLI
+
+   ```
+   brew install awscli
    ```
