@@ -323,15 +323,12 @@ In the MID Server record:
 ## Create your Application Service Database Relatonships
 
 1. Navigate to **Service Mapping > Services > Application Services**
-
 1. Select the `Pet Clinic` Application
-
 1. Press the **View Map** Button to display the Service Map as follows:
 
    ![Service Map without the Database](petclinic-service-map-without-db.png)
 
 1. On the top right, press the  **Suggestions > Connection Suggestion** Button
-
 1. Select All suggestions in the list and press the **Add** button as follows:
 
    ![Connection Suggestions for Database](petclinic-connection-suggestions-db.png)
