@@ -307,8 +307,8 @@ In the MID Server record:
 ## Create your Application Service
 
 1. Navigate to **Service Mapping > Services > Application Services**
-2. Create a **New** Application Service `Pet Clinic`
-3. Add a **Web Application** Entry Point as follows:
+1. Create a **New** Application Service `Pet Clinic`
+1. Add a **Web Application** Entry Point as follows:
 
    | Field                           | Value                                       |
    | ------------------------------- | ------------------------------------------- |
@@ -316,30 +316,30 @@ In the MID Server record:
    | URL                             | http:// NGINX AWS PRIVATE IP DNS NAME :8080 |
    | Host Name                       | NGINX AWS PRIVATE IP DNS NAME               |
 
-4. Under **Additional Info**, set the **Operational Status** to `Operational` and Update
-5. Press the **View Map** Button
-6. If Discovery isn't already running, press the **Run Discovery** button
+1. Under **Additional Info**, set the **Operational Status** to `Operational` and Update
+1. Press the **View Map** Button
+1. If Discovery isn't already running, press the **Run Discovery** button
 
 ## Create your Application Service Database Relatonships
 
 1. Navigate to **Service Mapping > Services > Application Services**
-2. Select the `Pet Clinic` Application
-3. Press the **View Map** Button - you should see the following:
+1. Select the `Pet Clinic` Application
+1. Press the **View Map** Button - you should see the following:
    ![service map without db](petclinic-service-map-without-db.png)
-4. Select **Suggestions > Connection Suggestions** at the top right
-5. Select all the suggestsions' boxes, and press the **Add** button, as follows:
+1. Select **Suggestions > Connection Suggestions** at the top right
+1. Select all the suggestsions' boxes, and press the **Add** button, as follows:
    ![connection suggestions to db](petclinic-connection-suggestions-db.png)
-6. Your map should now look like this:
+1. Your map should now look like this:
    ![service map with db](petclinic-service-map-with-db.png)
 
 # Configure ACC Log Policies
 
 1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
-2. Select the `acc-log-policies-update-set.xml` Update Set from the `heracles/servicenow/` local folder
-3. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
-4. Select the `Custom ACC-L Policies` and press `Preview Update Set`
-5. Press `Commit Update Set`
-6. Navigate to **ACC Log Analytics > ACC Log Policies** and and check for the new extensions:
+1. Select the `acc-log-policies-update-set.xml` Update Set from the `heracles/servicenow/` local folder
+1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
+1. Select the `Custom ACC-L Policies` and press `Preview Update Set`
+1. Press `Commit Update Set`
+1. Navigate to **ACC Log Analytics > ACC Log Policies** and and check for the new extensions:
 
 
    | Name                 | Hierarchy | Active | Pubish Status |
@@ -362,16 +362,16 @@ In the MID Server record:
 ## Configure your Source Type Structures
 
 1. Login to your NOW Instance as Administrator
-2. Navigate to **Health Log Analytics > Mapping > Source Type Structures**
-3. For each Source Type Structure, set the **Custom JS** Function using the scripts located in the cloned Git Project /servicenow folder (e.g., `source-type-structures-mariadb-error.js`)
+1. Navigate to **Health Log Analytics > Mapping > Source Type Structures**
+1. For each Source Type Structure, set the **Custom JS** Function using the scripts located in the cloned Git Project /servicenow folder (e.g., `source-type-structures-mariadb-error.js`)
 
    > NOTE: Source Type Structures cannot be updated if stil in `Learning` mode. Make sure you have at least 100 log entries before proceeding. In addition, Custom JS functions must be published to start working by clicking `Publish` after saving the form.
 
 ## Configure your Source Type Structures Key/Value Mappings
 
 1. Login to your NOW Instance as Administrator
-2. Navigate to **Health Log Analytics > Mapping > Source Type Structures**
-3. For each Source Type Structure, set the Key/Value Mappings as follows
+1. Navigate to **Health Log Analytics > Mapping > Source Type Structures**
+1. For each Source Type Structure, set the Key/Value Mappings as follows
 
 Syslog Logs
 
@@ -410,31 +410,31 @@ MariaDB Error Logs
 ## Install the Chaos Catalog Global Update Set
 
 1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
-2. Select the `chaos-catalog-global-update-set.xml` Update Set from the `heracles/servicenow/` local folder
-3. Select the `HLA WorkShop Global Updates` Loaded Update Set and press `Preview Update Set`
-4. Press `Commit Update Set`
+1. Select the `chaos-catalog-global-update-set.xml` Update Set from the `heracles/servicenow/` local folder
+1. Select the `HLA WorkShop Global Updates` Loaded Update Set and press `Preview Update Set`
+1. Press `Commit Update Set`
 
    > NOTE: Select `Accept remote update` for any Errors listed and commit update set
 ## Install the Chaos Catalog Service Portal Update Set
 
 1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
-2. Select the `chaos-catalog-portal-update-set.xml` Update Set from the `heracles/servicenow/` local folder
-3. Select the `Predictive AIOps Workshop Service Portal` Loaded Update Set and press `Preview Update Set`
-4. Press `Commit Update Set`
+1. Select the `chaos-catalog-portal-update-set.xml` Update Set from the `heracles/servicenow/` local folder
+1. Select the `Predictive AIOps Workshop Service Portal` Loaded Update Set and press `Preview Update Set`
+1. Press `Commit Update Set`
 
    > NOTE: Select `Accept remote update` for any Errors listed and commit update set
 ## Create Support Group
 
 1. Navigate to **User Administration > Groups**
-2. Create a Group called `Application Support`
+1. Create a Group called `Application Support`
 
 ## Map Linux Servers to Support Group
 
 1. Navigate to **Configuration > Servers > Linux**
-2. Add the `Support group` field to the list
-3. Map each of your Spring Application Servers `Support group` to `Application Support`
-4. Filter list to `Show Matching` only items mapped to the `Applicaton Support` group
-5. Select `Copy query` using *right-click* on the `All>Support group=Application Support` fiter breadcrumb
+1. Add the `Support group` field to the list
+1. Map each of your Spring Application Servers `Support group` to `Application Support`
+1. Filter list to `Show Matching` only items mapped to the `Applicaton Support` group
+1. Select `Copy query` using *right-click* on the `All>Support group=Application Support` fiter breadcrumb
 
 ## Configure the Generate Infrastructure Errors Catalog Item List Collector
 
@@ -472,17 +472,17 @@ MariaDB Error Logs
 # Grant User Access to your NOW Instance
 
 1. Login to your NOW Instance as Administrator
-2. Navigate to **User Admininstration > Users**
-3. Create a user named `hlauser1` and grant the `hla_workshop_user` Role
-4. Create a user named `hlaadmin1` and grant the `hla_admin_read_only` Role
+1. Navigate to **User Admininstration > Users**
+1. Create a user named `hlauser1` and grant the `hla_workshop_user` Role
+1. Create a user named `hlaadmin1` and grant the `hla_admin_read_only` Role
 
 # Secure your Workshop AWS Environment
 
 ## Identify your Crowdstrike CID
 
 1. Navigate to [NOW SURF](https://surf.service-now.com/)
-2. Search for `KB0051390` Knowledge Article
-3. Note the Crowdstrike CID for the `Cloud (Commercial)` Environment
+1. Search for `KB0051390` Knowledge Article
+1. Note the Crowdstrike CID for the `Cloud (Commercial)` Environment
 
 ## Install the Crowdstrike Falcon Agent using Ansible
 
@@ -491,7 +491,7 @@ MariaDB Error Logs
    ```
    wget "https://surf.service-now.com/sys_attachment.do?sys_id=6e589ffcdb800d10ae878fd3399619f8" -qO falcon-sensor.rpm
    ```
-2. Run the Install Falcon Playbook
+1. Run the Install Falcon Playbook
 
    ```
    $ ansible-playbook -i YOUR INVENTORY FILE.cfg ansible/install-falcon.yml \
