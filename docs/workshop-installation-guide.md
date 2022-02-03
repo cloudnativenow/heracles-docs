@@ -310,15 +310,15 @@ In the MID Server record:
 2. Create a **New** Application Service `Pet Clinic`
 3. Add a **Web Application** Entry Point as follows:
 
-
    | Field                           | Value                                       |
    | ------------------------------- | ------------------------------------------- |
    | Discoverable by Service Mapping | true                                        |
    | URL                             | http:// NGINX AWS PRIVATE IP DNS NAME :8080 |
    | Host Name                       | NGINX AWS PRIVATE IP DNS NAME               |
-4. Press the **View Map** Button
-5. Set the **Operational Status** to `Operational`
-6. Press the **Run Discovery** Button
+
+4. Under **Additional Info**, set the **Operational Status** to `Operational` and Update
+5. Press the **View Map** Button
+6. If Discovery isn't already running, press the **Run Discovery** button
 
 ## Create your Application Service Database Relatonships
 
