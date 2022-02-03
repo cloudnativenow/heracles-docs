@@ -33,7 +33,7 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Upgrade your NOW Instance to latest Rome version
 
 1. Navigate to [NOW HI](https://support.servicenow.com/now)
-2. Select our Instance from the Instances Dashboard
+2. Select your Instance from the Instances Dashboard
 3. Upgrade your instance to latest Rome version & patch level as follows:
 
    ![Upgrade to Rome](upgrade-to-rome.png)
@@ -45,7 +45,6 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Follow [KB0998946](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0998946) for the latest installation steps
 
    > NOTE: Please read and follow all the steps carefully as instructed in the HLA Installation Guide KB, as it is updated frequently by the HLA Dev team
-   >
 
 ## Check HLA Services Status for your NOW Instance
 
@@ -53,7 +52,7 @@ This document assumes a basic level of competency and familiarity with the tools
 2. Set your `Profile Time Zone` accordingly (e.g. `US\Eastern`)
 
    > NOTE: Log out and back in to make sure your `Profile Time Zone` is set correctly. Failure to do so will adversly affect the workshop and using basic HLA functions like searching and finding log entries.
-   >
+
 3. In your browser add the following to your instance URL: `xmlstats.do?include=services_status`
 4. Check **Services Status** are as follows:
 
@@ -82,7 +81,6 @@ This document assumes a basic level of competency and familiarity with the tools
 
 
    > NOTE: Confirm your Occultus version matches your HLA version using this matrix: [KB1002197](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB1002197). If it doesn't, comment on your HLA installation CHG request asking to fix this.
-   >
 
 ## Install the required ITOM plugins for the Workshop
 
@@ -90,15 +88,17 @@ This document assumes a basic level of competency and familiarity with the tools
 2. Navigate to the **System Definition > Plugins** and install or activate the following mandatory plugins:
 
 
-   | Plugin Name                                           | Plugin ID                               |
-   | ----------------------------------------------------- | --------------------------------------- |
-   | Agent Client Collector Log Analytics                  | sn_accl                                 |
-   | Service Mapping                                       | com.snc.service-mapping                 |
-   | Discovery and Service Mapping Patterns                | sn_itom_pattern                         |
-   | CMDB CI Class Models                                  | sn_cmdb_ci_class                        |
-   | Certificate Inventory and Management                  | sn_disco_certmgmt                       |
-   | Performance Analytics - Premium                       | com.snc.pa.premium                      |
-   | ServiceNow IntegrationHub Professional Pack Installer | com.glide.hub.integrations.professional |
+   | Plugin Name                                                  | Plugin ID                               |
+   | ------------------------------------------------------------ | --------------------------------------- |
+   | Agent Client Collector Log Analytics                         | sn_accl                                 |
+   | Service Mapping                                              | com.snc.service-mapping                 |
+   | Discovery and Service Mapping Patterns                       | sn_itom_pattern                         |
+   | CMDB CI Class Models                                         | sn_cmdb_ci_class                        |
+   | Certificate Inventory and Management                         | sn_disco_certmgmt                       |
+   | Performance Analytics - Premium                              | com.snc.pa.premium                      |
+   | ServiceNow IntegrationHub Professional Pack Installer [^1]   | com.glide.hub.integrations.professional |
+
+   [^1]: Requires installation using `maint` role after hopping in with full access
 
 ## Execute the [PA HLA] Historic Data Collection Job to catch up the HLA Overview Dashboard
 
@@ -131,7 +131,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
 
    > NOTE: Request an Occultus restart for properties that require it
-   >
+
 3. Navigate to **Health Log Analytics > Health Log Analytics Administration > Features** and set the following features:
 
 
@@ -149,28 +149,37 @@ This document assumes a basic level of competency and familiarity with the tools
 
    ```
    $ git clone git@github.com:pangealab/heracles.git
-   $ cd heracles/
    ```
 
    > NOTE: If you don't have an SSH Key setup, use the HTTPS URI instead to clone (e.g. https://github.com/pangealab/heracles.git)
-   >
-2. Configure AWS Profile
+
+1. Change to heracles folder
+
+   ```
+   $ cd heracles/
+   ```
+
+   > NOTE: Remain in this folder for the remainder of this installation. All files referenced therein are located in this folder.
+
+1. Configure AWS Profile
 
    ```
    $ export AWS_PROFILE=YOUR PROFILE; printenv AWS_PROFILE
    ```
-3. Standardize on using one AWS Region. The automation scripts provided assume you are deploying in one region (e.g. `us-east-2`). To change to another region, edit the `backend.tf`,`providers.tf` and `variables.tf` files and replace with your specific region.
-4. Create Terraform State Bucket using your CLUSTER ID (e.g., hlawork1)
+
+1. Standardize on using one AWS Region. The automation scripts provided assume you are deploying in one region (e.g. `us-east-2`). To change to another region, edit the `backend.tf`,`providers.tf` and `variables.tf` files and replace with your specific region.
+
+1. Create Terraform State Bucket using your CLUSTER ID (e.g., hlawork1)
 
    ```
    $ aws s3 mb s3://YOUR CLUSTER ID-terraform-backend --profile YOUR PROFILE
    ```
-5. Create SSH Key (e.g., heracles)
+1. Create SSH Key (e.g., heracles)
 
    ```
    $ ssh-keygen -t rsa -b 4096 -C "heracles@noreply.com" -f $HOME/.ssh/heracles -m PEM
    ```
-6. Set your backend bucket property in the *backend.tf* file as follows:
+1. Set your backend bucket property in the `backend.tf` file as follows:
 
    ```
    # Save Terraform State to S3 Bucket
@@ -182,18 +191,19 @@ This document assumes a basic level of competency and familiarity with the tools
    }
    }
    ```
-7. Initialize Terraform
+1. Initialize Terraform
 
    ```
    $ terraform init
    ```
-8. Create Infrastructure
+1. Create Infrastructure
 
    ```
    $ terraform apply -auto-approve -var instance_count=3 -var cluster_name=YOUR CLUSTER ID
    ```
-9. Safeguard the Terraform output of server public and private IPs
-10. Safeguard the generated Ansible Inventory file (e.g., inventory-hlawork1.cfg)
+1. Safeguard the Terraform output of server public and private IPs
+
+1. Safeguard the generated Ansible Inventory file (e.g., inventory-hlawork1.cfg)
 
 ## Install the Pet Clinic Software stack using Ansible
 
@@ -279,7 +289,6 @@ This document assumes a basic level of competency and familiarity with the tools
    ![Extension Contexts](extension-contexts.png)
 
    > NOTE: Make sre form is in **Advanced View** for Tabs to be visible
-   >
 
 ## Configure Agent Client Collector Policies
 
@@ -366,8 +375,6 @@ This document assumes a basic level of competency and familiarity with the tools
 4. Press `Commit Update Set`
 
    > NOTE: Select `Accept remote update` for any Errors listed and commit update set
-   >
-
 ## Install the Chaos Catalog Service Portal Update Set
 
 1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
@@ -376,8 +383,6 @@ This document assumes a basic level of competency and familiarity with the tools
 4. Press `Commit Update Set`
 
    > NOTE: Select `Accept remote update` for any Errors listed and commit update set
-   >
-
 ## Create Support Group
 
 1. Navigate to **User Administration > Groups**
@@ -433,7 +438,6 @@ This document assumes a basic level of competency and familiarity with the tools
 3. For each Source Type Structure, set the **Custom JS** Function using the scripts located in the cloned Git Project /servicenow folder (e.g., `source-type-structures-mariadb-error.js`)
 
    > NOTE: Source Type Structures cannot be updated if stil in `Learning` mode. Make sure you have at least 100 log entries before proceeding. In addition, Custom JS functions must be published to start working by clicking `Publish` after saving the form.
-   >
 
 ## Configure your Source Type Structures Key/Value Mappings
 
@@ -498,88 +502,155 @@ MariaDB Error Logs
    -e "falcon_rpm=YOUR FALCON RPM FILE" \
    -e "falcon_cid=YOUR FALCON CID" 
    ```
+# Appendix A – WSL Ubuntu Prerequisites Installation
 
-# Appendix A – Terraform Installation
+Instructions for installing the lab buildout pre-requisites on WSL Ubuntu.
 
-These instructions apply to a WSL Ubuntu workstation. Please refer to the Terraform Downloads page https://www.terraform.io/downloads.html for more information
+## Install Terraform
 
 1. Start a Bash Shell
-2. Install Terraform CLI (e.g., v0.12.31)
-
+1. Install Terraform CLI (e.g., v0.12.31). See the [Terraform Docs](https://www.terraform.io/downloads.html) for more information.
    ```
    $ wget -qO- https://releases.hashicorp.com/terraform/0.12.31/terraform_0.12.31_linux_amd64.zip | busybox unzip -
    $ chmod 775 terraform
    $ sudo mv terraform /usr/local/bin/
    ```
-
-# Appendix B – Python and Pyenv Installaton
-
-These instructions apply to a WSL Ubuntu workstation and provide an opinionated approach to installing Python. There are many ways to install Python on a workstation and we found that using the `pyenv` utility provides the most consistent approach across several operating systems.
-
-1. Start a Bash Shell
-2. Install pyenv
-
+1. Install pyenv
    ```
    curl https://pyenv.run | bash
    ```
-3. Edit Bashrc
-
+1. Edit Bashrc
    ```
    export PYENV_ROOT="$HOME/.pyenv"
    export PATH="$PYENV_ROOT/bin:$PATH"
    eval "$(pyenv init --path)"
    ```
-4. Install Python
 
+## Install Python
+
+1. Start a Bash Shell
+1. Install Python
    ```
    pyenv install 3.7.10
    ```
-5. Get Versions
-
+1. Get Versions
    ```
    pyenv versions
    ```
-6. Use Version
-
+1. Use Version
    ```
    pyenv global 3.7.10
    ```
 
-# Appendix C – Ansible Installation
-
-These instructions apply to a WSL Ubuntu workstation and Python PIP which provides broad cross-platform support regardless of the operating system. Please refer to the Ansible Installation Guide https://docs.ansible.com/ansible/latest/installation_guide for more information.
+## Install Ansible
 
 1. Start a Bash Shell
-2. Install Ansible (e.g., v4.5.0)
+1. Install Ansible (e.g., v4.5.0). See the [Ansible Docs](https://docs.ansible.com/ansible/latest/installation_guide) for more information.
+
    ```
    $ pip install ansible==4.5.0
    ```
-3. Edit Ansible Settings (e.g. vi ~/.ansible.cfg)
+1. Edit Ansible Settings (e.g. vi ~/.ansible.cfg)
+
    ```
    [defaults]
    interpreter_python=auto_silent
    ideprecation_warnings=false
    ```
-4. Install Prerequisites
+1. Install Prerequisites
+
    ```
    ansible-galaxy collection install community.mysql
    ```
 
-# Appendix D – AWS CLI Installation
-
-These instructions apply to a WSL Ubuntu workstation. Please refer to the AWS CLI Installation Guide https://docs.aws.amazon.com/cli/latest/userguide/install-linux.html for more information.
+##  Install AWS CLI
 
 1. Start a Bash Shell
-2. Install Venv
+1. Install Venv
 
    ```
    $ sudo apt-get install -y python3-venv
    ```
-3. Install the AWS CLI
+1. Install the AWS CLI. See the [AWS Docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) for more information.
 
    ```
    $ curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
    $ unzip awscli-bundle.zip
    $ sudo /usr/bin/python3 awscli-bundle/install -i \
    /usr/local/aws -b /usr/local/bin/aws
+   ```
+1. Configure your AWS CLI Profile. See the [AWS docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) for more information.
+
+   ```
+   aws cli configure --profile=YOUR PROFILE
+   ```
+   > NOTE: Remember to configure your profile default region and credentials.
+
+1. Validate AWS CLI Access
+
+   ```
+   aws ec2 describe-regions --profile=YOUR PROFILE
+   ```
+
+# Appendix B - MacOS Prerequisites Installation
+
+Instructions for installing the lab buildout pre-requisites on a Mac.  
+
+## Install Homebrew
+
+1. Open a Terminal
+1. Install [Homebrew](https://brew.sh/)
+
+   ```
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+
+## Install Terraform
+
+1. Open a Terminal
+1. Install Terraform. See the [Terraform Docs](https://www.terraform.io/docs) for more information
+
+   ```
+   brew install terraform@0.12
+   ```
+
+## Install Python
+
+1. Open a Terminal
+1. Install Python
+
+   ```
+   brew install python
+   ```
+
+## Install Ansible
+
+1. Open a Terminal
+1. Install Ansible. See the [Ansible Docs](https://docs.ansible.com/ansible/latest/installation_guide) for more information.
+
+   ```
+   brew install ansible
+   ```
+   
+## Install AWS CLI
+
+1. Configure your AWS CLI Profile. See the [AWS Docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) for more information. 
+
+1. Open a Terminal
+1. Install AWS CLI
+
+   ```
+   brew install awscli
+   ```
+1. Configure your AWS CLI Profile. See the [AWS docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) for more information. 
+
+   ```
+   aws cli configure --profile=YOUR PROFILE
+   ```
+   > NOTE: Remember to configure your profile default region and credentials.
+
+1. Validate AWS CLI Access
+
+   ```
+   aws ec2 describe-regions --profile=YOUR PROFILE
    ```

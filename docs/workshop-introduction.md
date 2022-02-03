@@ -13,13 +13,13 @@ This document describes at a high-level the Predictive AIOps Workshop Architectu
 
 The overall Predictive AIOps Workshop Architecture (see diagram below) consists of several AWS EC2 servers conforming to a typical N-Tier web application, complete with a Load Generator and Chaos Simulator. The core application is the Spring Pet Clinic which is based on Java Spring Boot and requires the use of a Database for persistence.
 
-![image](workshop-app-arch.png)
+![Workshop Application Architecture](workshop-app-arch.png)
 
 # Workshop ServiceNow Architecture
 
 On the ServiceNow side, we provide the full ITOM Health experience leveraging the latest Agent Client Collector (ACC), Health Log Analytics (HLA), Metric Intelligence (MI), Event Managment (EM) as well as ITOM Visiblity with Discovery and Service Mapping (see diagram below). Each of the Configuration Items (CI's) in the environment is fully monitored by ACC which runs basic discovery and collects all the observability data from the apps.
 
-![image](workshop-sn-arch.png)
+![Workshop ServiceNow Architecture](workshop-sn-arch.png)
 
 # Unified AIOps Agent
 
