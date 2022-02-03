@@ -489,7 +489,7 @@ MariaDB Error Logs
 1. Download the Crowdstrike Falcon Agent RPM from HI for RHEL 8 (e.g. 6.32.0-12904)
 
    ```
-   wget https://surf.service-now.com/sys_attachment.do?sys_id=6e589ffcdb800d10ae878fd3399619f8 -qO falcon-sensor.rpm
+   wget "https://surf.service-now.com/sys_attachment.do?sys_id=6e589ffcdb800d10ae878fd3399619f8" -qO falcon-sensor.rpm
    ```
 2. Run the Install Falcon Playbook
 
