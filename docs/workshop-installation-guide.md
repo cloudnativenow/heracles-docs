@@ -561,10 +561,8 @@ Instructions for installing the lab buildout pre-requisites on WSL Ubuntu.
 
 ## Install Terraform
 
-Please refer to the Terraform Downloads page https://www.terraform.io/downloads.html for more information
-
 1. Start a Bash Shell
-1. Install Terraform CLI (e.g., v0.12.31)
+1. Install Terraform CLI (e.g., v0.12.31). See the [Terraform Docs](https://www.terraform.io/docs) for more information.
    ```
    $ wget -qO- https://releases.hashicorp.com/terraform/0.12.31/terraform_0.12.31_linux_amd64.zip | busybox unzip -
    $ chmod 775 terraform
@@ -599,10 +597,8 @@ Please refer to the Terraform Downloads page https://www.terraform.io/downloads.
 
 ## Install Ansible
 
-Please refer to the Ansible Installation Guide https://docs.ansible.com/ansible/latest/installation_guide for more information.
-
 1. Start a Bash Shell
-1. Install Ansible (e.g., v4.5.0)
+1. Install Ansible (e.g., v4.5.0). See the [Ansible Docs](https://docs.ansible.com/ansible/latest/installation_guide) for more information.
    ```
    $ pip install ansible==4.5.0
    ```
@@ -658,7 +654,7 @@ Instructions for installing the lab buildout pre-requisites on a Mac.
 ## Install Terraform
 
 1. Open a Terminal
-1. Install Terraform. See the [Terraform Docs](https://www.terraform.io/docs) for more information
+1. Install Terraform. See the [Terraform Docs](https://www.terraform.io/docs) for more information.
    ```
    brew install terraform@0.12
    ```
