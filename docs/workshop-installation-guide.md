@@ -324,17 +324,13 @@ In the MID Server record:
 
 1. Navigate to **Service Mapping > Services > Application Services**
 2. Select the `Pet Clinic` Application
-3. Press the **View Map** Button
-4. Hover over each `Tomcat` Server and click on the **Manually add a connection** link
-5. Manually add a connection as follows:
-
-
-   | Field                   | Operator                                   |
-   | ----------------------- | ------------------------------------------ |
-   | Select Entry Point Type | MySQL Server Endpoint                      |
-   | Host                    | YOUR MYSQL PRIVATE IP (e.g. ip-15-0-1-241) |
-   | Port                    | YOUR MYSQL PORT (e.g. 3306)                |
-6. Press the **Add** Button
+3. Press the **View Map** Button - you should see the following:
+   ![service map without db](petclinic-service-map-without-db.png)
+4. Select **Suggestions > Connection Suggestions** at the top right
+5. Select all the suggestsions' boxes, and press the **Add** button, as follows:
+   ![connection suggestions to db](petclinic-connection-suggestions-db.png)
+6. Your map should now look like this:
+   ![service map with db](petclinic-service-map-with-db.png)
 
 # Configure ACC Log Policies
 
