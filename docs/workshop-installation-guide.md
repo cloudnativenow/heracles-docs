@@ -159,7 +159,7 @@ This document assumes a basic level of competency and familiarity with the tools
 4. Create Terraform State Bucket using your CLUSTER ID (e.g., hlawork1)
 
    ```
-   $ aws s3 mb s3://YOUR CLUSTER ID-terraform-backend --profile YOUR PROFILE
+   $ aws s3 mb s3://YOUR CLUSTER ID-terraform-backend --profile=YOUR PROFILE
    ```
 5. Create SSH Key (e.g., heracles)
 
@@ -617,22 +617,27 @@ Please refer to the Ansible Installation Guide https://docs.ansible.com/ansible/
 
 ##  Install AWS CLI
 
-Please refer to the AWS CLI Installation Guide https://docs.aws.amazon.com/cli/latest/userguide/install-linux.html for more information.
-
-
 1. Start a Bash Shell
-2. Install Venv
-
+1. Install Venv
    ```
    $ sudo apt-get install -y python3-venv
    ```
-3. Install the AWS CLI
-
+1. Install the AWS CLI. See the [AWS Docs](https://docs.aws.amazon.com/cli/latest/userguide/install-linux.html) for more information.
    ```
    $ curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
    $ unzip awscli-bundle.zip
    $ sudo /usr/bin/python3 awscli-bundle/install -i \
    /usr/local/aws -b /usr/local/bin/aws
+   ```
+1. Configure your AWS CLI Profile. See the [AWS docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html) for more information. 
+   ```
+   aws cli configure --profile=YOUR PROFILE
+   ```
+   > NOTE: Remember to configure your profile default region and credentials.
+
+1. Validate AWS CLI Access
+   ```
+   aws ec2 describe-regions --profile=YOUR PROFILE
    ```
 
 # Appendix B - MacOS Prerequisites Installation
@@ -650,10 +655,8 @@ Instructions for installing the lab buildout pre-requisites on a Mac.
 
 ## Install Terraform
 
-Please refer to the Terraform Downloads page https://www.terraform.io/downloads.html for more information
-
 1. Open a Terminal
-1. Install Terraform
+1. Install Terraform. See the [Terraform Docs](https://www.terraform.io/docs) for more information
    ```
    brew install terraform@0.12
    ```
@@ -668,17 +671,15 @@ Please refer to the Terraform Downloads page https://www.terraform.io/downloads.
 
 ## Install Ansible
 
-Please refer to the Ansible Installation Guide https://docs.ansible.com/ansible/latest/installation_guide for more information.
-
 1. Open a Terminal
-1. Install Ansible
+1. Install Ansible. See the [Ansible Docs](https://docs.ansible.com/ansible/latest/installation_guide) for more information.
    ```
    brew install ansible
    ```
    
 ## Install AWS CLI
 
-Please refer to the AWS CLI Installation Guide https://docs.aws.amazon.com/cli/latest/userguide/install-linux.html for more information.
+1. Configure your AWS CLI Profile. See the [AWS Docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html) for more information. 
 
 1. Open a Terminal
 1. Install AWS CLI
@@ -686,3 +687,13 @@ Please refer to the AWS CLI Installation Guide https://docs.aws.amazon.com/cli/l
    ```
    brew install awscli
    ```
+1. Configure your AWS CLI Profile. See the [AWS docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html) for more information. 
+   ```
+   aws cli configure --profile=YOUR PROFILE
+   ```
+   > NOTE: Remember to configure your profile default region and credentials.
+
+1. Validate AWS CLI Access
+   ```
+   aws ec2 describe-regions --profile=YOUR PROFILE
+   ```   
