@@ -289,7 +289,7 @@ In the MID Server record:
 
    ![Extension Contexts](extension-contexts.png)
 
-   > NOTE: Make sre form is in **Advanced View** for Tabs to be visible
+   > NOTE: Make sure form is in **Advanced View** for Tabs to be visible
 
 ## Configure Agent Client Collector Policies
 
