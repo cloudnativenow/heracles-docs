@@ -563,16 +563,19 @@ Instructions for installing the lab buildout pre-requisites on WSL Ubuntu.
 
 1. Start a Bash Shell
 1. Install Terraform CLI (e.g., v0.12.31). See the [Terraform Docs](https://www.terraform.io/docs) for more information.
+
    ```
    $ wget -qO- https://releases.hashicorp.com/terraform/0.12.31/terraform_0.12.31_linux_amd64.zip | busybox unzip -
    $ chmod 775 terraform
    $ sudo mv terraform /usr/local/bin/
    ```
 1. Install pyenv
+
    ```
    curl https://pyenv.run | bash
    ```
 1. Edit Bashrc
+
    ```
    export PYENV_ROOT="$HOME/.pyenv"
    export PATH="$PYENV_ROOT/bin:$PATH"
