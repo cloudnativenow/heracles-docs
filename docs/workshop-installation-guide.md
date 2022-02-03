@@ -502,95 +502,147 @@ MariaDB Error Logs
    -e "falcon_rpm=YOUR FALCON RPM FILE" \
    -e "falcon_cid=YOUR FALCON CID" 
    ```
+# Appendix A – WSL Ubuntu Prerequisites Installation
 
-# Appendix A – Terraform Installation
+Instructions for installing the lab buildout pre-requisites on WSL Ubuntu.
 
-These instructions apply to a WSL Ubuntu workstation. Please refer to the Terraform Downloads page https://www.terraform.io/downloads.html for more information
+## Install Terraform
+
+Please refer to the Terraform Downloads page https://www.terraform.io/downloads.html for more information
 
 1. Start a Bash Shell
-2. Install Terraform CLI (e.g., v0.12.31)
-
+1. Install Terraform CLI (e.g., v0.12.31)
    ```
    $ wget -qO- https://releases.hashicorp.com/terraform/0.12.31/terraform_0.12.31_linux_amd64.zip | busybox unzip -
    $ chmod 775 terraform
    $ sudo mv terraform /usr/local/bin/
    ```
-
-# Appendix B – Python and Pyenv Installaton
-
-These instructions apply to a WSL Ubuntu workstation and provide an opinionated approach to installing Python. There are many ways to install Python on a workstation and we found that using the `pyenv` utility provides the most consistent approach across several operating systems.
-
-1. Start a Bash Shell
-2. Install pyenv
-
+1. Install pyenv
    ```
    curl https://pyenv.run | bash
    ```
-3. Edit Bashrc
-
+1. Edit Bashrc
    ```
    export PYENV_ROOT="$HOME/.pyenv"
    export PATH="$PYENV_ROOT/bin:$PATH"
    eval "$(pyenv init --path)"
    ```
-4. Install Python
 
+## Install Python
+
+1. Start a Bash Shell
+1. Install Python
    ```
    pyenv install 3.7.10
    ```
-5. Get Versions
-
+1. Get Versions
    ```
    pyenv versions
    ```
-6. Use Version
-
+1. Use Version
    ```
    pyenv global 3.7.10
    ```
 
-# Appendix C – Ansible Installation
+## Install Ansible
 
-These instructions apply to a WSL Ubuntu workstation and Python PIP which provides broad cross-platform support regardless of the operating system. Please refer to the Ansible Installation Guide https://docs.ansible.com/ansible/latest/installation_guide for more information.
+Please refer to the Ansible Installation Guide https://docs.ansible.com/ansible/latest/installation_guide for more information.
 
 1. Start a Bash Shell
-2. Install Ansible (e.g., v4.5.0)
+1. Install Ansible (e.g., v4.5.0)
    ```
    $ pip install ansible==4.5.0
    ```
-3. Edit Ansible Settings (e.g. vi ~/.ansible.cfg)
+1. Edit Ansible Settings (e.g. vi ~/.ansible.cfg)
    ```
    [defaults]
    interpreter_python=auto_silent
    ideprecation_warnings=false
    ```
-4. Install Prerequisites
+1. Install Prerequisites
    ```
    ansible-galaxy collection install community.mysql
    ```
 
-# Appendix D – AWS CLI Installation
-
-These instructions apply to a WSL Ubuntu workstation. Please refer to the AWS CLI Installation Guide https://docs.aws.amazon.com/cli/latest/userguide/install-linux.html for more information.
+##  Install AWS CLI
 
 1. Start a Bash Shell
 1. Install Venv
-
    ```
    $ sudo apt-get install -y python3-venv
    ```
-1. Install the AWS CLI
-
+1. Install the AWS CLI. See the [AWS Docs](https://docs.aws.amazon.com/cli/latest/userguide/install-linux.html) for more information.
    ```
    $ curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
    $ unzip awscli-bundle.zip
    $ sudo /usr/bin/python3 awscli-bundle/install -i \
    /usr/local/aws -b /usr/local/bin/aws
    ```
-
-1. Configure your AWS CLI Profile. Please refer to the Please refer to the AWS CLI Named Profiles Guide https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html for more information.
-
-   > NOTE: Remember to configure your profile default region and profile credentials per the AWS documentation.
+1. Configure your AWS CLI Profile. See the [AWS docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html) for more information. 
+   ```
+   aws cli configure --profile=YOUR PROFILE
+   ```
+   > NOTE: Remember to configure your profile default region and credentials.
 
 1. Validate AWS CLI Access
-aws ec2 describe-regions --profile YOUR PROFILE
+   ```
+   aws ec2 describe-regions --profile=YOUR PROFILE
+   ```
+
+# Appendix B - MacOS Prerequisites Installation
+
+Instructions for installing the lab buildout pre-requisites on a Mac.  
+
+## Install Homebrew
+
+1. Open a Terminal
+1. Install [Homebrew](https://brew.sh/)
+
+   ```
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+
+## Install Terraform
+
+1. Open a Terminal
+1. Install Terraform. See the [Terraform Docs](https://www.terraform.io/docs) for more information
+   ```
+   brew install terraform@0.12
+   ```
+
+## Install Python
+
+1. Open a Terminal
+1. Install Python
+   ```
+   brew install python
+   ```
+
+## Install Ansible
+
+1. Open a Terminal
+1. Install Ansible. See the [Ansible Docs](https://docs.ansible.com/ansible/latest/installation_guide) for more information.
+   ```
+   brew install ansible
+   ```
+   
+## Install AWS CLI
+
+1. Configure your AWS CLI Profile. See the [AWS Docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html) for more information. 
+
+1. Open a Terminal
+1. Install AWS CLI
+
+   ```
+   brew install awscli
+   ```
+1. Configure your AWS CLI Profile. See the [AWS docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html) for more information. 
+   ```
+   aws cli configure --profile=YOUR PROFILE
+   ```
+   > NOTE: Remember to configure your profile default region and credentials.
+
+1. Validate AWS CLI Access
+   ```
+   aws ec2 describe-regions --profile=YOUR PROFILE
+   ```
