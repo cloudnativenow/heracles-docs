@@ -546,16 +546,19 @@ Instructions for installing the lab buildout pre-requisites on WSL Ubuntu.
 
 1. Start a Bash Shell
 1. Install Ansible (e.g., v4.5.0). See the [Ansible Docs](https://docs.ansible.com/ansible/latest/installation_guide) for more information.
+
    ```
    $ pip install ansible==4.5.0
    ```
 1. Edit Ansible Settings (e.g. vi ~/.ansible.cfg)
+
    ```
    [defaults]
    interpreter_python=auto_silent
    ideprecation_warnings=false
    ```
 1. Install Prerequisites
+
    ```
    ansible-galaxy collection install community.mysql
    ```
@@ -564,23 +567,27 @@ Instructions for installing the lab buildout pre-requisites on WSL Ubuntu.
 
 1. Start a Bash Shell
 1. Install Venv
+
    ```
    $ sudo apt-get install -y python3-venv
    ```
 1. Install the AWS CLI. See the [AWS Docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) for more information.
+
    ```
    $ curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
    $ unzip awscli-bundle.zip
    $ sudo /usr/bin/python3 awscli-bundle/install -i \
    /usr/local/aws -b /usr/local/bin/aws
    ```
-1. Configure your AWS CLI Profile. See the [AWS docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) for more information. 
+1. Configure your AWS CLI Profile. See the [AWS docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) for more information.
+
    ```
    aws cli configure --profile=YOUR PROFILE
    ```
    > NOTE: Remember to configure your profile default region and credentials.
 
 1. Validate AWS CLI Access
+
    ```
    aws ec2 describe-regions --profile=YOUR PROFILE
    ```
@@ -602,6 +609,7 @@ Instructions for installing the lab buildout pre-requisites on a Mac.
 
 1. Open a Terminal
 1. Install Terraform. See the [Terraform Docs](https://www.terraform.io/docs) for more information
+
    ```
    brew install terraform@0.12
    ```
@@ -610,6 +618,7 @@ Instructions for installing the lab buildout pre-requisites on a Mac.
 
 1. Open a Terminal
 1. Install Python
+
    ```
    brew install python
    ```
@@ -618,6 +627,7 @@ Instructions for installing the lab buildout pre-requisites on a Mac.
 
 1. Open a Terminal
 1. Install Ansible. See the [Ansible Docs](https://docs.ansible.com/ansible/latest/installation_guide) for more information.
+
    ```
    brew install ansible
    ```
@@ -633,12 +643,14 @@ Instructions for installing the lab buildout pre-requisites on a Mac.
    brew install awscli
    ```
 1. Configure your AWS CLI Profile. See the [AWS docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) for more information. 
+
    ```
    aws cli configure --profile=YOUR PROFILE
    ```
    > NOTE: Remember to configure your profile default region and credentials.
 
 1. Validate AWS CLI Access
+
    ```
    aws ec2 describe-regions --profile=YOUR PROFILE
    ```
