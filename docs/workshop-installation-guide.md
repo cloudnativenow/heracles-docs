@@ -357,74 +357,6 @@ In the MID Server record:
    -e "acc_api_key=YOUR ACC API KEY"
    ```
 
-# Configure your NOW HLA instance Chaos Catalog
-
-## Login to your NOW Instance
-
-1. Login to your NOW Instance as Administrator
-
-## Install the Chaos Catalog Global Update Set
-
-1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
-2. Select the `chaos-catalog-global-update-set.xml` Update Set from the `heracles/servicenow/` local folder
-3. Select the `HLA WorkShop Global Updates` Loaded Update Set and press `Preview Update Set`
-4. Press `Commit Update Set`
-
-   > NOTE: Select `Accept remote update` for any Errors listed and commit update set
-## Install the Chaos Catalog Service Portal Update Set
-
-1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
-2. Select the `chaos-catalog-portal-update-set.xml` Update Set from the `heracles/servicenow/` local folder
-3. Select the `Predictive AIOps Workshop Service Portal` Loaded Update Set and press `Preview Update Set`
-4. Press `Commit Update Set`
-
-   > NOTE: Select `Accept remote update` for any Errors listed and commit update set
-## Create Support Group
-
-1. Navigate to **User Administration > Groups**
-2. Create a Group called `Application Support`
-
-## Map Linux Servers to Support Group
-
-1. Navigate to **Configuration > Servers > Linux**
-2. Add the `Support group` field to the list
-3. Map each of your Spring Application Servers `Support group` to `Application Support`
-4. Filter list to `Show Matching` only items mapped to the `Applicaton Support` group
-5. Select `Copy query` using *right-click* on the `All>Support group=Application Support` fiter breadcrumb
-
-## Configure the Generate Infrastructure Errors Catalog Item List Collector
-
-1. Navigate to **Service Catalog > Catalog Definitions > My Items**
-2. Filter list to `Show Matching` only items mapped to the `Predictive AIOps Workshop Error Generation` Catalogs as follows:
-
-
-   | Name                           | Category             |
-   | ------------------------------ | -------------------- |
-   | Generate Application Errors    | Application Chaos    |
-   | Generate Infrastructure Errors | Infrastructure Chaos |
-   | Stress Servers                 | Infrastructure Chaos  |
-3. For each item in this select the `List Collector` variable
-
-   ![list-collector](list-collector.png)
-4. Set the `Reference qualifier` field to the query copied earlier
-
-   ![reference-qualifier](reference-qualifier.png)
-
-## Configure the Chaos Catalog Credentials
-
-1. Navigate to **Connections & Credentials > Connections & Credential Aliases**
-2. Click on the `hla_workshop_creds` Credential
-3. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
-   ![SSH Credentials](heracles-credential.png)
-4. Test Credential with any of your server IP addresses (e.g. mysql, spring, etc.)
-
-## Test the Chaos Catalog
-
-1. Navigate to `https://YOUR INSTANCE.service-now.com/chaos`
-2. You should see the following Chaos Catalog Page:
-
-   ![chaos-catalog](chaos-catalog.png)
-
 # Configure your NOW HLA instance for a new Workshop
 
 ## Configure your Source Type Structures
@@ -468,6 +400,74 @@ MariaDB SQL Dump
 MariaDB Error Logs
 
 ![mariadb-error](mariadb-error-kvm.png)
+
+# Configure your NOW HLA instance Chaos Catalog
+
+## Login to your NOW Instance
+
+1. Login to your NOW Instance as Administrator
+
+## Install the Chaos Catalog Global Update Set
+
+1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
+2. Select the `chaos-catalog-global-update-set.xml` Update Set from the `heracles/servicenow/` local folder
+3. Select the `HLA WorkShop Global Updates` Loaded Update Set and press `Preview Update Set`
+4. Press `Commit Update Set`
+
+   > NOTE: Select `Accept remote update` for any Errors listed and commit update set
+## Install the Chaos Catalog Service Portal Update Set
+
+1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
+2. Select the `chaos-catalog-portal-update-set.xml` Update Set from the `heracles/servicenow/` local folder
+3. Select the `Predictive AIOps Workshop Service Portal` Loaded Update Set and press `Preview Update Set`
+4. Press `Commit Update Set`
+
+   > NOTE: Select `Accept remote update` for any Errors listed and commit update set
+## Create Support Group
+
+1. Navigate to **User Administration > Groups**
+2. Create a Group called `Application Support`
+
+## Map Linux Servers to Support Group
+
+1. Navigate to **Configuration > Servers > Linux**
+2. Add the `Support group` field to the list
+3. Map each of your Spring Application Servers `Support group` to `Application Support`
+4. Filter list to `Show Matching` only items mapped to the `Applicaton Support` group
+5. Select `Copy query` using *right-click* on the `All>Support group=Application Support` fiter breadcrumb
+
+## Configure the Generate Infrastructure Errors Catalog Item List Collector
+
+1. Navigate to **Service Catalog > Catalog Definitions > My Items**
+1. Filter list to `Show Matching` only items mapped to the `Predictive AIOps Workshop Error Generation` Catalogs as follows:
+
+   | Name                           | Category             |
+   | ------------------------------ | -------------------- |
+   | Generate Application Errors    | Application Chaos    |
+   | Generate Infrastructure Errors | Infrastructure Chaos |
+   | Stress Servers                 | Infrastructure Chaos  |
+
+1. For each item in this select the `List Collector` variable
+
+   ![list-collector](list-collector.png)
+1. Set the `Reference qualifier` field to the query copied earlier
+
+   ![reference-qualifier](reference-qualifier.png)
+
+## Configure the Chaos Catalog Credentials
+
+1. Navigate to **Connections & Credentials > Connections & Credential Aliases**
+1. Click on the `hla_workshop_creds` Credential
+1. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
+   ![SSH Credentials](heracles-credential.png)
+1. Test Credential with any of your server IP addresses (e.g. mysql, spring, etc.)
+
+## Test the Chaos Catalog
+
+1. Navigate to `https://YOUR INSTANCE.service-now.com/chaos`
+1. You should see the following Chaos Catalog Page:
+
+   ![chaos-catalog](chaos-catalog.png)
 
 # Grant User Access to your NOW Instance
 
