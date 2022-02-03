@@ -303,7 +303,6 @@ In the MID Server record:
    | Linux OS Metrics    | true   |
    | MySQL DB Events     | true   |
    | MySQL DB Metrics    | true   |
-   | Self-Healing Events | true   |
 
 ## Create your Application Service
 
