@@ -696,4 +696,4 @@ Instructions for installing the lab buildout pre-requisites on a Mac.
 1. Validate AWS CLI Access
    ```
    aws ec2 describe-regions --profile=YOUR PROFILE
-   ```   
+   ```
