@@ -25,16 +25,16 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Request a new NOW Instance
 
 1. Navigate to [NOW HI](https://support.servicenow.com/now)
-2. Search for "new internal instance request"
-3. Request a new instance as follows, using the latest available application version:
+1. Search for "new internal instance request"
+1. Request a new instance as follows, using the latest available application version:
 
    ![New Internal Instance Request](new-internal-instance-request.png)
 
 ## Upgrade your NOW Instance to latest Rome version
 
 1. Navigate to [NOW HI](https://support.servicenow.com/now)
-2. Select your Instance from the Instances Dashboard
-3. Upgrade your instance to latest Rome version & patch level as follows:
+1. Select your Instance from the Instances Dashboard
+1. Upgrade your instance to latest Rome version & patch level as follows:
 
    ![Upgrade to Rome](upgrade-to-rome.png)
 
@@ -49,12 +49,12 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Check HLA Services Status for your NOW Instance
 
 1. Login to your NOW Instance as an Administrator
-2. Set your `Profile Time Zone` accordingly (e.g. `US\Eastern`)
+1. Set your `Profile Time Zone` accordingly (e.g. `US\Eastern`)
 
    > NOTE: Log out and back in to make sure your `Profile Time Zone` is set correctly. Failure to do so will adversly affect the workshop and using basic HLA functions like searching and finding log entries.
 
-3. In your browser add the following to your instance URL: `xmlstats.do?include=services_status`
-4. Check **Services Status** are as follows:
+1. In your browser add the following to your instance URL: `xmlstats.do?include=services_status`
+1. Check **Services Status** are as follows:
 
 
    | Name          | Status |
@@ -66,8 +66,8 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Check HLA Package Versions your NOW Instance
 
 1. Login to your NOW Instance as an Administrator
-2. In the Filter Navigator enter `sn_occ_stats.do`
-3. Note the **Health Log Analytics Package Dependencies & Versions** as follows:
+1. In the Filter Navigator enter `sn_occ_stats.do`
+1. Note the **Health Log Analytics Package Dependencies & Versions** as follows:
 
 
    | Dependency                  | Version   |
@@ -85,7 +85,7 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Install the required ITOM plugins for the Workshop
 
 1. HOP to your NOW Instance as Administrator
-2. Navigate to the **System Definition > Plugins** and install or activate the following mandatory plugins:
+1. Navigate to the **System Definition > Plugins** and install or activate the following mandatory plugins:
 
 
    | Plugin Name                                                  | Plugin ID                               |
@@ -103,14 +103,14 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Execute the [PA HLA] Historic Data Collection Job to catch up the HLA Overview Dashboard
 
 1. Login to your NOW Instance as an Administrator
-2. Set the Application Scope to `Health Log Analytics`
-3. Navigate to the **Performance Analytics > Data Collector > Jobs** and Execute the `[PA HLA] Historic Data Collection` by using right-click-mouse to `Execute Now`
+1. Set the Application Scope to `Health Log Analytics`
+1. Navigate to the **Performance Analytics > Data Collector > Jobs** and Execute the `[PA HLA] Historic Data Collection` by using right-click-mouse to `Execute Now`
 
 ## Fix Service Mapping Glitches
 
 1. Login to your NOW Instance as an Administrator
-2. In the Filter Navigator enter `sys_properties_list.do`
-3. Set the following property:
+1. In the Filter Navigator enter `sys_properties_list.do`
+1. Set the following property:
 
 
    | Property Name                 | Value | Type    | Application |
@@ -120,7 +120,7 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Optimize your NOW Instance for the Workshop
 
 1. Login to your NOW Instance as an Administrator
-2. Navigate to **Health Log Analytics > Health Log Analytics Administration > System Properties** and set the following properties:
+1. Navigate to **Health Log Analytics > Health Log Analytics Administration > System Properties** and set the following properties:
 
 
    | Property Name                                            | Value | Default Value |
@@ -132,7 +132,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
    > NOTE: Request an Occultus restart for properties that require it
 
-3. Navigate to **Health Log Analytics > Health Log Analytics Administration > Features** and set the following features:
+1. Navigate to **Health Log Analytics > Health Log Analytics Administration > Features** and set the following features:
 
 
    | Name                                              | State | Default Value |
@@ -213,7 +213,7 @@ This document assumes a basic level of competency and familiarity with the tools
    $ eval `ssh-agent -s`
    $ ssh-add ~/.ssh/YOUR SSH KEY 
    ```
-2. Run the Install Pet Clinic Playbook
+1. Run the Install Pet Clinic Playbook
 
    ```
    $ ansible-playbook -i YOUR INVENTORY FILE.cfg ansible/install-petclinic.yml \
@@ -228,8 +228,8 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Configure NOW MID Access
 
 1. Login to your NOW Instance as Administrator
-2. In your browser add the following to your instance URL: `/nav_to.do?uri=%2F$mid_server_user.do`
-3. **Create MID Server User**
+1. In your browser add the following to your instance URL: `/nav_to.do?uri=%2F$mid_server_user.do`
+1. **Create MID Server User**
 
    ![Create MID User](create-mid-user.png)
 
@@ -250,19 +250,19 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Configure Discovery Credentials
 
 1. Login to your NOW Instance as Administrator
-2. Navigate to **Discovery > Credentials**
-3. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
+1. Navigate to **Discovery > Credentials**
+1. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
 
    ![SSH Credentials](heracles-credential.png)
-4. Test Credential with any of your server private IP addresses (e.g. mysql, spring, etc.)
+1. Test Credential with any of your server private IP addresses (e.g. mysql, spring, etc.)
 
 ## Validate MID Server
 
 1. Login to your NOW Instance as Administrator
-2. Navigate to **MID Server > Servers**
-3. Click on your MID Server
-4. Click on the **Validate** link
-5. Set the **MID Initial Selection Criteria** as follows:
+1. Navigate to **MID Server > Servers**
+1. Click on your MID Server
+1. Click on the **Validate** link
+1. Set the **MID Initial Selection Criteria** as follows:
 
    ![Validate MID Server](validate-mid.png)
 
@@ -270,8 +270,8 @@ This document assumes a basic level of competency and familiarity with the tools
 
 In the MID Server record:
 1. Click on the **Setup ACC Monitoring** link
-2. Set the MID Web Server Port to `8085`
-3. Safeguard your Endpoint address (e.g., `wss://15.0.1.210:8085/ws/events`)
+1. Set the MID Web Server Port to `8085`
+1. Safeguard your Endpoint address (e.g., `wss://15.0.1.210:8085/ws/events`)
 
 ## Collect the MID Server API Key
 
@@ -281,7 +281,7 @@ In the MID Server record:
 ## Setup ACC Log Analytics:
 In the MID Server record:
 1. Click on the **Setup ACC Log Analytics** link
-2. Set the ACC Data Input Port to `5044`
+1. Set the ACC Data Input Port to `5044`
 
 ## Validate ACC-L Extension Contexts
 
@@ -294,7 +294,7 @@ In the MID Server record:
 ## Configure Agent Client Collector Policies
 
 1. Navigate to **Agent Client Collector > Configuration > Policies**
-2. Activate the following Policies:
+1. Activate the following Policies:
 
 
    | Name                | Active |
