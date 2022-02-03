@@ -553,75 +553,72 @@ MariaDB Error Logs
    -e "falcon_cid=YOUR FALCON CID" 
    ```
 
-# Appendix A – Terraform Installation
+# Appendix A – WSL Ubuntu Prerequisites Installation
 
-These instructions apply to a WSL Ubuntu workstation. Please refer to the Terraform Downloads page https://www.terraform.io/downloads.html for more information
+Instructions for installing the lab buildout pre-requisites on WSL Ubuntu.
+
+## Install Terraform
+
+Please refer to the Terraform Downloads page https://www.terraform.io/downloads.html for more information
 
 1. Start a Bash Shell
-2. Install Terraform CLI (e.g., v0.12.31)
-
+1. Install Terraform CLI (e.g., v0.12.31)
    ```
    $ wget -qO- https://releases.hashicorp.com/terraform/0.12.31/terraform_0.12.31_linux_amd64.zip | busybox unzip -
    $ chmod 775 terraform
    $ sudo mv terraform /usr/local/bin/
    ```
-
-# Appendix B – Python and Pyenv Installaton
-
-These instructions apply to a WSL Ubuntu workstation and provide an opinionated approach to installing Python. There are many ways to install Python on a workstation and we found that using the `pyenv` utility provides the most consistent approach across several operating systems.
-
-1. Start a Bash Shell
-2. Install pyenv
-
+1. Install pyenv
    ```
    curl https://pyenv.run | bash
    ```
-3. Edit Bashrc
-
+1. Edit Bashrc
    ```
    export PYENV_ROOT="$HOME/.pyenv"
    export PATH="$PYENV_ROOT/bin:$PATH"
    eval "$(pyenv init --path)"
    ```
-4. Install Python
 
+## Install Python
+
+1. Start a Bash Shell
+1. Install Python
    ```
    pyenv install 3.7.10
    ```
-5. Get Versions
-
+1. Get Versions
    ```
    pyenv versions
    ```
-6. Use Version
-
+1. Use Version
    ```
    pyenv global 3.7.10
    ```
 
-# Appendix C – Ansible Installation
+## Install Ansible
 
-These instructions apply to a WSL Ubuntu workstation and Python PIP which provides broad cross-platform support regardless of the operating system. Please refer to the Ansible Installation Guide https://docs.ansible.com/ansible/latest/installation_guide for more information.
+Please refer to the Ansible Installation Guide https://docs.ansible.com/ansible/latest/installation_guide for more information.
 
 1. Start a Bash Shell
-2. Install Ansible (e.g., v4.5.0)
+1. Install Ansible (e.g., v4.5.0)
    ```
    $ pip install ansible==4.5.0
    ```
-3. Edit Ansible Settings (e.g. vi ~/.ansible.cfg)
+1. Edit Ansible Settings (e.g. vi ~/.ansible.cfg)
    ```
    [defaults]
    interpreter_python=auto_silent
    ideprecation_warnings=false
    ```
-4. Install Prerequisites
+1. Install Prerequisites
    ```
    ansible-galaxy collection install community.mysql
    ```
 
-# Appendix D – AWS CLI Installation
+##  Install AWS CLI
 
-These instructions apply to a WSL Ubuntu workstation. Please refer to the AWS CLI Installation Guide https://docs.aws.amazon.com/cli/latest/userguide/install-linux.html for more information.
+Please refer to the AWS CLI Installation Guide https://docs.aws.amazon.com/cli/latest/userguide/install-linux.html for more information.
+
 
 1. Start a Bash Shell
 2. Install Venv
@@ -638,37 +635,51 @@ These instructions apply to a WSL Ubuntu workstation. Please refer to the AWS CL
    /usr/local/aws -b /usr/local/bin/aws
    ```
 
-# Appendix E - MacOS Prerequisites installation.
+# Appendix B - MacOS Prerequisites Installation
 
 Instructions for installing the lab buildout pre-requisites on a Mac.  
 
-1. Open a terminal
+## Install Homebrew
+
+1. Open a Terminal
 1. Install [Homebrew](https://brew.sh/)
 
    ```
    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
    ```
+## Install AWS CLI
 
+Please refer to the AWS CLI Installation Guide https://docs.aws.amazon.com/cli/latest/userguide/install-linux.html for more information.
+
+1. Open a Terminal
 1. Install AWS CLI
 
    ```
    brew install awscli
    ```
-1. Install Terraform
 
+## Install Terraform
+
+Please refer to the Terraform Downloads page https://www.terraform.io/downloads.html for more information
+
+1. Open a Terminal
+1. Install Terraform
    ```
    brew install terraform@0.12
    ```
+## Install Python
 
+1. Open a Terminal
 1. Install Python
-
    ```
    brew install python
    ```
+## Install Ansible
 
+Please refer to the Ansible Installation Guide https://docs.ansible.com/ansible/latest/installation_guide for more information.
+
+1. Open a Terminal
 1. Install Ansible
-
    ```
    brew install ansible
    ```
-
