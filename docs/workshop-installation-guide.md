@@ -335,17 +335,12 @@ In the MID Server record:
 # Configure ACC Log Policies
 
 1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
-2. Select the `acc-log-policies-update-set.xml` Update Set from the `heracles/servicenow/` local folder
+2. Select the `acc-l-policies-update-set.xml` Update Set from the `heracles/servicenow/` local folder
 3. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
-4. Select the `Custom ACC-L Policies` and press `Preview Update Set`
+4. Select the `Workshop custom ACC log policies` and press `Preview Update Set`
 5. Press `Commit Update Set`
-6. Navigate to **ACC Log Analytics > ACC Log Policies** and and check for the new extensions:
-
-
-   | Name                 | Hierarchy | Active | Pubish Status |
-   | -------------------- | --------- | ------ | ------------- |
-   | Nginx Stream Logs    | None      | true   | Published     |
-   | Tomcat on Linux Logs | Parent    | true   | Published     |
+6. Navigate to **ACC Log Analytics > ACC Log Policies**, clear the default filter, and confirm all the following extensions exist:
+   ![custom acc log policies](acc-log-policies-workshop.png)
 
 # Install the ACC Software using Ansible
 
