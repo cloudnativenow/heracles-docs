@@ -474,7 +474,7 @@ MariaDB Error Logs
 1. Login to your NOW Instance as Administrator
 1. Navigate to **User Admininstration > Users**
 1. Create a user named `hlauser1` and grant the `hla_workshop_user` Role
-1. Create a user named `hlaadmin1` and grant the `hla_admin_read_only` Role
+1. Create a user named `hladmin1` and grant the `hla_admin_read_only` Role
 
 # Secure your Workshop AWS Environment
 
