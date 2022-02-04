@@ -25,16 +25,16 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Request a new NOW Instance
 
 1. Navigate to [NOW HI](https://support.servicenow.com/now)
-2. Search for "new internal instance request"
-3. Request a new instance as follows, using the latest available application version:
+1. Search for "new internal instance request"
+1. Request a new instance as follows, using the latest available application version:
 
    ![New Internal Instance Request](new-internal-instance-request.png)
 
 ## Upgrade your NOW Instance to latest Rome version
 
 1. Navigate to [NOW HI](https://support.servicenow.com/now)
-2. Select your Instance from the Instances Dashboard
-3. Upgrade your instance to latest Rome version & patch level as follows:
+1. Select your Instance from the Instances Dashboard
+1. Upgrade your instance to latest Rome version & patch level as follows:
 
    ![Upgrade to Rome](upgrade-to-rome.png)
 
@@ -49,12 +49,12 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Check HLA Services Status for your NOW Instance
 
 1. Login to your NOW Instance as an Administrator
-2. Set your `Profile Time Zone` accordingly (e.g. `US\Eastern`)
+1. Set your `Profile Time Zone` accordingly (e.g. `US\Eastern`)
 
    > NOTE: Log out and back in to make sure your `Profile Time Zone` is set correctly. Failure to do so will adversly affect the workshop and using basic HLA functions like searching and finding log entries.
 
-3. In your browser add the following to your instance URL: `xmlstats.do?include=services_status`
-4. Check **Services Status** are as follows:
+1. In your browser add the following to your instance URL: `xmlstats.do?include=services_status`
+1. Check **Services Status** are as follows:
 
 
    | Name          | Status |
@@ -66,8 +66,8 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Check HLA Package Versions your NOW Instance
 
 1. Login to your NOW Instance as an Administrator
-2. In the Filter Navigator enter `sn_occ_stats.do`
-3. Note the **Health Log Analytics Package Dependencies & Versions** as follows:
+1. In the Filter Navigator enter `sn_occ_stats.do`
+1. Note the **Health Log Analytics Package Dependencies & Versions** as follows:
 
 
    | Dependency                  | Version   |
@@ -85,7 +85,7 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Install the required ITOM plugins for the Workshop
 
 1. HOP to your NOW Instance as Administrator
-2. Navigate to the **System Definition > Plugins** and install or activate the following mandatory plugins:
+1. Navigate to the **System Definition > Plugins** and install or activate the following mandatory plugins:
 
 
    | Plugin Name                                                  | Plugin ID                               |
@@ -103,14 +103,14 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Execute the [PA HLA] Historic Data Collection Job to catch up the HLA Overview Dashboard
 
 1. Login to your NOW Instance as an Administrator
-2. Set the Application Scope to `Health Log Analytics`
-3. Navigate to the **Performance Analytics > Data Collector > Jobs** and Execute the `[PA HLA] Historic Data Collection` by using right-click-mouse to `Execute Now`
+1. Set the Application Scope to `Health Log Analytics`
+1. Navigate to the **Performance Analytics > Data Collector > Jobs** and Execute the `[PA HLA] Historic Data Collection` by using right-click-mouse to `Execute Now`
 
 ## Fix Service Mapping Glitches
 
 1. Login to your NOW Instance as an Administrator
-2. In the Filter Navigator enter `sys_properties_list.do`
-3. Set the following property:
+1. In the Filter Navigator enter `sys_properties_list.do`
+1. Set the following property:
 
 
    | Property Name                 | Value | Type    | Application |
@@ -120,7 +120,7 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Optimize your NOW Instance for the Workshop
 
 1. Login to your NOW Instance as an Administrator
-2. Navigate to **Health Log Analytics > Health Log Analytics Administration > System Properties** and set the following properties:
+1. Navigate to **Health Log Analytics > Health Log Analytics Administration > System Properties** and set the following properties:
 
 
    | Property Name                                            | Value | Default Value |
@@ -132,7 +132,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
    > NOTE: Request an Occultus restart for properties that require it
 
-3. Navigate to **Health Log Analytics > Health Log Analytics Administration > Features** and set the following features:
+1. Navigate to **Health Log Analytics > Health Log Analytics Administration > Features** and set the following features:
 
 
    | Name                                              | State | Default Value |
@@ -213,7 +213,7 @@ This document assumes a basic level of competency and familiarity with the tools
    $ eval `ssh-agent -s`
    $ ssh-add ~/.ssh/YOUR SSH KEY 
    ```
-2. Run the Install Pet Clinic Playbook
+1. Run the Install Pet Clinic Playbook
 
    ```
    $ ansible-playbook -i YOUR INVENTORY FILE.cfg ansible/install-petclinic.yml \
@@ -228,8 +228,8 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Configure NOW MID Access
 
 1. Login to your NOW Instance as Administrator
-2. In your browser add the following to your instance URL: `/nav_to.do?uri=%2F$mid_server_user.do`
-3. **Create MID Server User**
+1. In your browser add the following to your instance URL: `/nav_to.do?uri=%2F$mid_server_user.do`
+1. **Create MID Server User**
 
    ![Create MID User](create-mid-user.png)
 
@@ -250,19 +250,19 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Configure Discovery Credentials
 
 1. Login to your NOW Instance as Administrator
-2. Navigate to **Discovery > Credentials**
-3. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
+1. Navigate to **Discovery > Credentials**
+1. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
 
    ![SSH Credentials](heracles-credential.png)
-4. Test Credential with any of your server private IP addresses (e.g. mysql, spring, etc.)
+1. Test Credential with any of your server private IP addresses (e.g. mysql, spring, etc.)
 
 ## Validate MID Server
 
 1. Login to your NOW Instance as Administrator
-2. Navigate to **MID Server > Servers**
-3. Click on your MID Server
-4. Click on the **Validate** link
-5. Set the **MID Initial Selection Criteria** as follows:
+1. Navigate to **MID Server > Servers**
+1. Click on your MID Server
+1. Click on the **Validate** link
+1. Set the **MID Initial Selection Criteria** as follows:
 
    ![Validate MID Server](validate-mid.png)
 
@@ -270,8 +270,8 @@ This document assumes a basic level of competency and familiarity with the tools
 
 In the MID Server record:
 1. Click on the **Setup ACC Monitoring** link
-2. Set the MID Web Server Port to `8085`
-3. Safeguard your Endpoint address (e.g., `wss://15.0.1.210:8085/ws/events`)
+1. Set the MID Web Server Port to `8085`
+1. Safeguard your Endpoint address (e.g., `wss://15.0.1.210:8085/ws/events`)
 
 ## Collect the MID Server API Key
 
@@ -281,7 +281,7 @@ In the MID Server record:
 ## Setup ACC Log Analytics:
 In the MID Server record:
 1. Click on the **Setup ACC Log Analytics** link
-2. Set the ACC Data Input Port to `5044`
+1. Set the ACC Data Input Port to `5044`
 
 ## Validate ACC-L Extension Contexts
 
@@ -294,7 +294,7 @@ In the MID Server record:
 ## Configure Agent Client Collector Policies
 
 1. Navigate to **Agent Client Collector > Configuration > Policies**
-2. Activate the following Policies:
+1. Activate the following Policies:
 
 
    | Name                | Active |
@@ -307,8 +307,8 @@ In the MID Server record:
 ## Create your Application Service
 
 1. Navigate to **Service Mapping > Services > Application Services**
-2. Create a **New** Application Service `Pet Clinic`
-3. Add a **Web Application** Entry Point as follows:
+1. Create a **New** Application Service `Pet Clinic`
+1. Add a **Web Application** Entry Point as follows:
 
    | Field                           | Value                                       |
    | ------------------------------- | ------------------------------------------- |
@@ -316,21 +316,26 @@ In the MID Server record:
    | URL                             | http:// NGINX AWS PRIVATE IP DNS NAME :8080 |
    | Host Name                       | NGINX AWS PRIVATE IP DNS NAME               |
 
-4. Under **Additional Info**, set the **Operational Status** to `Operational` and Update
-5. Press the **View Map** Button
-6. If Discovery isn't already running, press the **Run Discovery** button
+1. Under **Additional Info**, set the **Operational Status** to `Operational` and Update
+1. Press the **View Map** Button
+1. If Discovery isn't already running, press the **Run Discovery** button
 
 ## Create your Application Service Database Relatonships
 
 1. Navigate to **Service Mapping > Services > Application Services**
-2. Select the `Pet Clinic` Application
-3. Press the **View Map** Button - you should see the following:
-   ![service map without db](petclinic-service-map-without-db.png)
-4. Select **Suggestions > Connection Suggestions** at the top right
-5. Select all the suggestsions' boxes, and press the **Add** button, as follows:
-   ![connection suggestions to db](petclinic-connection-suggestions-db.png)
-6. Your map should now look like this:
-   ![service map with db](petclinic-service-map-with-db.png)
+1. Select the `Pet Clinic` Application
+1. Press the **View Map** Button to display the Service Map as follows:
+
+   ![Service Map without the Database](petclinic-service-map-without-db.png)
+
+1. On the top right, press the  **Suggestions > Connection Suggestion** Button
+1. Select All suggestions in the list and press the **Add** button as follows:
+
+   ![Connection Suggestions for Database](petclinic-connection-suggestions-db.png)
+
+1. Your Service Map should now look as follows:
+
+   ![Service Map with the Database](petclinic-service-map-with-db.png)
 
 # Configure ACC Log Policies
 
@@ -352,89 +357,21 @@ In the MID Server record:
    -e "acc_api_key=YOUR ACC API KEY"
    ```
 
-# Configure your NOW HLA instance Chaos Catalog
-
-## Login to your NOW Instance
-
-1. Login to your NOW Instance as Administrator
-
-## Install the Chaos Catalog Global Update Set
-
-1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
-2. Select the `chaos-catalog-global-update-set.xml` Update Set from the `heracles/servicenow/` local folder
-3. Select the `HLA WorkShop Global Updates` Loaded Update Set and press `Preview Update Set`
-4. Press `Commit Update Set`
-
-   > NOTE: Select `Accept remote update` for any Errors listed and commit update set
-## Install the Chaos Catalog Service Portal Update Set
-
-1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
-2. Select the `chaos-catalog-portal-update-set.xml` Update Set from the `heracles/servicenow/` local folder
-3. Select the `Predictive AIOps Workshop Service Portal` Loaded Update Set and press `Preview Update Set`
-4. Press `Commit Update Set`
-
-   > NOTE: Select `Accept remote update` for any Errors listed and commit update set
-## Create Support Group
-
-1. Navigate to **User Administration > Groups**
-2. Create a Group called `Application Support`
-
-## Map Linux Servers to Support Group
-
-1. Navigate to **Configuration > Servers > Linux**
-2. Add the `Support group` field to the list
-3. Map each of your Spring Application Servers `Support group` to `Application Support`
-4. Filter list to `Show Matching` only items mapped to the `Applicaton Support` group
-5. Select `Copy query` using *right-click* on the `All>Support group=Application Support` fiter breadcrumb
-
-## Configure the Generate Infrastructure Errors Catalog Item List Collector
-
-1. Navigate to **Service Catalog > Catalog Definitions > My Items**
-2. Filter list to `Show Matching` only items mapped to the `Predictive AIOps Workshop Error Generation` Catalogs as follows:
-
-
-   | Name                           | Category             |
-   | ------------------------------ | -------------------- |
-   | Generate Application Errors    | Application Chaos    |
-   | Generate Infrastructure Errors | Infrastructure Chaos |
-   | Stress Servers                 | Infrastructure Chaos  |
-3. For each item in this select the `List Collector` variable
-
-   ![list-collector](list-collector.png)
-4. Set the `Reference qualifier` field to the query copied earlier
-
-   ![reference-qualifier](reference-qualifier.png)
-
-## Configure the Chaos Catalog Credentials
-
-1. Navigate to **Connections & Credentials > Connections & Credential Aliases**
-2. Click on the `hla_workshop_creds` Credential
-3. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
-   ![SSH Credentials](heracles-credential.png)
-4. Test Credential with any of your server IP addresses (e.g. mysql, spring, etc.)
-
-## Test the Chaos Catalog
-
-1. Navigate to `https://YOUR INSTANCE.service-now.com/chaos`
-2. You should see the following Chaos Catalog Page:
-
-   ![chaos-catalog](chaos-catalog.png)
-
 # Configure your NOW HLA instance for a new Workshop
 
 ## Configure your Source Type Structures
 
 1. Login to your NOW Instance as Administrator
-2. Navigate to **Health Log Analytics > Mapping > Source Type Structures**
-3. For each Source Type Structure, set the **Custom JS** Function using the scripts located in the cloned Git Project /servicenow folder (e.g., `source-type-structures-mariadb-error.js`)
+1. Navigate to **Health Log Analytics > Mapping > Source Type Structures**
+1. For each Source Type Structure, set the **Custom JS** Function using the scripts located in the cloned Git Project /servicenow folder (e.g., `source-type-structures-mariadb-error.js`)
 
    > NOTE: Source Type Structures cannot be updated if stil in `Learning` mode. Make sure you have at least 100 log entries before proceeding. In addition, Custom JS functions must be published to start working by clicking `Publish` after saving the form.
 
 ## Configure your Source Type Structures Key/Value Mappings
 
 1. Login to your NOW Instance as Administrator
-2. Navigate to **Health Log Analytics > Mapping > Source Type Structures**
-3. For each Source Type Structure, set the Key/Value Mappings as follows
+1. Navigate to **Health Log Analytics > Mapping > Source Type Structures**
+1. For each Source Type Structure, set the Key/Value Mappings as follows
 
 Syslog Logs
 
@@ -464,20 +401,88 @@ MariaDB Error Logs
 
 ![mariadb-error](mariadb-error-kvm.png)
 
+# Configure your NOW HLA instance Chaos Catalog
+
+## Login to your NOW Instance
+
+1. Login to your NOW Instance as Administrator
+
+## Install the Chaos Catalog Global Update Set
+
+1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
+1. Select the `chaos-catalog-global-update-set.xml` Update Set from the `heracles/servicenow/` local folder
+1. Select the `HLA WorkShop Global Updates` Loaded Update Set and press `Preview Update Set`
+1. Press `Commit Update Set`
+
+   > NOTE: Select `Accept remote update` for any Errors listed and commit update set
+## Install the Chaos Catalog Service Portal Update Set
+
+1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
+1. Select the `chaos-catalog-portal-update-set.xml` Update Set from the `heracles/servicenow/` local folder
+1. Select the `Predictive AIOps Workshop Service Portal` Loaded Update Set and press `Preview Update Set`
+1. Press `Commit Update Set`
+
+   > NOTE: Select `Accept remote update` for any Errors listed and commit update set
+## Create Support Group
+
+1. Navigate to **User Administration > Groups**
+1. Create a Group called `Application Support`
+
+## Map Linux Servers to Support Group
+
+1. Navigate to **Configuration > Servers > Linux**
+1. Add the `Support group` field to the list
+1. Map each of your Spring Application Servers `Support group` to `Application Support`
+1. Filter list to `Show Matching` only items mapped to the `Applicaton Support` group
+1. Select `Copy query` using *right-click* on the `All>Support group=Application Support` fiter breadcrumb
+
+## Configure the Generate Infrastructure Errors Catalog Item List Collector
+
+1. Navigate to **Service Catalog > Catalog Definitions > My Items**
+1. Filter list to `Show Matching` only items mapped to the `Predictive AIOps Workshop Error Generation` Catalogs as follows:
+
+   | Name                           | Category             |
+   | ------------------------------ | -------------------- |
+   | Generate Application Errors    | Application Chaos    |
+   | Generate Infrastructure Errors | Infrastructure Chaos |
+   | Stress Servers                 | Infrastructure Chaos  |
+
+1. For each item in this select the `List Collector` variable
+
+   ![list-collector](list-collector.png)
+1. Set the `Reference qualifier` field to the query copied earlier
+
+   ![reference-qualifier](reference-qualifier.png)
+
+## Configure the Chaos Catalog Credentials
+
+1. Navigate to **Connections & Credentials > Connections & Credential Aliases**
+1. Click on the `hla_workshop_creds` Credential
+1. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
+   ![SSH Credentials](heracles-credential.png)
+1. Test Credential with any of your server IP addresses (e.g. mysql, spring, etc.)
+
+## Test the Chaos Catalog
+
+1. Navigate to `https://YOUR INSTANCE.service-now.com/chaos`
+1. You should see the following Chaos Catalog Page:
+
+   ![chaos-catalog](chaos-catalog.png)
+
 # Grant User Access to your NOW Instance
 
 1. Login to your NOW Instance as Administrator
-2. Navigate to **User Admininstration > Users**
-3. Create a user named `hlauser1` and grant the `hla_workshop_user` Role
-4. Create a user named `hlaadmin1` and grant the `hla_admin_read_only` Role
+1. Navigate to **User Admininstration > Users**
+1. Create a user named `hlauser1` and grant the `hla_workshop_user` Role
+1. Create a user named `hlaadmin1` and grant the `hla_admin_read_only` Role
 
 # Secure your Workshop AWS Environment
 
 ## Identify your Crowdstrike CID
 
 1. Navigate to [NOW SURF](https://surf.service-now.com/)
-2. Search for `KB0051390` Knowledge Article
-3. Note the Crowdstrike CID for the `Cloud (Commercial)` Environment
+1. Search for `KB0051390` Knowledge Article
+1. Note the Crowdstrike CID for the `Cloud (Commercial)` Environment
 
 ## Install the Crowdstrike Falcon Agent using Ansible
 
@@ -486,7 +491,7 @@ MariaDB Error Logs
    ```
    wget "https://surf.service-now.com/sys_attachment.do?sys_id=6e589ffcdb800d10ae878fd3399619f8" -qO falcon-sensor.rpm
    ```
-2. Run the Install Falcon Playbook
+1. Run the Install Falcon Playbook
 
    ```
    $ ansible-playbook -i YOUR INVENTORY FILE.cfg ansible/install-falcon.yml \
