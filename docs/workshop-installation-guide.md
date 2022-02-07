@@ -34,11 +34,8 @@ This document assumes a basic level of competency and familiarity with the tools
 
 1. Navigate to [NOW HI](https://support.servicenow.com/now)
 1. Select your Instance from the Instances Dashboard
-1. Upgrade your instance to latest Rome version & patch level as follows:
-
-   ![Upgrade to Rome](upgrade-to-rome.png)
-
-   > NOTE: Recommended Family Release for this workshop is Rome Patch 6 (RP6) or later.
+1. Upgrade your instance to latest Rome version & patch level
+> NOTE: **Minimal** Family Release version for this workshop is **Rome Patch 6 (RP6)**
 
 ## Install the HLA stack for your NOW Instance
 
@@ -271,12 +268,12 @@ This document assumes a basic level of competency and familiarity with the tools
 In the MID Server record:
 1. Click on the **Setup ACC Monitoring** link
 1. Set the MID Web Server Port to `8085`
-1. Safeguard your Endpoint address (e.g., `wss://15.0.1.210:8085/ws/events`)
+1. Safeguard your ACC Websocket Endpoint URL address (e.g., `wss://15.0.1.210:8085/ws/events` - to later be used as "acc_mid")
 
 ## Collect the MID Server API Key
 
 1. Navigate to **MID Server > Extensions > MID Web Server API Key**
-2. Copy and safeguard your `MID Web Server API Key` - to later be used as the "ACC_API_KEY"
+2. Copy and safeguard your `MID Web Server API Key` - to later be used as "acc_api_key"
 
 ## Setup ACC Log Analytics:
 In the MID Server record:
@@ -355,8 +352,8 @@ In the MID Server record:
 
    ```
    $ ansible-playbook -i YOUR INVENTORY FILE ansible/install-agents.yml \
-   -e "acc_mid=YOUR ACC MID URL" \
-   -e "acc_api_key=YOUR ACC API KEY"
+   -e "acc_mid=YOUR MID ACC WEBSOCKET ENDPOINT URL" \
+   -e "acc_api_key=YOUR MID WEB SERVER API KEY"
    ```
 
 # Configure your NOW HLA instance for a new Workshop
