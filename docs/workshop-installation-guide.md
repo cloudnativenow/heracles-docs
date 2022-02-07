@@ -26,7 +26,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
 1. Navigate to [NOW HI](https://support.servicenow.com/now)
 1. Search for "new internal instance request"
-1. Request a new instance as follows, using the latest available application version:
+1. Request a new instance as follows, asking for the latest available **Rome** application version (e.g. `Rome Patch 6`):
 
    ![New Internal Instance Request](new-internal-instance-request.png)
 
@@ -356,7 +356,7 @@ In the MID Server record:
    -e "acc_api_key=YOUR MID WEB SERVER API KEY"
    ```
 
-# Configure your NOW HLA instance for a new Workshop
+# Configure HLA Data Parsing
 
 ## Configure your Source Type Structures
 
