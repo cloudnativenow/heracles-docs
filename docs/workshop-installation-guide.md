@@ -268,12 +268,16 @@ This document assumes a basic level of competency and familiarity with the tools
 In the MID Server record:
 1. Click on the **Setup ACC Monitoring** link
 1. Set the MID Web Server Port to `8085`
-1. Safeguard your ACC Websocket Endpoint URL address (e.g., `wss://15.0.1.210:8085/ws/events` - to later be used as "acc_mid")
+1. Safeguard your ACC Websocket Endpoint URL address (e.g., `wss://15.0.1.210:8085/ws/events`
+
+   > NOTE: You will use this later as YOUR MID ACC WEBSOCKET ENDPOINT URL
 
 ## Collect the MID Server API Key
 
 1. Navigate to **MID Server > Extensions > MID Web Server API Key**
-2. Copy and safeguard your `MID Web Server API Key` - to later be used as "acc_api_key"
+2. Copy and safeguard your `MID Web Server API Key`
+
+   > NOTE: You will use this later as YOUR MID WEB SERVER API KEY
 
 ## Setup ACC Log Analytics:
 In the MID Server record:
