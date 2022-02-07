@@ -340,11 +340,13 @@ In the MID Server record:
 # Configure ACC Log Policies
 
 1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
-2. Select the `acc-l-policies-update-set.xml` Update Set from the `heracles/servicenow/` local folder
+1. Select the `acc-l-policies-update-set.xml` Update Set from the `heracles/servicenow/` local folder
 3. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
-4. Select the `Workshop custom ACC log policies` and press `Preview Update Set`
-5. Press `Commit Update Set`
-6. Navigate to **ACC Log Analytics > ACC Log Policies**, clear the default filter, and confirm all the following extensions exist:
+1. Select the `Workshop custom ACC log policies` and press `Preview Update Set`
+1. Check all records under the "Preview Problems for Batch" and select `Accept remote update` for **all Errors** listed
+1. Press `Commit Update Set`
+
+> NOTE: to see the changes, navigate to **ACC Log Analytics > ACC Log Policies**, clear the filter, and confirm the following policies exist:
    ![custom acc log policies](acc-log-policies-workshop.png)
 
 # Install the ACC Software using Ansible
