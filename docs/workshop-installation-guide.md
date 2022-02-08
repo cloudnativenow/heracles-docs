@@ -127,8 +127,6 @@ This document assumes a basic level of competency and familiarity with the tools
    | incidents.cooldown_period_minutes                        | 2     | 5             |
 
 
-   > NOTE: Request an Occultus restart for properties that require it
-
 1. Navigate to **Health Log Analytics > Health Log Analytics Administration > Features** and set the following features:
 
 
