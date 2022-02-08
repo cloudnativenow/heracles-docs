@@ -376,31 +376,40 @@ In the MID Server record:
 1. Navigate to **Health Log Analytics > Mapping > Source Type Structures**
 1. For each Source Type Structure, set the Key/Value Mappings as follows
 
-Syslog Logs
+Linux_system_logs
 
-![syslog-messages](syslog-messages-kvm.png)
+![Linux_system_logs](syslog-messages-kvm.png)
 
-Spring App Logs
+spring-app
 
 ![spring-app](spring-app-kvm.png)
 
-Spring Access Logs
+spring-access
+
+> there's no .js file for this one, auto extraction is good OOTB - but DO make sure you fix up classifications as shown below:
 
 ![spring-access](spring-access-kvm.png)
 
-NGINX Error Logs
+nginx-error
 
 ![nginx-error](nginx-error-kvm.png)
 
-NGINX Access Logs
+nginx-access
+
+> there's no .js file for this one, auto extraction is good OOTB - but DO make sure you fix up classifications as shown below:
 
 ![nginx-access](nginx-access-kvm.png)
 
-MariaDB SQL Dump
+mariadb-sql
+
+> there's no .js file for this one, auto extraction is good OOTB
 
 ![mariadb-sql](mariadb-sql-kvm.png)
 
-MariaDB Error Logs
+mariadb-error
+
+> if the `mariadb-error` source type is yet to be created / is stuck in learning, you can speed things up by SSHing to your mysql instance and restarting the mariadb service, which would generate some logs.
+You could also temporarily reduce the value of the HLA System Property: `source_type.default_learn_sample_size` - from 100, to **10** - so _learning_ is over more quickly
 
 ![mariadb-error](mariadb-error-kvm.png)
 
