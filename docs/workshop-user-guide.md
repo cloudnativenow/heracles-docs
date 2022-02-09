@@ -251,6 +251,7 @@ Following is an example scenario to trigger database chaos using a `privileged a
 * Service Account & SSH Private Key
 
 ## Trigger Database Chaos and Remediation
+> Requires SSH access - ask your SN-rep to do this with you during a touchpoint meeting!
 
 1. SSH To MySQL Server
 
