@@ -3,7 +3,7 @@ title: Predictive AIOps Workshop User Guide
 subtitle: Predictive AIOps Workshop 
 author: 
 - Anthony Angelo, Netser Heruty, Daniel Smith
-date: 10 Nov 2021
+date: 10 Feb 2022
 ---
 
 # Introduction
