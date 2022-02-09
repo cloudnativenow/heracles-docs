@@ -148,6 +148,7 @@ This document assumes a basic level of competency and familiarity with the tools
    ```
    $ git clone git@github.com:pangealab/heracles.git
    $ cd heracles/
+   $ git checkout 1.0
    ```
 
    > NOTE: If you don't have an SSH Key setup, use the HTTPS URI instead to clone (e.g. https://github.com/pangealab/heracles.git)
