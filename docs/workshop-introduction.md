@@ -2,7 +2,7 @@
 title: Predictive AIOps Workshop Introduction
 subtitle: Predictive AIOps Workshop
 author: Anthony Angelo, Netser Heruty
-date: 1 Feb 2022
+date: 10 Feb 2022
 ---
 
 # Introduction
@@ -23,7 +23,7 @@ On the ServiceNow side, we provide the full ITOM Health experience leveraging th
 
 # Unified AIOps Agent
 
-The Predictive AIOps Workshop leverages the latest version of ACC, which unifies the legacy functions of our Monitoring Agent (ACC-M) together with log collection, simplifying the deployment.
+The Predictive AIOps Workshop leverages the latest version of ACC, which unifies the legacy functions of our Monitoring Agent (ACC-M) together with log collection (formerly done with filebeat, now reaplced with ACC-L), simplifying the deployment.
 
 ACC is built on the [Sensu.io](https://sensu.io) framework and comes installed with monitoring capabilities for servers, databases, application servers, and middleware. Sensu based checks and policies run in the ACC agent to retrieve the relevant data, which is transformed into events or metrics which are analyzed in real-time by the Metric Intelligence capability. 
 
@@ -31,7 +31,7 @@ This latest ACC release removes the need for a separate 3rd party agent to colle
 
 Alerts are continuously scanned by Event Management and correlated using temporal or lexical heuristics, or processed by leveraging relationships defined in the Configuration Management Database (CMDB).
 
-# Release History
+# Workshop Release History
 
 | Release | Release Notes |
 | ------- | ------------- |
