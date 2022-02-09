@@ -411,7 +411,7 @@ You could also temporarily reduce the value of the HLA System Property: `source_
 
 ![mariadb-error](mariadb-error-kvm.png)
 
-# Configure your NOW HLA instance Chaos Catalog
+# Configure your NOW instance Chaos Catalog
 
 ## Login to your NOW Instance
 
@@ -444,12 +444,12 @@ You could also temporarily reduce the value of the HLA System Property: `source_
 1. Add the `Support group` field to the list
 1. Map each of your Spring Application Servers `Support group` to `Application Support`
 1. Filter list to `Show Matching` only items mapped to the `Applicaton Support` group
-1. Select `Copy query` using *right-click* on the `All>Support group=Application Support` fiter breadcrumb
+1. Select `Copy query` using *right-click* on the `All>Support group=Application Support` filter breadcrumb
 
 ## Configure the Generate Infrastructure Errors Catalog Item List Collector
 
 1. Navigate to **Service Catalog > Catalog Definitions > My Items**
-1. Filter list to `Show Matching` only items mapped to the `Predictive AIOps Workshop Error Generation` Catalogs as follows:
+1. Filter list to `Show Matching` only items mapped to the `Predictive AIOps Workshop Error Generation` Catalogs, which should result with the following records:
 
    | Name                           | Category             |
    | ------------------------------ | -------------------- |
@@ -457,16 +457,16 @@ You could also temporarily reduce the value of the HLA System Property: `source_
    | Generate Infrastructure Errors | Infrastructure Chaos |
    | Stress Servers                 | Infrastructure Chaos  |
 
-1. For each item in this select the `List Collector` variable
+1. For **each** item in this list: Open the record and select the `List Collector` variable
 
    ![list-collector](list-collector.png)
-1. Set the `Reference qualifier` field to the query copied earlier
+1. Set the `Reference qualifier` field (under the **Type Specifications** tab) to the query copied earlier
 
    ![reference-qualifier](reference-qualifier.png)
 
 ## Configure the Chaos Catalog Credentials
 
-1. Navigate to **Connections & Credentials > Connections & Credential Aliases**
+1. Navigate to **Connections & Credentials > Connection & Credential Aliases**
 1. Click on the `hla_workshop_creds` Credential
 1. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
    ![SSH Credentials](heracles-credential.png)
