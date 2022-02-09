@@ -2,12 +2,12 @@
 title: Predictive AIOps Workshop Installation Guide
 subtitle: Predictive AIOps Workshop
 author: 
-- Anthony Angelo, Netser Heruty, Daniel Smith, Joe Steinfeld, Mike Gallagher
-date: 1 Feb 2022
+- Anthony Angelo, Netser Heruty, Daniel Smith
+date: 10 Feb 2022
 ---
 # Introduction
 
-This document provides prescriptive guidance for deploying the Predictive AIOps Workshop infrastructure and ServiceNow instance configuration. 
+This document provides prescriptive guidance for deploying the Predictive AIOps Workshop app infrastructure and ServiceNow instance configuration. 
 
 # Prerequisites
 
