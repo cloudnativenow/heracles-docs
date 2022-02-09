@@ -11,7 +11,7 @@ This document provides prescriptive guidance for deploying the Predictive AIOps 
 
 # Prerequisites
 
-This document assumes a basic level of competency and familiarity with the tools listed as prerequisites. See the Appendix section for some basic guidance of the use of these tools. Following is a list of prerequisite tools and accesses needed to perform a full Predictive AIOps Workshop installation:
+This document assumes a basic level of competency and familiarity with the tools listed as prerequisites. See the **Appendix** section for some basic guidance of the use of these tools. Following is a list of prerequisite tools and accesses needed to perform a full Predictive AIOps Workshop installation:
 
 * Access to an AWS Account with full admin privileges
 * AWS CLI
@@ -19,6 +19,7 @@ This document assumes a basic level of competency and familiarity with the tools
 * Terraform v0.12.31
 * Python v3.7.10
 * Ansible v4.5.0
+> Check out the Appendix for guidance!
 
 # Deploy your NOW Instance
 
