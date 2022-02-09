@@ -35,7 +35,7 @@ Documentation project for the Predictive AIOps Workshop. In addition it describe
 * Install Pandoc using HOMEBREW
 
     ```
-    sudo apt-get update
+    brew update
     brew install pandoc
     brew install texlive-latex-extra
     ```
