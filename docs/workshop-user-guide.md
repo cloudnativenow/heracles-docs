@@ -78,11 +78,13 @@ The Workshop Application Chaos leverages the UNIX `stress` API which allows priv
 
 1. Press `Submit` to process request
 
-# APPENDIX A - Trigger Application Chaos using REST
+# Under The Hood - Chaos APIs Explained
+
+## APPENDIX A - Trigger Application Chaos using REST
 
 Following is an example scenario to trigger application chaos for the Predictive AIOps Workshop using the Chaos Monkey REST API which will ultimately be detected as an anomaly in ServiceNow.
 
-## Chaos Monkey API Explained
+### **Chaos Monkey API Explained**
 
 The Chaos Monkey assaults API is accessible via REST both via HTTP GET from a browser to simply query for status, as well as HTTP PUT to configure new assaults. Chaos Monkey is initially deployed in a disabled state to minimize impact to the initial Predictive AIOps Workshop deployment and scenarios.  The Chaos Monkey APIs are as follows:
 
@@ -94,7 +96,7 @@ The Chaos Monkey assaults API is accessible via REST both via HTTP GET from a br
 | GET	| /actuator/chaosmonkey/assaults | Get assaults payload |
 | POST | /actuator/chaosmonkey/assaults | Set assaults payload |
 
-## Trigger Application Chaos using REST
+### **Trigger Application Chaos using REST**
 
 Following is an example scenario to trigger infrastructure chaos for the Predictive AIOps Workshop which will ultimately be detected as an anomaly in ServiceNow
 
@@ -166,15 +168,15 @@ Following is an example scenario to trigger infrastructure chaos for the Predict
       Chaos Monkey is disabled
       ```
 
-# APPENDIX B - Trigger Infrastructure Chaos
+## APPENDIX B - Trigger Infrastructure Chaos
 
 Following is an example scenario to trigger server syslog chaos using a `privileged account` which will ultimately be detected as an anomaly in ServiceNow.
 
-## Prerequisites
+### **Prerequisites**
 
 * Service Account & SSH Private Key
 
-## Trigger Infrastructure Chaos and Remediation
+### **Trigger Infrastructure Chaos and Remediation**
 
 1. SSH To any Server (e.g. nginx, spring or mysql)
 
@@ -200,11 +202,11 @@ Following is an example scenario to trigger server syslog chaos using a `privile
 
    > NOTE: Use an HLA Lexical Keyword so that HLA can notice the log faster (e.g., error, failed, fatal, corrupt, etc.). For more information please refer to the [HLA Lexical Keyword](https://docs.servicenow.com/bundle/quebec-it-operations-management/page/product/health-log-analytics-admin/task/hla-lexical-keywords-admin.html) documentation
 
-# APPENDIX C - Trigger Infrastructure Stress Chaos
+## APPENDIX C - Trigger Infrastructure Stress Chaos
 
 Following is an example scenario to trigger `stress` chaos using a `privileged account` which will ultimately be detected as an anomaly in ServiceNow.
 
-## Prerequisites
+### **Prerequisites**
 
 * Service Account & SSH Private Key
 * Install `stress` as follows:
@@ -214,7 +216,7 @@ Following is an example scenario to trigger `stress` chaos using a `privileged a
    sudo yum install stress -y
    ```
 
-## Trigger Infrastructure Stress Chaos and Remediation
+### **Trigger Infrastructure Stress Chaos and Remediation**
 
 1. SSH To MySQL Server
 
@@ -242,18 +244,19 @@ Following is an example scenario to trigger `stress` chaos using a `privileged a
    CPUS=$(getconf _NPROCESSORS_ONLN); stress -m $CPUS --vm-bytes $(awk -v cpus=$CPUS '/MemAvailable/{printf "%d\n", $2 / cpus;}' < /proc/meminfo)k --vm-keep  -t 5m
    ```
 
-# APPENDIX D - Database Chaos and Remediation
+# _**Bonus** Chaos Playbook: Database Crash & Remediation_
 
-Following is an example scenario to trigger database chaos using a `privileged account` which will ultimately be detected as an anomaly in ServiceNow.
+Following is an example scenario to trigger database chaos using a `privileged account`. This chaos simulates a realistic issue where too many connections are hitting the DB (which could happen even during legitimate traffic surges if the default limit is too low) and the DB is hitting a too many open files error - causing the entire application to fail! 
+
+Ask your ServiceNow Workshop owner to run this with you during a touchpoint meeting to see how ServiceNow's Predictive AIOps automatically detects this critical outage!
 
 ## Prerequisites
 
 * Service Account & SSH Private Key
 
 ## Trigger Database Chaos and Remediation
-> Requires SSH access - ask your SN-rep to do this with you during a touchpoint meeting!
 
-1. SSH To MySQL Server
+1. SSH To MySQL (MariaDB) Server
 
    ```
    ssh ec2-user@$HOST PUBLIC IP -i ~/.ssh/YOUR SSH KEY
