@@ -7,13 +7,12 @@ Documentation project for the Predictive AIOps Workshop. In addition it describe
 
 # Clone Project
 
-1. Clone Git Project
+1. Clone Git Project and change directory to desired documentation release per example below.
 
     ```
     $ git clone git@github.com:pangealab/heracle-docs.git
-    $ cd heracles-docs/docs
+    $ cd heracles-docs/docs/1.0
     ```
-
 # Pandoc Installation for WSL
 
 * Install Pandoc using APT GET
