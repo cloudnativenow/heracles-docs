@@ -347,7 +347,6 @@ This document assumes a basic level of competency and familiarity with the tools
 4. Press **Submit** when done
 
    > NOTE: Do not download the ”filebeat.yml” as it is part of an Ansible Playbook already
-   >
 
 ## Spring Data Input
 
@@ -359,8 +358,6 @@ This document assumes a basic level of competency and familiarity with the tools
 4. Press **Submit** when done
 
    > NOTE: Do not download the ”filebeat.yml” as it is part of an Ansible Playbook already
-   >
-
 ## MySQL Data Input
 
 1. Login to your NOW Instance as Administrator
@@ -372,7 +369,6 @@ This document assumes a basic level of competency and familiarity with the tools
 5. Press **Submit** when done
 
    > NOTE: Do not download the ”filebeat.yml” as it is part of an Ansible Playbook already
-   >
 
 # Install the ACC & Filebeat Software using Ansible
 
