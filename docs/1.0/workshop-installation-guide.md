@@ -45,7 +45,6 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Follow the [HLA Installation Guide](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0998946) for the latest installation steps
 
    > NOTE: Please read and follow all the steps carefully as instructed in the "HLA Installation Guide" document as it us updated frequently by the HLA Development Team
-   >
 
 ## Check HLA Services Status for your NOW Instance
 
@@ -53,7 +52,7 @@ This document assumes a basic level of competency and familiarity with the tools
 2. Set your `Profile Time Zone` accordingly (e.g. `US\Eastern`)
 
    > NOTE: Log out and back in to make sure your `Profile Time Zone` is set correctly. Failure to do so will adversly affect the workshop and using basic HLA functions like searching and finding log entries.
-   >
+
 3. In your browser add the following to your instance URL `xmlstats.do?include=services_status`
 4. Check **Services Status** are as follows:
 
@@ -129,7 +128,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
 
    > NOTE: Request an Occultus restart for properties that require it
-   >
+
 3. Navigate to **Health Log Analytics > Health Log Analytics Administration > Features** and set the following features:
 
 
@@ -397,7 +396,6 @@ This document assumes a basic level of competency and familiarity with the tools
 4. Press `Commit Update Set`
 
    > NOTE: Select `Accept remote update` for any Errors listed and commit update set
-   >
 
 ## Install the Chaos Catalog Service Portal Update Set
 
@@ -407,7 +405,6 @@ This document assumes a basic level of competency and familiarity with the tools
 4. Press `Commit Update Set`
 
    > NOTE: Select `Accept remote update` for any Errors listed and commit update set
-   >
 
 ## Create Support Group
 
@@ -485,7 +482,6 @@ This document assumes a basic level of competency and familiarity with the tools
 3. For each Source Type Structure, set the **Custom JS** Function using the scripts located in the cloned Git Project /servicenow folder (e.g., `source-type-structures-mariadb-error.js`)
 
    > NOTE: Source Type Structures cannot be updated if stil in `Learning` mode. Make sure you have at least 100 log entries before proceeding. In addition, Custom JS functions must be published to start working by clicking `Publish` after saving the form.
-   >
 
 ## Configure your Source Type Structures Key/Value Mappings
 
