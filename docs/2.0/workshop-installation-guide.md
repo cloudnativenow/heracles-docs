@@ -145,7 +145,6 @@ This document assumes a basic level of competency and familiarity with the tools
 
    ```
    $ git clone git@github.com:pangealab/heracles.git
-   $ cd heracles/releases/2.0
    ```
 
    > NOTE: If you don't have an SSH Key setup, use the HTTPS URI instead to clone (e.g. https://github.com/pangealab/heracles.git)
@@ -153,7 +152,7 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Change to heracles folder
 
    ```
-   $ cd heracles/
+   $ cd heracles/releases/2.0
    ```
 
    > NOTE: Remain in this folder for the remainder of this installation. All files referenced therein are located in this folder.
