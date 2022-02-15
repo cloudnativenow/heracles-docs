@@ -175,6 +175,8 @@ This document assumes a basic level of competency and familiarity with the tools
    ```
    $ ssh-keygen -t rsa -b 4096 -C "heracles@noreply.com" -f $HOME/.ssh/heracles -m PEM
    ```
+   > NOTE: Do not use a passphrase when generating your ssh key
+
 1. Set your backend bucket property in the `backend.tf` file as follows:
 
    ```
