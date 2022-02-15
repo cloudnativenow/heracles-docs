@@ -126,9 +126,6 @@ This document assumes a basic level of competency and familiarity with the tools
    | rules.filter_detections_with_low_current_value.threshold | 1.0   | 5.0           |
    | incidents.cooldown_period_minutes                        | 2     | 5             |
 
-
-   > NOTE: Request an Occultus restart for properties that require it
-
 3. Navigate to **Health Log Analytics > Health Log Analytics Administration > Features** and set the following features:
 
 
