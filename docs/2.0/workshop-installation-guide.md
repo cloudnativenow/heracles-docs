@@ -70,8 +70,8 @@ This document assumes a basic level of competency and familiarity with the tools
 
    | Dependency                  | Version   |
    | --------------------------- | --------- |
-   | Health Log Analytics        | 22.0.12   |
-   | Health Log Analytics Viewer | 21.0.0    |
+   | Health Log Analytics        | 22.0.13   |
+   | Health Log Analytics Viewer | 21.0.2    |
    | Alert Intelligence          | 19.4.7    |
    | Occultus Version            | 1.14.0.34 |
    | Metrics Base Version        | 1.14.0.13 |
@@ -119,7 +119,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
 1. Login to your NOW Instance as an Administrator
 1. Navigate to **Health Log Analytics > Health Log Analytics Administration > System Properties** and set the following properties:
-
+> to see all the properties, clear the list's default filter first
 
    | Property Name                                            | Value | Default Value |
    | -------------------------------------------------------- | ----- | ------------- |
