@@ -11,7 +11,7 @@ This document provides prescriptive guidance for deploying the Predictive AIOps 
 
 # Prerequisites
 
-This document assumes a basic level of competency and familiarity with the tools listed as prerequisites. See the **Appendix** section for some basic guidance of the use of these tools. Following is a list of prerequisite tools and accesses needed to perform a full Predictive AIOps Workshop installation:
+This document assumes a basic level of competency and familiarity with the tools listed as prerequisites. Following is a list of prerequisite tools and accesses needed to perform a full Predictive AIOps Workshop installation:
 
 * Access to an AWS Account with full admin privileges
 * AWS CLI
@@ -19,8 +19,8 @@ This document assumes a basic level of competency and familiarity with the tools
 * Terraform v0.12.31
 * Python v3.7.10
 * Ansible v4.5.0
-> Check out the Appendix for guidance!
 
+> NOTE: See the Appendix section for specific installation and use instructions.
 # Deploy your NOW Instance
 
 ## Request a new NOW Instance
@@ -145,7 +145,6 @@ This document assumes a basic level of competency and familiarity with the tools
 
    ```
    $ git clone git@github.com:pangealab/heracles.git
-   $ cd heracles/releases/2.0
    ```
 
    > NOTE: If you don't have an SSH Key setup, use the HTTPS URI instead to clone (e.g. https://github.com/pangealab/heracles.git)
@@ -153,7 +152,7 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Change to heracles folder
 
    ```
-   $ cd heracles/
+   $ cd heracles/releases/2.0
    ```
 
    > NOTE: Remain in this folder for the remainder of this installation. All files referenced therein are located in this folder.
@@ -176,6 +175,8 @@ This document assumes a basic level of competency and familiarity with the tools
    ```
    $ ssh-keygen -t rsa -b 4096 -C "heracles@noreply.com" -f $HOME/.ssh/heracles -m PEM
    ```
+   > NOTE: Do not use a passphrase when generating your ssh key
+
 1. Set your backend bucket property in the `backend.tf` file as follows:
 
    ```
