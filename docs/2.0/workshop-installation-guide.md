@@ -73,7 +73,7 @@ This document assumes a basic level of competency and familiarity with the tools
    | Health Log Analytics        | 22.0.13   |
    | Health Log Analytics Viewer | 21.0.2    |
    | Alert Intelligence          | 19.4.7    |
-   | Occultus Version            | 1.14.0.34 |
+   | Occultus Version            | 1.14.0.35 |
    | Metrics Base Version        | 1.14.0.13 |
    | ElasticSearch Version       | 7.3.2     |
 
@@ -163,7 +163,7 @@ This document assumes a basic level of competency and familiarity with the tools
    $ export AWS_PROFILE=YOUR PROFILE; printenv AWS_PROFILE
    ```
 
-1. Standardize on using one AWS Region. The automation scripts provided assume you are deploying in one region (e.g. `us-east-2`). To change to another region, edit the `backend.tf`,`providers.tf` and `variables.tf` files and replace with your specific region.
+1. Standardize on using one AWS Region. The automation scripts provided assume you are deploying in one region (e.g. `us-east-2`). To change to another region, edit the `backend.tf`, `providers.tf` and `variables.tf` files and replace with your specific region.
 
 1. Create Terraform State Bucket using your CLUSTER ID (e.g., hlawork1)
 
