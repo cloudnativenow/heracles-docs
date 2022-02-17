@@ -646,7 +646,7 @@ Instructions for installing the lab buildout pre-requisites on a Mac.
 1. Install Terraform. See the [Terraform Docs](https://www.terraform.io/docs) for more information
 
    ```
-   brew install terraform@0.12
+   brew install terraform@1.1.6
    ```
 
 ## Install Python
