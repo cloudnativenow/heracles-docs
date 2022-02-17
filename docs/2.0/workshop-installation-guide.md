@@ -16,7 +16,7 @@ This document assumes a basic level of competency and familiarity with the tools
 * Access to an AWS Account with full admin privileges
 * AWS CLI
 * Bash Terminal Access (e.g., WSL for Windows, MacOS Terminal or another Linux)
-* Terraform v0.12.31
+* Terraform v1.1.6
 * Python v3.7.10
 * Ansible v4.5.0
 
