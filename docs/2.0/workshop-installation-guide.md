@@ -16,7 +16,7 @@ This document assumes a basic level of competency and familiarity with the tools
 * Access to an AWS Account with full admin privileges
 * AWS CLI
 * Bash Terminal Access (e.g., WSL for Windows, MacOS Terminal or another Linux)
-* Terraform v0.12.31
+* Terraform v1.1.6
 * Python v3.7.10
 * Ansible v4.5.0
 
@@ -515,15 +515,42 @@ You could also temporarily reduce the value of the HLA System Property: `source_
 
 Instructions for installing the lab buildout pre-requisites on WSL Ubuntu.
 
-## Install Terraform
+## Install Tfenv
 
-1. Start a Bash Shell
-1. Install Terraform CLI (e.g., v0.12.31). See the [Terraform Docs](https://www.terraform.io/downloads.html) for more information.
+1. Install Tfenv
+
    ```
-   $ wget -qO- https://releases.hashicorp.com/terraform/0.12.31/terraform_0.12.31_linux_amd64.zip | busybox unzip -
-   $ chmod 775 terraform
-   $ sudo mv terraform /usr/local/bin/
+   git clone https://github.com/tfutils/tfenv.git ~/.tfenv
    ```
+
+1. Add Tfenv to Path
+
+   ```
+   echo 'export PATH="$HOME/.tfenv/bin:$PATH"' >> ~/.bashrc
+   ```
+
+1. List Terraform versions
+
+   ```
+   tfenv list-remote
+   ```
+
+## Install Terraform   
+
+* Install Terraform latest (e.g. 1.1.6)
+
+   ```
+   tfenv install latest
+   tfenv use 1.1.6
+   ```
+
+* Install Terraform 0.12.31 (legacy)
+
+   ```
+   tfenv install 0.12.31
+   ```
+## Install Pyenv
+
 1. Install pyenv
    ```
    curl https://pyenv.run | bash
@@ -534,7 +561,6 @@ Instructions for installing the lab buildout pre-requisites on WSL Ubuntu.
    export PATH="$PYENV_ROOT/bin:$PATH"
    eval "$(pyenv init --path)"
    ```
-
 ## Install Python
 
 1. Start a Bash Shell
