@@ -78,7 +78,7 @@ This document assumes a basic level of competency and familiarity with the tools
    | ElasticSearch Version       | 7.3.2     |
 
 
-   > NOTE: Confirm your Occultus version matches your HLA version using this matrix: [KB1002197](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB1002197). If it doesn't, comment on your HLA installation CHG request asking to fix this.
+   > NOTE: Confirm your Occultus version matches your HLA version using this matrix: [KB1002197](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB1002197). If it's lower than the version number in the matrix, comment on your HLA installation CHG request asking to upgrade it.
 
 ## Install the required ITOM plugins for the Workshop
 
