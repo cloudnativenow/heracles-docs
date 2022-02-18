@@ -215,7 +215,6 @@ This document assumes a basic level of competency and familiarity with the tools
 
    ```
    $ ansible-playbook -i YOUR INVENTORY FILE.cfg ansible/install-petclinic.yml \
-   -e "github_token=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" \
    -e "mysql_host=YOUR MYSQL PRIVATE IP" \
    -e "servers='SPACE SEPARATED LIST OF YOUR SPRING SERVERS PRIVATE IPS'" \
    -e "frontend_addr=YOUR NGINX PUBLIC IP:8080"
