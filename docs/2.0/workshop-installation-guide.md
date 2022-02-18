@@ -543,12 +543,6 @@ Instructions for installing the lab buildout pre-requisites on WSL Ubuntu.
    tfenv install latest
    tfenv use 1.1.6
    ```
-
-* Install Terraform 0.12.31 (legacy)
-
-   ```
-   tfenv install 0.12.31
-   ```
 ## Install Pyenv
 
 1. Install pyenv
