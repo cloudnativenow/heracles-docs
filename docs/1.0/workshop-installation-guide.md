@@ -605,7 +605,8 @@ Instructions for installing the lab buildout pre-requisites on WSL Ubuntu.
    ```
    [defaults]
    interpreter_python=auto_silent
-   ideprecation_warnings=false
+   deprecation_warnings=false
+   host_key_checking=false
    ```
 1. Install Prerequisites
 
