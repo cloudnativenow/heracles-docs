@@ -350,6 +350,14 @@ In the MID Server record:
 > NOTE: to see the changes, navigate to **ACC Log Analytics > ACC Log Policies**, clear the filter, and confirm the following policies exist:
    ![custom acc log policies](acc-log-policies-workshop.png)
 
+### Fix temporary glitch in ACC log plugins, post policies import: 
+1. Navigate to **Agent Client Collector > Configuration > ACC Plugins**
+1. Open each of the "filebeat" records (start with the one for *Linux* which is critical for the workshop):
+1. At the top, to edit this record, click "here"
+1. Check the "Active" box
+1. Update
+> this is a bug that only happens after exporting and importing ACC-L policies - and Dev are on it...
+
 # Install the ACC Software using Ansible
 
 1. Run the Install Agents Playbook
