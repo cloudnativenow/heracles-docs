@@ -347,8 +347,17 @@ In the MID Server record:
 1. Check all records under the "Preview Problems for Batch" and select `Accept remote update` for **all Errors** listed
 1. Press `Commit Update Set`
 
-> NOTE: to see the changes, navigate to **ACC Log Analytics > ACC Log Policies**, clear the filter, and confirm the following policies exist:
-   ![custom acc log policies](acc-log-policies-workshop.png)
+# Fix ACC Log Policies Glitches
+
+> NOTE: This is a temporary workaround for ACC Log Policies imported via Update Sets and should be addresed in following releases
+
+1. Navigate to **ACC Log Analytics > ACC Log Policies**, clear the filter, and confirm the following policies exist:
+![custom acc log policies](acc-log-policies-workshop.png)
+1. Navigate to **Agent Client Collector > Configuration > ACC Plugins**
+1. Click on the Linux `filebeat` record
+1. Edit the record by clicking on the `To edit this record click here` link
+1. Set the `Active` checkbox to checked
+1. Press the `Update` Button
 
 # Install the ACC Software using Ansible
 
