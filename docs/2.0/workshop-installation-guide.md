@@ -21,6 +21,7 @@ This document assumes a basic level of competency and familiarity with the tools
 * Ansible v4.5.0
 
 > NOTE: See the Appendix section for specific installation and use instructions.
+
 # Deploy your NOW Instance
 
 ## Request a new NOW Instance
@@ -280,6 +281,7 @@ In the MID Server record:
    > NOTE: You will use this later as YOUR MID WEB SERVER API KEY
 
 ## Setup ACC Log Analytics:
+
 In the MID Server record:
 1. Click on the **Setup ACC Log Analytics** link
 1. Set the ACC Data Input Port to `5044`
@@ -436,6 +438,7 @@ You could also temporarily reduce the value of the HLA System Property: `source_
 1. Press `Commit Update Set`
 
    > NOTE: Select `Accept remote update` for any Errors listed and commit update set
+
 ## Install the Chaos Catalog Service Portal Update Set
 
 1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
@@ -444,6 +447,7 @@ You could also temporarily reduce the value of the HLA System Property: `source_
 1. Press `Commit Update Set`
 
    > NOTE: Select `Accept remote update` for any Errors listed and commit update set
+
 ## Create Support Group
 
 1. Navigate to **User Administration > Groups**
