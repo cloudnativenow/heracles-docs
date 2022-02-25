@@ -135,6 +135,8 @@ This document assumes a basic level of competency and familiarity with the tools
    | Disable Setup Time Rule                           | ON    | OFF           |
    | Disable All Events Metric Anomaly Detections Rule | ON    | OFF           |
 
+   > NOTE: Not all features are visible by default, to view them remove the `feature type=basic` filter.
+
 # Deploy the Workshop AWS Environment
 
 ## Create the AWS Environment using Terraform
