@@ -75,9 +75,11 @@ This document assumes a basic level of competency and familiarity with the tools
    | Health Log Analytics        | 21.0.1    |
    | Health Log Analytics Viewer | 20.1.4    |
    | Alert Intelligence          | 19.3.8    |
-   | Occultus Version            | 1.13.2.25 |
+   | Occultus Version            | 1.13.2.32 |
    | Metrics Base Version        | 1.14.0.13 |
    | ElasticSearch Version       | 7.3.2     |
+
+ > NOTE: Confirm your Occultus version matches your HLA version using this matrix: [KB1002197](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB1002197). If it's **lower** than the version number in the matrix, comment on your HLA installation CHG request asking to upgrade it. If you're using later HLA/Occultus versions than the ones in the above table that's fine, as long as they align to one another per the KB matrix.
 
 ## Install the required ITOM plugins for the Workshop
 
