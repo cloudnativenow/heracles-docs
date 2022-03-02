@@ -75,7 +75,7 @@ This document assumes a basic level of competency and familiarity with the tools
    | Health Log Analytics        | 21.0.1    |
    | Health Log Analytics Viewer | 20.1.4    |
    | Alert Intelligence          | 19.3.8    |
-   | Occultus Version            | 1.13.2.32 |
+   | Occultus Version            | 1.13.2.31 |
    | Metrics Base Version        | 1.14.0.13 |
    | ElasticSearch Version       | 7.3.2     |
 
