@@ -464,10 +464,11 @@ This document assumes a basic level of competency and familiarity with the tools
 
 ## Configure the Chaos Catalog Credentials
 
-1. Navigate to **Connections & Credentials > Connections & Credential Aliases**
-2. Click on the `hla_workshop_creds` Credential
-3. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
-   ![SSH Credentials](heracles-credential.png)
+1. Navigate to **Connections & Credentials > Credentials**
+1. Click on the `heracles` Credential
+1. Click on the `Credential alias` icon
+1. Lookup using list the alias `x_snc_hla_workshop.hla_workshop_creds`
+1. Press `Update` 
 4. Test Credential with any of your server IP addresses (e.g. mysql, spring, etc.)
 
 ## Test the Chaos Catalog
