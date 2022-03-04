@@ -120,7 +120,6 @@ This document assumes a basic level of competency and familiarity with the tools
 
 1. Login to your NOW Instance as an Administrator
 1. Navigate to **Health Log Analytics > Health Log Analytics Administration > System Properties** and set the following properties:
-> to see all the properties, clear the list's default filter first
 
    | Property Name                                            | Value | Default Value |
    | -------------------------------------------------------- | ----- | ------------- |
@@ -128,7 +127,8 @@ This document assumes a basic level of competency and familiarity with the tools
    | rules.filter_detections_with_low_current_value.threshold | 1.0   | 5.0           |
    | incidents.cooldown_period_minutes                        | 2     | 5             |
 
-
+   > NOTE: to see all the properties, clear the list's default filter first
+   
 1. Navigate to **Health Log Analytics > Health Log Analytics Administration > Features** and set the following features:
 
 
