@@ -232,16 +232,6 @@ This document assumes a basic level of competency and familiarity with the tools
    -e "mid_username=YOUR MID SERVER USER ID" \
    -e "mid_password=YOUR MID SERVER USER PASSWORD"
    ```
-
-## Configure Discovery Credentials
-
-1. Login to your NOW Instance as Administrator
-2. Navigate to **Discovery > Credentials**
-3. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
-
-   ![SSH Credentials](heracles-credential.png)
-4. Test Credential with any of your server private IP addresses (e.g. mysql, spring, etc.)
-
 ## Validate MID Server
 
 1. Login to your NOW Instance as Administrator
@@ -251,30 +241,41 @@ This document assumes a basic level of competency and familiarity with the tools
 5. Set the **MID Initial Selection Criteria** as follows:
 
    ![Validate MID Server](validate-mid.png)
+
 6. Click on the **Supported Applications** tab and check settings are as follows:
 
 
    | Field                       | Value           |
-   | ----------------------------- | ----------------- |
+   | --------------------------- | --------------- |
    | Name                        | ALL             |
    | Default MID Server          | YOUR MID SERVER |
    | Included in application ALL | true            |
+
 7. Click on the **Capabilities** tab and check settings are as follows:
 
 
    | Field                       | Value           |
-   | ----------------------------- | ----------------- |
+   | --------------------------- | --------------- |
    | Name                        | ALL             |
    | Default MID Server          | YOUR MID SERVER |
    | Included in application ALL | true            |
+  
 8. Click on the **IP Ranges** tab and check settings are as follows:
 
 
    | Field | Value   |
-   | ------- | --------- |
+   | ----- | ------- |
    | Name  | ALL     |
    | Type  | Include |
    | Range | 0.0.0.0 |
+## Configure Discovery Credentials
+
+1. Login to your NOW Instance as Administrator
+2. Navigate to **Discovery > Credentials**
+3. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
+
+   ![SSH Credentials](heracles-credential.png)
+4. Test Credential with any of your server private IP addresses (e.g. mysql, spring, etc.)
 
 ## Setup Metric Intelligence
 
@@ -298,7 +299,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
 
    | Name                | Active |
-   | --------------------- | -------- |
+   | ------------------- | ------ |
    | Linux OS Events     | true   |
    | MySQL DB Metrics    | true   |
    | Self-Healing Events | true   |

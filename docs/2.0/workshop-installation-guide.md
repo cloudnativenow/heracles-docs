@@ -245,16 +245,6 @@ This document assumes a basic level of competency and familiarity with the tools
    -e "mid_username=YOUR MID SERVER USER ID" \
    -e "mid_password=YOUR MID SERVER USER PASSWORD"
    ```
-
-## Configure Discovery Credentials
-
-1. Login to your NOW Instance as Administrator
-1. Navigate to **Discovery > Credentials**
-1. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
-
-   ![SSH Credentials](heracles-credential.png)
-1. Test Credential with any of your server private IP addresses (e.g. mysql, spring, etc.)
-
 ## Validate MID Server
 
 1. Login to your NOW Instance as Administrator
@@ -264,6 +254,14 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Set the **MID Initial Selection Criteria** as follows:
 
    ![Validate MID Server](validate-mid.png)
+## Configure Discovery Credentials
+
+1. Login to your NOW Instance as Administrator
+1. Navigate to **Discovery > Credentials**
+1. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
+
+   ![SSH Credentials](heracles-credential.png)
+1. Test Credential with any of your server private IP addresses (e.g. mysql, spring, etc.)
 
 ## Setup ACC Monitoring:
 
