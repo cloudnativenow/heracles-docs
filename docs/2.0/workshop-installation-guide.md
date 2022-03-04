@@ -477,11 +477,12 @@ You could also temporarily reduce the value of the HLA System Property: `source_
 
 ## Configure the Chaos Catalog Credentials
 
-1. Navigate to **Connections & Credentials > Connection & Credential Aliases**
-1. Click on the `hla_workshop_creds` Credential
-1. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
-   ![SSH Credentials](heracles-credential.png)
-1. Test Credential with any of your server IP addresses (e.g. mysql, spring, etc.)
+1. Navigate to **Connections & Credentials > Credentials**
+1. Click on the `heracles` Credential
+1. Click on the `Credential alias` icon
+1. Lookup using list the alias `x_snc_hla_workshop.hla_workshop_creds`
+1. Press `Update` 
+4. Test Credential with any of your server IP addresses (e.g. mysql, spring, etc.)
 
 ## Test the Chaos Catalog
 
