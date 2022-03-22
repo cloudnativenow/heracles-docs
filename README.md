@@ -1,4 +1,4 @@
-Documentation project for the Predictive AIOps Workshop, Release 1.0.
+Documentation project for the Predictive AIOps Workshop.
 
 # Project Documentation
 
