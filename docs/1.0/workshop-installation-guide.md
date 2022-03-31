@@ -30,7 +30,8 @@ This document assumes a basic level of competency and familiarity with the tools
 2. Search for "new internal instance request"
 3. Request a new instance as follows, using the latest available application version:
 
-   ![New Internal Instance Request](new-internal-instance-request.png)
+   <!-- ![New Internal Instance Request](new-internal-instance-request.png) -->
+   * [New Internal Instance Request Notice](20220331_hla_naming_notice_1.pdf)
 
 ## Upgrade your NOW Instance to latest Rome version
 
