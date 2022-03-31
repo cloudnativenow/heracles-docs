@@ -30,7 +30,8 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Search for "new internal instance request"
 1. Request a new instance as follows, asking for the latest available **Rome** application version (e.g. `Rome Patch 6`):
 
-   ![New Internal Instance Request](new-internal-instance-request.png)
+   <!-- ![New Internal Instance Request](new-internal-instance-request.png) -->
+   * [New Internal Instance Request Notice](20220331_hla_naming_notice_1.pdf)
 
 ## Upgrade your NOW Instance to latest Rome version
 
