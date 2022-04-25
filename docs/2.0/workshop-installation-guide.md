@@ -28,15 +28,15 @@ This document assumes a basic level of competency and familiarity with the tools
 
 1. Navigate to [NOW HI](https://support.servicenow.com/now)
 1. Search for "new internal instance request"
-1. Request a new instance as follows, asking for the latest available **Rome** application version (e.g. `Rome Patch 6`):
+1. Request a new instance as follows, asking for the latest available **Rome/SanDiego** application version:
 
    ![New Internal Instance Request](new-internal-instance-request.png)
 
-## Upgrade your NOW Instance to latest Rome version
+## Upgrade your NOW Instance to latest Rome/SanDiego version
 
 1. Navigate to [NOW HI](https://support.servicenow.com/now)
 1. Select your Instance from the Instances Dashboard
-1. Upgrade your instance to latest Rome version & patch level
+1. Upgrade your instance to latest Rome/SanDiego version & patch level
 > NOTE: **Minimal** Family Release version for this workshop is **Rome Patch 6 (RP6)**
 
 ## Install the HLA stack for your NOW Instance
@@ -245,6 +245,7 @@ This document assumes a basic level of competency and familiarity with the tools
    -e "mid_password=YOUR MID SERVER USER PASSWORD"
    ```
 
+
 ## Configure Discovery Credentials
 
 1. Login to your NOW Instance as Administrator
@@ -342,10 +343,10 @@ In the MID Server record:
 
 # Configure ACC Log Policies
 
-1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
+1. Navigate to **System Update Sets > Retrieved Update Sets** 
+1. Import Update Set from XML
 1. Select the `acc-l-policies-update-set.xml` Update Set from the `heracles/servicenow/` local folder
-3. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
-1. Select the `Workshop custom ACC log policies` and press `Preview Update Set`
+1. Select the `AccPolicyExport...` **Parent** record that was now loaded, and press `Preview Update Set`
 1. Check all records under the "Preview Problems for Batch" and select `Accept remote update` for **all Errors** listed
 1. Press `Commit Update Set`
 
@@ -555,6 +556,7 @@ Instructions for installing the lab buildout pre-requisites on WSL Ubuntu.
    tfenv install latest
    tfenv use 1.1.6
    ```
+
 ## Install Pyenv
 
 1. Install pyenv
@@ -567,6 +569,7 @@ Instructions for installing the lab buildout pre-requisites on WSL Ubuntu.
    export PATH="$PYENV_ROOT/bin:$PATH"
    eval "$(pyenv init --path)"
    ```
+
 ## Install Python
 
 1. Start a Bash Shell
