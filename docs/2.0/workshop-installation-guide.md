@@ -371,6 +371,7 @@ In the MID Server record:
    -e "acc_mid=YOUR MID ACC WEBSOCKET ENDPOINT URL" \
    -e "acc_api_key=YOUR MID WEB SERVER API KEY"
    ```
+   > Note: if it's been a long time since you first ran the Pet Clinic installation ansible script, you might have to repeat the "Set SSH Agent" step first, for this ansible script to work
 
 # Configure HLA Data Parsing
 
