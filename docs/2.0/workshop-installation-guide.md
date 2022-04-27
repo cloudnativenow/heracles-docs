@@ -30,7 +30,8 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Search for "new internal instance request"
 1. Request a new instance as follows, asking for the latest available **Rome/SanDiego** application version:
 
-   ![New Internal Instance Request](new-internal-instance-request.png)
+   <!-- ![New Internal Instance Request](new-internal-instance-request.png) -->
+   * [New Internal Instance Request Notice](20220331_hla_naming_notice_1.pdf)
 
 ## Upgrade your NOW Instance to latest Rome/SanDiego version
 
@@ -120,7 +121,6 @@ This document assumes a basic level of competency and familiarity with the tools
 
 1. Login to your NOW Instance as an Administrator
 1. Navigate to **Health Log Analytics > Health Log Analytics Administration > System Properties** and set the following properties:
-> to see all the properties, clear the list's default filter first
 
    | Property Name                                            | Value | Default Value |
    | -------------------------------------------------------- | ----- | ------------- |
@@ -128,7 +128,8 @@ This document assumes a basic level of competency and familiarity with the tools
    | rules.filter_detections_with_low_current_value.threshold | 1.0   | 5.0           |
    | incidents.cooldown_period_minutes                        | 2     | 5             |
 
-
+   > NOTE: to see all the properties, clear the list's default filter first
+   
 1. Navigate to **Health Log Analytics > Health Log Analytics Administration > Features** and set the following features:
 
 
@@ -137,6 +138,8 @@ This document assumes a basic level of competency and familiarity with the tools
    | Disable  Warm Up Time Rule                        | ON    | OFF           |
    | Disable Setup Time Rule                           | ON    | OFF           |
    | Disable All Events Metric Anomaly Detections Rule | ON    | OFF           |
+
+   > NOTE: Not all features are visible by default, to view them remove the `feature type=basic` filter.
 
 # Deploy the Workshop AWS Environment
 
@@ -245,16 +248,6 @@ This document assumes a basic level of competency and familiarity with the tools
    -e "mid_password=YOUR MID SERVER USER PASSWORD"
    ```
 
-
-## Configure Discovery Credentials
-
-1. Login to your NOW Instance as Administrator
-1. Navigate to **Discovery > Credentials**
-1. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
-
-   ![SSH Credentials](heracles-credential.png)
-1. Test Credential with any of your server private IP addresses (e.g. mysql, spring, etc.)
-
 ## Validate MID Server
 
 1. Login to your NOW Instance as Administrator
@@ -264,6 +257,15 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Set the **MID Initial Selection Criteria** as follows:
 
    ![Validate MID Server](validate-mid.png)
+
+## Configure Discovery Credentials
+
+1. Login to your NOW Instance as Administrator
+1. Navigate to **Discovery > Credentials**
+1. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
+
+   ![SSH Credentials](heracles-credential.png)
+1. Test Credential with any of your server private IP addresses (e.g. mysql, spring, etc.)
 
 ## Setup ACC Monitoring:
 
@@ -483,11 +485,12 @@ You could also temporarily reduce the value of the HLA System Property: `source_
 
 ## Configure the Chaos Catalog Credentials
 
-1. Navigate to **Connections & Credentials > Connection & Credential Aliases**
-1. Click on the `hla_workshop_creds` Credential
-1. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
-   ![SSH Credentials](heracles-credential.png)
-1. Test Credential with any of your server IP addresses (e.g. mysql, spring, etc.)
+1. Navigate to **Connections & Credentials > Credentials**
+1. Click on the `heracles` Credential
+1. Click on the `Credential alias` icon
+1. Lookup using list the alias `x_snc_hla_workshop.hla_workshop_creds`
+1. Press `Update` 
+4. Test Credential with any of your server IP addresses (e.g. mysql, spring, etc.)
 
 ## Test the Chaos Catalog
 

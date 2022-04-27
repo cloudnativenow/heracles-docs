@@ -30,7 +30,8 @@ This document assumes a basic level of competency and familiarity with the tools
 2. Search for "new internal instance request"
 3. Request a new instance as follows, using the latest available application version:
 
-   ![New Internal Instance Request](new-internal-instance-request.png)
+   <!-- ![New Internal Instance Request](new-internal-instance-request.png) -->
+   * [New Internal Instance Request Notice](20220331_hla_naming_notice_1.pdf)
 
 ## Upgrade your NOW Instance to latest Rome version
 
@@ -137,6 +138,8 @@ This document assumes a basic level of competency and familiarity with the tools
    | Disable Setup Time Rule                           | ON    | OFF           |
    | Disable All Events Metric Anomaly Detections Rule | ON    | OFF           |
 
+   > NOTE: Not all features are visible by default, to view them remove the `feature type=basic` filter.
+
 # Deploy the Workshop AWS Environment
 
 ## Create the AWS Environment using Terraform
@@ -232,16 +235,6 @@ This document assumes a basic level of competency and familiarity with the tools
    -e "mid_username=YOUR MID SERVER USER ID" \
    -e "mid_password=YOUR MID SERVER USER PASSWORD"
    ```
-
-## Configure Discovery Credentials
-
-1. Login to your NOW Instance as Administrator
-2. Navigate to **Discovery > Credentials**
-3. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
-
-   ![SSH Credentials](heracles-credential.png)
-4. Test Credential with any of your server private IP addresses (e.g. mysql, spring, etc.)
-
 ## Validate MID Server
 
 1. Login to your NOW Instance as Administrator
@@ -251,30 +244,41 @@ This document assumes a basic level of competency and familiarity with the tools
 5. Set the **MID Initial Selection Criteria** as follows:
 
    ![Validate MID Server](validate-mid.png)
+
 6. Click on the **Supported Applications** tab and check settings are as follows:
 
 
    | Field                       | Value           |
-   | ----------------------------- | ----------------- |
+   | --------------------------- | --------------- |
    | Name                        | ALL             |
    | Default MID Server          | YOUR MID SERVER |
    | Included in application ALL | true            |
+
 7. Click on the **Capabilities** tab and check settings are as follows:
 
 
    | Field                       | Value           |
-   | ----------------------------- | ----------------- |
+   | --------------------------- | --------------- |
    | Name                        | ALL             |
    | Default MID Server          | YOUR MID SERVER |
    | Included in application ALL | true            |
+  
 8. Click on the **IP Ranges** tab and check settings are as follows:
 
 
    | Field | Value   |
-   | ------- | --------- |
+   | ----- | ------- |
    | Name  | ALL     |
    | Type  | Include |
    | Range | 0.0.0.0 |
+## Configure Discovery Credentials
+
+1. Login to your NOW Instance as Administrator
+2. Navigate to **Discovery > Credentials**
+3. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
+
+   ![SSH Credentials](heracles-credential.png)
+4. Test Credential with any of your server private IP addresses (e.g. mysql, spring, etc.)
 
 ## Setup Metric Intelligence
 
@@ -298,7 +302,7 @@ This document assumes a basic level of competency and familiarity with the tools
 
 
    | Name                | Active |
-   | --------------------- | -------- |
+   | ------------------- | ------ |
    | Linux OS Events     | true   |
    | MySQL DB Metrics    | true   |
    | Self-Healing Events | true   |
@@ -461,10 +465,11 @@ This document assumes a basic level of competency and familiarity with the tools
 
 ## Configure the Chaos Catalog Credentials
 
-1. Navigate to **Connections & Credentials > Connections & Credential Aliases**
-2. Click on the `hla_workshop_creds` Credential
-3. Add a **SSH Private Key Credentials** Credential named `heracles` as follows:
-   ![SSH Credentials](heracles-credential.png)
+1. Navigate to **Connections & Credentials > Credentials**
+1. Click on the `heracles` Credential
+1. Click on the `Credential alias` icon
+1. Lookup using list the alias `x_snc_hla_workshop.hla_workshop_creds`
+1. Press `Update` 
 4. Test Credential with any of your server IP addresses (e.g. mysql, spring, etc.)
 
 ## Test the Chaos Catalog
