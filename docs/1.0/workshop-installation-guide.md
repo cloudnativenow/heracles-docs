@@ -532,24 +532,20 @@ MariaDB Error Logs
 
 # Secure your Workshop AWS Environment
 
-## Identify your Crowdstrike CID
+## Get the latest Crowdstrike agent and CID
 
-1. Navigate to [NOW SURF](https://surf.service-now.com/)
-2. Search for `KB0051390` Knowledge Article
-3. Note the Crowdstrike CID for the `Cloud (Commercial)` Environment
+1. Open `KB0051390` on [NOW SURF](https://surf.service-now.com/): https://surf.service-now.com/kb_view.do?sysparm_article=KB0051390 
+1. Click on the "Amazon Linux 2" link in the table at the top, and download the agent locally (filename example: `falcon-sensor-6.37.0-13402.amzn2.x86_64.rpm`)
+1. Place the downloaded rpm in your local heracles repo folder, under: `heracles/releases/2.0/ansible`
+1. Back in the KB article, note the Crowdstrike CID for the `Cloud (Commercial)` Environment
 
 ## Install the Crowdstrike Falcon Agent using Ansible
 
-1. Download the Crowdstrike Falcon Agent RPM from HI for RHEL 8 (e.g. 6.32.0-12904)
-
-   ```
-   wget https://surf.service-now.com/sys_attachment.do?sys_id=6e589ffcdb800d10ae878fd3399619f8 -qO falcon-sensor.rpm
-   ```
-2. Run the Install Falcon Playbook
+1. Run the Install Falcon Playbook
 
    ```
    $ ansible-playbook -i YOUR INVENTORY FILE.cfg ansible/install-falcon.yml \
-   -e "falcon_rpm=YOUR FALCON RPM FILE" \
+   -e "falcon_rpm=YOUR FALCON RPM FILENAME" \
    -e "falcon_cid=YOUR FALCON CID" 
    ```
 

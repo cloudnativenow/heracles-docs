@@ -5,6 +5,7 @@ author:
 - Anthony Angelo, Netser Heruty, Daniel Smith
 date: 10 Feb 2022
 ---
+
 # Introduction
 
 This document provides prescriptive guidance for deploying the Predictive AIOps Workshop app infrastructure and ServiceNow instance configuration. 
@@ -28,16 +29,16 @@ This document assumes a basic level of competency and familiarity with the tools
 
 1. Navigate to [NOW HI](https://support.servicenow.com/now)
 1. Search for "new internal instance request"
-1. Request a new instance as follows, asking for the latest available **Rome** application version (e.g. `Rome Patch 6`):
+1. Request a new instance as follows, asking for the latest available **Rome/SanDiego** application version:
 
    <!-- ![New Internal Instance Request](new-internal-instance-request.png) -->
    * [New Internal Instance Request Notice](20220331_hla_naming_notice_1.pdf)
 
-## Upgrade your NOW Instance to latest Rome version
+## Upgrade your NOW Instance to latest Rome/SanDiego version
 
 1. Navigate to [NOW HI](https://support.servicenow.com/now)
 1. Select your Instance from the Instances Dashboard
-1. Upgrade your instance to latest Rome version & patch level
+1. Upgrade your instance to latest Rome/SanDiego version & patch level
 > NOTE: **Minimal** Family Release version for this workshop is **Rome Patch 6 (RP6)**
 
 ## Install the HLA stack for your NOW Instance
@@ -247,6 +248,7 @@ This document assumes a basic level of competency and familiarity with the tools
    -e "mid_username=YOUR MID SERVER USER ID" \
    -e "mid_password=YOUR MID SERVER USER PASSWORD"
    ```
+
 ## Validate MID Server
 
 1. Login to your NOW Instance as Administrator
@@ -256,6 +258,7 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Set the **MID Initial Selection Criteria** as follows:
 
    ![Validate MID Server](validate-mid.png)
+
 ## Configure Discovery Credentials
 
 1. Login to your NOW Instance as Administrator
@@ -343,10 +346,10 @@ In the MID Server record:
 
 # Configure ACC Log Policies
 
-1. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
+1. Navigate to **System Update Sets > Retrieved Update Sets** 
+1. Import Update Set from XML
 1. Select the `acc-l-policies-update-set.xml` Update Set from the `heracles/servicenow/` local folder
-3. Navigate to **System Update Sets > Retrieved Update Sets > Import Update Set from XML**
-1. Select the `Workshop custom ACC log policies` and press `Preview Update Set`
+1. Select the `AccPolicyExport...` **Parent** record that was now loaded, and press `Preview Update Set`
 1. Check all records under the "Preview Problems for Batch" and select `Accept remote update` for **all Errors** listed
 1. Press `Commit Update Set`
 
@@ -371,6 +374,7 @@ In the MID Server record:
    -e "acc_mid=YOUR MID ACC WEBSOCKET ENDPOINT URL" \
    -e "acc_api_key=YOUR MID WEB SERVER API KEY"
    ```
+   > Note: if it's been a long time since you first ran the Pet Clinic installation ansible script, you might have to repeat the "Set SSH Agent" step first, for this ansible script to work
 
 # Configure HLA Data Parsing
 
@@ -505,26 +509,23 @@ You could also temporarily reduce the value of the HLA System Property: `source_
 
 # Secure your Workshop AWS Environment
 
-## Identify your Crowdstrike CID
+## Get the latest Crowdstrike agent and CID
 
-1. Navigate to [NOW SURF](https://surf.service-now.com/)
-1. Search for `KB0051390` Knowledge Article
-1. Note the Crowdstrike CID for the `Cloud (Commercial)` Environment
+1. Open `KB0051390` on [NOW SURF](https://surf.service-now.com/): https://surf.service-now.com/kb_view.do?sysparm_article=KB0051390 
+1. Click on the "Amazon Linux 2" link in the table at the top, and download the agent locally (filename example: `falcon-sensor-6.37.0-13402.amzn2.x86_64.rpm`)
+1. Place the downloaded rpm in your local heracles repo folder, under: `heracles/releases/2.0/ansible`
+1. Back in the KB article, note the Crowdstrike CID for the `Cloud (Commercial)` Environment
 
 ## Install the Crowdstrike Falcon Agent using Ansible
 
-1. Download the Crowdstrike Falcon Agent RPM from HI for RHEL 8 (e.g. 6.32.0-12904)
-
-   ```
-   wget "https://surf.service-now.com/sys_attachment.do?sys_id=6e589ffcdb800d10ae878fd3399619f8" -qO falcon-sensor.rpm
-   ```
 1. Run the Install Falcon Playbook
 
    ```
    $ ansible-playbook -i YOUR INVENTORY FILE.cfg ansible/install-falcon.yml \
-   -e "falcon_rpm=YOUR FALCON RPM FILE" \
+   -e "falcon_rpm=YOUR FALCON RPM FILENAME" \
    -e "falcon_cid=YOUR FALCON CID" 
    ```
+
 # Appendix A – WSL Ubuntu Prerequisites Installation
 
 Instructions for installing the lab buildout pre-requisites on WSL Ubuntu.
@@ -557,6 +558,7 @@ Instructions for installing the lab buildout pre-requisites on WSL Ubuntu.
    tfenv install latest
    tfenv use 1.1.6
    ```
+
 ## Install Pyenv
 
 1. Install pyenv
@@ -569,6 +571,7 @@ Instructions for installing the lab buildout pre-requisites on WSL Ubuntu.
    export PATH="$PYENV_ROOT/bin:$PATH"
    eval "$(pyenv init --path)"
    ```
+
 ## Install Python
 
 1. Start a Bash Shell
@@ -686,6 +689,7 @@ Instructions for installing the lab buildout pre-requisites on a Mac.
    ```
    brew install awscli
    ```
+
 1. Configure your AWS CLI Profile. See the [AWS docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) for more information. 
 
    ```
