@@ -5,6 +5,7 @@ author:
 - Anthony Angelo, Netser Heruty, Daniel Smith
 date: 10 Feb 2022
 ---
+
 # Introduction
 
 This document provides prescriptive guidance for deploying the Predictive AIOps Workshop app infrastructure and ServiceNow instance configuration. 
@@ -524,6 +525,7 @@ You could also temporarily reduce the value of the HLA System Property: `source_
    -e "falcon_rpm=YOUR FALCON RPM FILENAME" \
    -e "falcon_cid=YOUR FALCON CID" 
    ```
+
 # Appendix A – WSL Ubuntu Prerequisites Installation
 
 Instructions for installing the lab buildout pre-requisites on WSL Ubuntu.
@@ -687,6 +689,7 @@ Instructions for installing the lab buildout pre-requisites on a Mac.
    ```
    brew install awscli
    ```
+
 1. Configure your AWS CLI Profile. See the [AWS docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) for more information. 
 
    ```
