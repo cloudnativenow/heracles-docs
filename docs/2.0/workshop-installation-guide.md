@@ -27,22 +27,18 @@ This document assumes a basic level of competency and familiarity with the tools
 
 ## Request a new NOW Instance
 
-> To get HLA installed on internal SN instances, a few conditions must be met: 
-> 1. The instance name must begin with *loomsalesdemo*...
-> 1. The instance must be deployed in our **Subprod** data-center pool (to check, go to Instances in HI, and see check the "purpose" field). To achieve that, SCs can simply deploy the instance from **DemoHub** and ***NOT from HI*** - as DemoHub instances' deployment-requests coming from employees under the Sales org (such as SCs...) are automatically provisioned within the Subprod pool (FYI: a prerequisite to install HLA is that instances MUST be provisioned on the ADCv2 LoadBalancer environment in our Data-Center, and 'Subprod' instances default to ADCv2...)
-
 1. Navigate to [DemoHub](https://demohub.service-now.com/hub)
-1. Press "Deploy New Instance"
+1. Press **Deploy New Instance**
 1. Fill in the details as follows:
-   1. Use an **instance name** which matches the following naming convention - starting with the prefix: **loomsalesdemo**
-      > This is critical! otherwise HLA won't be provisioned... (this only applies to internal instances, don't worry about your customers)
-   
-   1. Ask for the latest family-release version available (e.g. Sang Diego)
 
-   see:
-   ![demohub-deploy-instance-for-hla](demohub-deploy-instance-for-hla.png)
+   | Field | Value | Note |
+   |-------|-------|------|
+   | Instance Name | YOUR INSTANCE NAME | You MUST prefix your instance name with `loomsalesdemo` [^1] |
+   | Version | LATEST RELEASE | San Diego as of May 19, 2022 | 
 
-## Upgrade your NOW Instance to latest Rome/SanDiego version
+   [^1]: It is critical you follow this naming convention for internal instances. This requirement does not apply to customer instances.
+
+## Upgrade your NOW Instance to latest Rome or SanDiego versions
 
 1. Navigate to [NOW HI](https://support.servicenow.com/now)
 1. Select your Instance from the Instances Dashboard
@@ -52,11 +48,18 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Install HLA on your NOW Instance
 
 1. In your NOW instance, navigate to: **All Available Applications > All**
-1. Search for "Health Log Analytics" and hit Install.
-> Notice: even when the plugin installation is complete, HLA will NOT be working yet! there are also background workflows running to provision the backend services of HLA which take a long time (when it's complete, you'll know by no longer seeing a red banner error notification on the Data Inputs page telling you "Provisioning must be completed")
+1. Search for "Health Log Analytics"
+1. Press the **Install** Button
 
-> You can also follow [KB0998946](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0998946) for the latest installation steps - starting from step 1: Install the HLA plugin (Note it is recommended to read all the steps carefully as instructed in the HLA Installation Guide KB, as it is updated frequently by the HLA Dev team)
+   > NOTE: Please note that HLA installation process is automatically scheduled in the backround and provisioned by Operations over the course of several days. 
 
+## Check HLA Installaton Status
+
+1. Login to your NOW Instance as Administrator
+1. Navigate to **Health Log Analytics > Data Input > Data Inputs **
+1. If you notice an red error banner stating that `Provisioning must completed` check again later.
+
+   > NOTE: To get a better understanding of the HLA installation process please read  [KB0998946](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0998946) 
 
 ## Check HLA Services Status for your NOW Instance
 
@@ -102,9 +105,9 @@ This document assumes a basic level of competency and familiarity with the tools
    | CMDB CI Class Models                                         | sn_cmdb_ci_class                        |
    | Certificate Inventory and Management                         | sn_disco_certmgmt                       |
    | Performance Analytics - Premium                              | com.snc.pa.premium                      |
-   | ServiceNow IntegrationHub Professional Pack Installer [^1]   | com.glide.hub.integrations.professional |
+   | ServiceNow IntegrationHub Professional Pack Installer [^2]   | com.glide.hub.integrations.professional |
 
-   [^1]: Requires installation using `maint` role after hopping in with full access
+   [^2]: Requires installation using `maint` role after hopping in with full access
 
 ## Execute the [PA HLA] Historic Data Collection Job to catch up the HLA Overview Dashboard
 
