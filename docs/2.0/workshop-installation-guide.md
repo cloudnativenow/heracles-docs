@@ -38,13 +38,6 @@ This document assumes a basic level of competency and familiarity with the tools
 
    [^1]: It is critical you follow this naming convention for internal instances. This requirement does not apply to customer instances.
 
-## Upgrade your NOW Instance to latest Rome or SanDiego versions
-
-1. Navigate to [NOW HI](https://support.servicenow.com/now)
-1. Select your Instance from the Instances Dashboard
-1. Upgrade your instance to latest Rome/SanDiego version & patch level
-> NOTE: **Minimal** Family Release version for this workshop is **Rome Patch 6 (RP6)**
-
 ## Install HLA on your NOW Instance
 
 1. In your NOW instance, navigate to: **All Available Applications > All**
