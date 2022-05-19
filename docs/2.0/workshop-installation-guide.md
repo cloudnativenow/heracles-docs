@@ -27,18 +27,20 @@ This document assumes a basic level of competency and familiarity with the tools
 
 ## Request a new NOW Instance
 
+> To get HLA installed on internal SN instances, a few conditions must be met: 
+> 1. The instance name must begin with *loomsalesdemo*...
+> 1. The instance must be deployed in our **Subprod** data-center pool (to check, go to Instances in HI, and see check the "purpose" field). To achieve that, SCs can simply deploy the instance from **DemoHub** and ***NOT from HI*** - as DemoHub instances' deployment-requests coming from employees under the Sales org (such as SCs...) are automatically provisioned within the Subprod pool (FYI: a prerequisite to install HLA is that instances MUST be provisioned on the ADCv2 LoadBalancer environment in our Data-Center, and 'Subprod' instances default to ADCv2...)
+
 1. Navigate to [DemoHub](https://demohub.service-now.com/hub)
 1. Press "Deploy New Instance"
 1. Fill in the details as follows:
    1. Use an **instance name** which matches the following naming convention - starting with the prefix: **loomsalesdemo**
-      > This is critical! otherwise HLA won't be provisioned... (this only applies to internal instances)
+      > This is critical! otherwise HLA won't be provisioned... (this only applies to internal instances, don't worry about your customers)
+   
    1. Ask for the latest family-release version available (e.g. Sang Diego)
 
    see:
-   
-
-   <!-- ![New Internal Instance Request](new-internal-instance-request.png) -->
-   * [New Internal Instance Request Notice](20220331_hla_naming_notice_1.pdf)
+   ![demohub-deploy-instance-for-hla](demohub-deploy-instance-for-hla.png)
 
 ## Upgrade your NOW Instance to latest Rome/SanDiego version
 
@@ -47,22 +49,19 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Upgrade your instance to latest Rome/SanDiego version & patch level
 > NOTE: **Minimal** Family Release version for this workshop is **Rome Patch 6 (RP6)**
 
-## Install the HLA stack for your NOW Instance
+## Install HLA on your NOW Instance
 
-1. Follow [KB0998946](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0998946) for the latest installation steps
+1. In your NOW instance, navigate to: **All Available Applications > All**
+1. Search for "Health Log Analytics" and hit Install.
+> Notice: even when the plugin installation is complete, HLA will NOT be working yet! there are also background workflows running to provision the backend services of HLA which take a long time (when it's complete, you'll know by no longer seeing a red banner error notification on the Data Inputs page telling you "Provisioning must be completed")
 
-   > NOTE: Please read and follow all the steps carefully as instructed in the HLA Installation Guide KB, as it is updated frequently by the HLA Dev team
+> You can also follow [KB0998946](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0998946) for the latest installation steps - starting from step 1: Install the HLA plugin (Note it is recommended to read all the steps carefully as instructed in the HLA Installation Guide KB, as it is updated frequently by the HLA Dev team)
+
 
 ## Check HLA Services Status for your NOW Instance
 
-1. Login to your NOW Instance as an Administrator
-1. Set your `Profile Time Zone` accordingly (e.g. `US\Eastern`)
-
-   > NOTE: Log out and back in to make sure your `Profile Time Zone` is set correctly. Failure to do so will adversly affect the workshop and using basic HLA functions like searching and finding log entries.
-
 1. In your browser add the following to your instance URL: `xmlstats.do?include=services_status`
-1. Check **Services Status** are as follows:
-
+1. Confirm **Services Status** are as follows:
 
    | Name          | Status |
    | ------------- | ------ |
@@ -127,6 +126,11 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Optimize your NOW Instance for the Workshop
 
 1. Login to your NOW Instance as an Administrator
+
+1. Set your `Profile Time Zone` accordingly (e.g. `US\Eastern`)
+
+   > NOTE: Log out and back in to make sure your `Profile Time Zone` is set correctly. Failure to do so will adversly affect the workshop and using basic HLA functions like searching and finding log entries...
+
 1. Navigate to **Health Log Analytics > Health Log Analytics Administration > System Properties** and set the following properties:
 
    | Property Name                                            | Value | Default Value |
