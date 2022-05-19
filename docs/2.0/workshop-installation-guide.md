@@ -27,9 +27,15 @@ This document assumes a basic level of competency and familiarity with the tools
 
 ## Request a new NOW Instance
 
-1. Navigate to [NOW HI](https://support.servicenow.com/now)
-1. Search for "new internal instance request"
-1. Request a new instance as follows, asking for the latest available **Rome/SanDiego** application version:
+1. Navigate to [DemoHub](https://demohub.service-now.com/hub)
+1. Press "Deploy New Instance"
+1. Fill in the details as follows:
+   1. Use an **instance name** which matches the following naming convention - starting with the prefix: **loomsalesdemo**
+      > This is critical! otherwise HLA won't be provisioned... (this only applies to internal instances)
+   1. Ask for the latest family-release version available (e.g. Sang Diego)
+
+   see:
+   
 
    <!-- ![New Internal Instance Request](new-internal-instance-request.png) -->
    * [New Internal Instance Request Notice](20220331_hla_naming_notice_1.pdf)
