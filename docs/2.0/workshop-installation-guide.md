@@ -27,36 +27,37 @@ This document assumes a basic level of competency and familiarity with the tools
 
 ## Request a new NOW Instance
 
-1. Navigate to [NOW HI](https://support.servicenow.com/now)
-1. Search for "new internal instance request"
-1. Request a new instance as follows, asking for the latest available **Rome/SanDiego** application version:
+1. Navigate to [DemoHub](https://demohub.service-now.com/hub)
+1. Press **Deploy New Instance**
+1. Fill in the details as follows:
 
-   <!-- ![New Internal Instance Request](new-internal-instance-request.png) -->
-   * [New Internal Instance Request Notice](20220331_hla_naming_notice_1.pdf)
+   | Field | Value | Note |
+   |-------|-------|------|
+   | Instance Name | YOUR INSTANCE NAME | You MUST prefix your instance name with `loomsalesdemo` [^1] |
+   | Version | LATEST RELEASE | San Diego as of May 19, 2022 | 
 
-## Upgrade your NOW Instance to latest Rome/SanDiego version
+   [^1]: It is critical you follow this naming convention for internal instances. This requirement does not apply to customer instances.
 
-1. Navigate to [NOW HI](https://support.servicenow.com/now)
-1. Select your Instance from the Instances Dashboard
-1. Upgrade your instance to latest Rome/SanDiego version & patch level
-> NOTE: **Minimal** Family Release version for this workshop is **Rome Patch 6 (RP6)**
+## Install HLA on your NOW Instance
 
-## Install the HLA stack for your NOW Instance
+1. In your NOW instance, navigate to: **All Available Applications > All**
+1. Search for "Health Log Analytics"
+1. Press the **Install** Button
 
-1. Follow [KB0998946](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0998946) for the latest installation steps
+   > NOTE: Please note that HLA installation process is automatically scheduled in the backround and provisioned by Operations over the course of several days.
 
-   > NOTE: Please read and follow all the steps carefully as instructed in the HLA Installation Guide KB, as it is updated frequently by the HLA Dev team
+## Check HLA Installaton Status
+
+1. Login to your NOW Instance as Administrator
+1. Navigate to **Health Log Analytics > Data Input > Data Inputs **
+1. If you notice an red error banner stating that `Provisioning must completed`, please check again later.
+
+   > NOTE: To get a better understanding of the HLA installation process please read  [KB0998946](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0998946) 
 
 ## Check HLA Services Status for your NOW Instance
 
-1. Login to your NOW Instance as an Administrator
-1. Set your `Profile Time Zone` accordingly (e.g. `US\Eastern`)
-
-   > NOTE: Log out and back in to make sure your `Profile Time Zone` is set correctly. Failure to do so will adversly affect the workshop and using basic HLA functions like searching and finding log entries.
-
 1. In your browser add the following to your instance URL: `xmlstats.do?include=services_status`
-1. Check **Services Status** are as follows:
-
+1. Confirm **Services Status** are as follows:
 
    | Name          | Status |
    | ------------- | ------ |
@@ -97,9 +98,9 @@ This document assumes a basic level of competency and familiarity with the tools
    | CMDB CI Class Models                                         | sn_cmdb_ci_class                        |
    | Certificate Inventory and Management                         | sn_disco_certmgmt                       |
    | Performance Analytics - Premium                              | com.snc.pa.premium                      |
-   | ServiceNow IntegrationHub Professional Pack Installer [^1]   | com.glide.hub.integrations.professional |
+   | ServiceNow IntegrationHub Professional Pack Installer [^2]   | com.glide.hub.integrations.professional |
 
-   [^1]: Requires installation using `maint` role after hopping in with full access
+   [^2]: Requires installation using `maint` role after hopping in with full access
 
 ## Execute the [PA HLA] Historic Data Collection Job to catch up the HLA Overview Dashboard
 
@@ -121,6 +122,11 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Optimize your NOW Instance for the Workshop
 
 1. Login to your NOW Instance as an Administrator
+
+1. Set your `Profile Time Zone` accordingly (e.g. `US\Eastern`)
+
+   > NOTE: Log out and back in to make sure your `Profile Time Zone` is set correctly. Failure to do so will adversly affect the workshop and using basic HLA functions like searching and finding log entries...
+
 1. Navigate to **Health Log Analytics > Health Log Analytics Administration > System Properties** and set the following properties:
 
    | Property Name                                            | Value | Default Value |
