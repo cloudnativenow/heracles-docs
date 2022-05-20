@@ -535,7 +535,7 @@ MariaDB Error Logs
 ## Get the latest Crowdstrike agent and CID
 
 1. Open `KB0051390` on [NOW SURF](https://surf.service-now.com/): https://surf.service-now.com/kb_view.do?sysparm_article=KB0051390 
-1. Click on the "Amazon Linux 2" link in the table at the top, and download the agent locally (filename example: `falcon-sensor-6.37.0-13402.amzn2.x86_64.rpm`)
+1. Click on the "Amazon Linux 2" link in the table at the top, and download the agent locally (e.g., `falcon-sensor-6.37.0-13402.amzn2.x86_64.rpm`)
 1. Place the downloaded rpm in your local heracles repo folder, under: `heracles/releases/2.0/ansible`
 1. Back in the KB article, note the Crowdstrike CID for the `Cloud (Commercial)` Environment
 
