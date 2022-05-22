@@ -44,7 +44,7 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Search for "Health Log Analytics"
 1. Press the **Install** Button
 
-   > NOTE: Please note that HLA installation process is automatically scheduled in the backround and provisioned by Operations over the course of several days.
+   > NOTE: Please note that HLA installation process is automatically scheduled and provisioned in the backround, and takes up to 24 hours.
 
 ## Check HLA Installaton Status
 
