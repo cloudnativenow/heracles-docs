@@ -11,7 +11,7 @@ Documentation project for the Predictive AIOps Workshop. In addition it describe
 
     ```
     $ git clone git@github.com:pangealab/heracle-docs.git
-    $ cd heracles-docs/docs/1.0
+    $ cd heracles-docs/docs/2.0
     ```
 # Pandoc Installation for WSL
 
