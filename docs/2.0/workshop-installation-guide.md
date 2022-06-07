@@ -49,7 +49,7 @@ This document assumes a basic level of competency and familiarity with the tools
 ## Check HLA Installaton Status
 
 1. Login to your NOW Instance as Administrator
-1. Navigate to **Health Log Analytics > Data Input > Data Inputs **
+1. Navigate to **Health Log Analytics > Data Input > Data Inputs**
 1. If you notice a red error banner stating that `Provisioning must completed`, please check again later.
 
    > NOTE: To get a better understanding of the HLA installation process please read  [KB0998946](https://support.servicenow.com/kb?id=kb_article_view&sysparm_article=KB0998946) 
