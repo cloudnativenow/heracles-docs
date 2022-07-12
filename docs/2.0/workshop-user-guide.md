@@ -244,7 +244,7 @@ Following is an example scenario to trigger `stress` chaos using a `privileged a
    CPUS=$(getconf _NPROCESSORS_ONLN); stress -m $CPUS --vm-bytes $(awk -v cpus=$CPUS '/MemAvailable/{printf "%d\n", $2 / cpus;}' < /proc/meminfo)k --vm-keep  -t 5m
    ```
 
-# _**Bonus** Chaos Playbook: Database Crash & Remediation_
+## APPENDIX D - Database Crash and Remediation
 
 Following is an example scenario to trigger database chaos using a `privileged account`. This chaos simulates a realistic issue where too many connections are hitting the DB (which could happen even during legitimate traffic surges if the default limit is too low) and the DB is hitting a too many open files error - causing the entire application to fail! 
 
