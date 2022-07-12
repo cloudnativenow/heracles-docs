@@ -246,7 +246,7 @@ Following is an example scenario to trigger `stress` chaos using a `privileged a
 
 ## APPENDIX D - Database Crash and Remediation
 
-Following is a Database Crash and Remediation Scenario which simulates a realistic traffic surge triggering a "Too many open files" error om a misconfigured database. This error will cause the entire application to fail. The scenario uses a `privileged account` to SSH directy to the database host and change its settings. Ask your ServiceNow Workshop owner to demonstrate this scenario during a touchpoint meeting, and to showcase how ServiceNow's Predictive AIOps automatically detects this critical outage.
+Following is a Database Crash and Remediation Scenario which simulates a realistic traffic surge triggering a "Too many open files" error on a misconfigured database. This error will cause the entire application to fail. The scenario uses a `privileged account` to SSH directy to the database host and change its settings. Ask your ServiceNow Workshop owner to demonstrate this scenario during a touchpoint meeting, and to showcase how ServiceNow's Predictive AIOps automatically detects this critical outage.
 
 ## Prerequisites
 
