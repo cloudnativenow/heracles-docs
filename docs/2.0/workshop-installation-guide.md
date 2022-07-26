@@ -155,7 +155,7 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Clone Git Project
 
    ```
-   $ git clone git@github.com:pangealab/heracles.git
+   git clone git@github.com:pangealab/heracles.git
    ```
 
    > NOTE: If you don't have an SSH Key setup, use the HTTPS URI instead to clone (e.g. https://github.com/pangealab/heracles.git)
@@ -163,7 +163,7 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Change to heracles folder
 
    ```
-   $ cd heracles/releases/2.0
+   cd heracles/releases/2.0
    ```
 
    > NOTE: Remain in this folder for the remainder of this installation. All files referenced therein are located in this folder.
@@ -171,7 +171,7 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Configure AWS Profile
 
    ```
-   $ export AWS_PROFILE=YOUR PROFILE; printenv AWS_PROFILE
+   export AWS_PROFILE=YOUR PROFILE; printenv AWS_PROFILE
    ```
 
 1. Standardize on using one AWS Region. The automation scripts provided assume you are deploying in one region (e.g. `us-east-2`). To change to another region, edit the `backend.tf`, `providers.tf` and `variables.tf` files and replace with your specific region.
@@ -179,12 +179,12 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Create Terraform State Bucket using your CLUSTER ID (e.g., hlawork1)
 
    ```
-   $ aws s3 mb s3://YOUR CLUSTER ID-terraform-backend --profile YOUR PROFILE
+   aws s3 mb s3://YOUR CLUSTER ID-terraform-backend --profile YOUR PROFILE
    ```
 1. Create SSH Key (e.g., heracles)
 
    ```
-   $ ssh-keygen -t rsa -b 4096 -C "heracles@noreply.com" -f $HOME/.ssh/heracles -m PEM
+   ssh-keygen -t rsa -b 4096 -C "heracles@noreply.com" -f $HOME/.ssh/heracles -m PEM
    ```
    > NOTE: Do not use a passphrase when generating your ssh key
 
@@ -203,12 +203,12 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Initialize Terraform
 
    ```
-   $ terraform init
+   terraform init
    ```
 1. Create Infrastructure
 
    ```
-   $ terraform apply -auto-approve -var instance_count=3 -var cluster_name=YOUR CLUSTER ID
+   terraform apply -auto-approve -var instance_count=3 -var cluster_name=YOUR CLUSTER ID
    ```
 1. Safeguard the Terraform output of server public and private IPs
 
@@ -219,13 +219,13 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Set SSH Agent
 
    ```
-   $ eval `ssh-agent -s`
-   $ ssh-add ~/.ssh/YOUR SSH KEY 
+   eval `ssh-agent -s`
+   ssh-add ~/.ssh/YOUR SSH KEY 
    ```
 1. Run the Install Pet Clinic Playbook
 
    ```
-   $ ansible-playbook -i YOUR INVENTORY FILE.cfg ansible/install-petclinic.yml \
+   ansible-playbook -i YOUR INVENTORY FILE.cfg ansible/install-petclinic.yml \
    -e "mysql_host=YOUR MYSQL PRIVATE IP" \
    -e "servers='SPACE SEPARATED LIST OF YOUR SPRING SERVERS PRIVATE IPS'" \
    -e "frontend_addr=YOUR NGINX PUBLIC IP:8080"
@@ -249,7 +249,7 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Run the Install MID Server Playbook
 
    ```
-   $ ansible-playbook -i YOUR INVENTORY FILE.cfg ansible/install-midserver.yml \
+   ansible-playbook -i YOUR INVENTORY FILE.cfg ansible/install-midserver.yml \
    -e "instance_url=https://YOUR NOW URL" \
    -e "mid_username=YOUR MID SERVER USER ID" \
    -e "mid_password=YOUR MID SERVER USER PASSWORD"
@@ -376,7 +376,7 @@ In the MID Server record:
 1. Run the Install Agents Playbook
 
    ```
-   $ ansible-playbook -i YOUR INVENTORY FILE ansible/install-agents.yml \
+   ansible-playbook -i YOUR INVENTORY FILE ansible/install-agents.yml \
    -e "acc_mid=YOUR MID ACC WEBSOCKET ENDPOINT URL" \
    -e "acc_api_key=YOUR MID WEB SERVER API KEY"
    ```
@@ -527,7 +527,7 @@ You could also temporarily reduce the value of the HLA System Property: `source_
 1. Run the Install Falcon Playbook
 
    ```
-   $ ansible-playbook -i YOUR INVENTORY FILE.cfg ansible/install-falcon.yml \
+   ansible-playbook -i YOUR INVENTORY FILE.cfg ansible/install-falcon.yml \
    -e "falcon_rpm=YOUR FALCON RPM FILENAME" \
    -e "falcon_cid=YOUR FALCON CID" 
    ```
@@ -600,7 +600,7 @@ Instructions for installing the lab buildout pre-requisites on WSL Ubuntu.
 1. Install Ansible (e.g., v4.5.0). See the [Ansible Docs](https://docs.ansible.com/ansible/latest/installation_guide) for more information.
 
    ```
-   $ pip install ansible==4.5.0
+   pip install ansible==4.5.0
    ```
 1. Edit Ansible Settings (e.g. vi ~/.ansible.cfg)
 
@@ -622,14 +622,14 @@ Instructions for installing the lab buildout pre-requisites on WSL Ubuntu.
 1. Install Venv
 
    ```
-   $ sudo apt-get install -y python3-venv
+   sudo apt-get install -y python3-venv
    ```
 1. Install the AWS CLI. See the [AWS Docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-welcome.html) for more information.
 
    ```
-   $ curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
-   $ unzip awscli-bundle.zip
-   $ sudo /usr/bin/python3 awscli-bundle/install -i \
+   curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
+   unzip awscli-bundle.zip
+   sudo /usr/bin/python3 awscli-bundle/install -i \
    /usr/local/aws -b /usr/local/bin/aws
    ```
 1. Configure your AWS CLI Profile. See the [AWS docs](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) for more information.
