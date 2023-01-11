@@ -155,10 +155,10 @@ This document assumes a basic level of competency and familiarity with the tools
 1. Clone Git Project
 
    ```
-   git clone git@github.com:pangealab/heracles.git
+   git clone git@github.com:cloudnativenow/heracles.git
    ```
 
-   > NOTE: If you don't have an SSH Key setup, use the HTTPS URI instead to clone (e.g. https://github.com/pangealab/heracles.git)
+   > NOTE: If you don't have an SSH Key setup, use the HTTPS URI instead to clone (e.g. https://github.com/cloudnativenow/heracles.git)
 
 1. Change to heracles folder
 
