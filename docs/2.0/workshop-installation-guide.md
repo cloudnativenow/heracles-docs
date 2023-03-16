@@ -226,6 +226,23 @@ This document assumes a basic level of competency and familiarity with the tools
    ```
    > NOTE: When copying the above command it may be needed to retype the single quote characters listed on the 3rd line before executing the command. Syntax errors can result in poor configuration. 
 
+# If Needed: Check Common Points of Failure with Ansible Script
+If the ansible command fails with all or some servers listed as "unreachable":
+1.  It may help to manually SSH into each of the servers and then re-run "Run the Install Pet Clinic Playbook" step above
+1.  Use the following command in your command line interface to ssh int each server
+   ```
+   ssh -i ~/.ssh/<YOUR_SSH_KEY> ec2-user@<external_IP_of_a_server>
+   ```
+1. Re-run the "Run the Install Pet Clinic Playbook" step above
+
+Check security groups in AWS for each server:
+1.  Navigate to **servicenow.okta.com** in your browser and select the **Amazon Web Services** tile
+1.  Once inside navigate to **EC2** and then **Instances(running)**
+1.  Select a server of your choice and with the server selected click on **Actions** in the top right corner followed by **Security > Change Security Groups**
+1.  In that screen make sure that **Master_VPC** is in the list under **Associated Secuirty Groups** and add it via the search bar if it isn't
+![Security Groups](Secuirty_groups.PNG)
+
+
 # Deploy the MID Server and pre-configure ACC Access
 
 ## Configure NOW MID Access
