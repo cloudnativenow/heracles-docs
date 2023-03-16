@@ -102,12 +102,6 @@ This document assumes a basic level of competency and familiarity with the tools
 
    [^2]: Requires installation using `maint` role after hopping in with full access
 
-## Execute the [PA HLA] Historic Data Collection Job to catch up the HLA Overview Dashboard
-
-1. Login to your NOW Instance as an Administrator
-1. Set the Application Scope to `Health Log Analytics`
-1. Navigate to the **Performance Analytics > Data Collector > Jobs** and Execute the `[PA HLA] Historic Data Collection` by using right-click-mouse to `Execute Now`
-
 ## Fix Service Mapping Glitches
 
 1. Login to your NOW Instance as an Administrator
@@ -230,6 +224,7 @@ This document assumes a basic level of competency and familiarity with the tools
    -e "servers='SPACE SEPARATED LIST OF YOUR SPRING SERVERS PRIVATE IPS'" \
    -e "frontend_addr=YOUR NGINX PUBLIC IP:8080"
    ```
+   > NOTE: When copying the above command it may be needed to retype the single quote characters listed on the 3rd line before executing the command. Syntax errors can result in poor configuration. 
 
 # Deploy the MID Server and pre-configure ACC Access
 
@@ -361,15 +356,16 @@ In the MID Server record:
 
 # Fix ACC Log Policies Glitches
 
-> NOTE: This is a temporary workaround for ACC Log Policies imported via Update Sets and should be addresed in following releases
+> NOTE: The above update set imports an old version of filebeat along with the additional policies. We must remove it as a result. 
 
-1. Navigate to **ACC Log Analytics > ACC Log Policies**, clear the filter, and confirm the following policies exist:
-![custom acc log policies](acc-log-policies-workshop.png)
-1. Navigate to **Agent Client Collector > Configuration > ACC Plugins**
-1. Click on the Linux `filebeat` record
-1. Edit the record by clicking on the `To edit this record click here` link
-1. Set the `Active` checkbox to checked
-1. Press the `Update` Button
+1. In the filter navigator search for  **sys_update_xml.list** to navigate to the Customer Updates table
+1. Search for **\*filebeat** in the **Target name** column
+1. Select all items by clicking the box in the top left near the search icon
+1. In the top right select the **Actions on selected rows..** drop down and then **Delete**
+![Delete Old Filebeat Changes](customer_updates_filebeat.png)
+1. Navigate to **System Definition > Plugins** and search for **Agent Client Collector Log**
+1. Select the three dots in the top right of the **Agent Client Collector Log Analytics** and then select **Repair**
+![Repair Agent Client Collector Log Analytics](Agent_client_collector_repair.png)
 
 # Install the ACC Software using Ansible
 
