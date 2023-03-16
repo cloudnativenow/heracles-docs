@@ -229,7 +229,7 @@ This document assumes a basic level of competency and familiarity with the tools
 # If Needed: Check Common Points of Failure with Ansible Script
 If the ansible command fails with all or some servers listed as "unreachable":
 1.  It may help to manually SSH into each of the servers and then re-run "Run the Install Pet Clinic Playbook" step above
-1.  Use the following command in your command line interface to ssh int each server
+1.  Use the following command in your command line interface to ssh into each server
    ```
    ssh -i ~/.ssh/<YOUR_SSH_KEY> ec2-user@<external_IP_of_a_server>
    ```
