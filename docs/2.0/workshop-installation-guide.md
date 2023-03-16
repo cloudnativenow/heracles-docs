@@ -240,7 +240,7 @@ Check security groups in AWS for each server:
 1.  Once inside navigate to **EC2** and then **Instances(running)**
 1.  Select a server of your choice and with the server selected click on **Actions** in the top right corner followed by **Security > Change Security Groups**
 1.  In that screen make sure that **Master_VPC** is in the list under **Associated Secuirty Groups** and add it via the search bar if it isn't
-![Security Groups](Secuirty_groups.PNG)
+![Security Groups](Security_groups.PNG)
 
 
 # Deploy the MID Server and pre-configure ACC Access
