@@ -362,10 +362,11 @@ In the MID Server record:
 1. Search for **\*filebeat** in the **Target name** column
 1. Select all items by clicking the box in the top left near the search icon
 1. In the top right select the **Actions on selected rows..** drop down and then **Delete**
-![Delete Old Filebeat Changes](customer_updates_filebeat.png)
+![Delete Old Filebeat Changes](customer_updates_filebeat.PNG)
+   > NOTE: Your environment may have more or less filebeat related entries. Delete any that exist. You may have to switch between Global and Health Log Analytics scope in order to delete them all. 
 1. Navigate to **System Definition > Plugins** and search for **Agent Client Collector Log**
 1. Select the three dots in the top right of the **Agent Client Collector Log Analytics** and then select **Repair**
-![Repair Agent Client Collector Log Analytics](Agent_client_collector_repair.png)
+![Repair Agent Client Collector Log Analytics](Agent_client_collector_repair.PNG)
 
 # Install the ACC Software using Ansible
 
